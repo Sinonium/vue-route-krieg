@@ -10,8 +10,8 @@ import PageSix from '../pages/PageSix.vue'
 const routes = [
   // {
   //   path: '/1',
-  //   name: 'Home',
-  //   component: Home
+  //   name: 'PageOne',
+  //   component: PageOne
   // },
   {
     path: '/2',
