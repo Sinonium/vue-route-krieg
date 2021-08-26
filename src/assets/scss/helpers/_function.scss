@@ -5,7 +5,7 @@
 // @function vmin($value, $base: 375px) {
 //     @return ($value *100vmin) / $base
 // };
-@function vw($value, $base: 1600) {
+@function vw($value, $base: 1920) {
     @return $value / $base * 100vw;
 };
 
