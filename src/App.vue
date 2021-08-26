@@ -16,22 +16,19 @@
 <style lang="scss">
 @import '@/assets/scss/index.scss';
 #nav{
-  display: flex;
-  justify-content: center;
-  a{
-  text-decoration: none;
-  color: inherit;
-  margin: 0 15px;
-}
-
+    display: flex;
+    justify-content: center;
+    a{
+    text-decoration: none;
+    color: inherit;
+    margin: 0 15px;
+  }
 }
 .container {
   max-width: vw(1510);
   margin: 0 auto;
 }
-
-    #nav.router-link-exact-active {
-      color: #42b983;
+#nav.router-link-exact-active {
+  color: #42b983;
 }
-
 </style>
