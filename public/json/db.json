@@ -1,0 +1,78 @@
+{
+    "catalogFilms": [
+        {
+            "title": "Big Brother",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
+        },
+        {
+            "title": "Guydufefuy",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": ""
+        },
+        {
+            "title": "Big Brother",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": ""
+        },
+        {
+            "title": "Big Brother",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": ""
+        }
+    ],
+    "catalogFilmsWeek":[
+        {
+          "title": "Monday",
+          "date": 26.05,
+          "catalogFilms": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        {
+          "title": "Tuesday",
+          "date": 27.05 
+        },
+        {
+          "title": "Wednesday",
+          "date": 28.05
+        },
+        {
+          "title": "Thursday",
+          "date": 29.05
+        },
+        {
+          "title": "Friday",
+          "date": 30.05
+        },
+        {
+          "title": "Saturday",
+          "date": 31.05
+        },
+        {
+          "title": "Sunday",
+          "date": 32.05
+        }
+    ],
+    "ScheduleAddres": {
+        "text": "Subscribe To Schedule",
+        "imageUrl": "~@/assets/img/icons/email__icon-gray.svg"
+    },
+    "catalogFilmsMonths": [
+        "May",
+        "June",
+        "July",
+        "September",
+        "October",
+        "November"
+    ]
+}
