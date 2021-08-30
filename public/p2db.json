@@ -1,0 +1,202 @@
+{
+    "catalog": [
+        {
+            "id":"pageone",
+            "content": [
+                {
+                    "title": "Boardwalk Empire",
+                    "rate": 9.5,
+                    "seasons": 6,
+                    "imgSource": "/img/Image1.83f24962.png"
+                },
+                {
+                    "title": "Game Of Trones",
+                    "rate": 9.5,
+                    "seasons": 8,
+                    "imgSource": "/img/Image2.b998ff09.png"
+                },
+                {
+                    "title": "Breaking Bad",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image3.5c4c0536.png"
+                },
+                {
+                    "title": "TV Series Wiretap",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image4.65e5c0d7.png"
+                },
+                {
+                    "title": "Sherlock Holmes",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image5.27b25058.png"
+                },
+                {
+                    "title": "True Detective",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image6.bc8eb9fe.png"
+                },
+                {
+                    "title": "Fargo",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image7.eebba3cc.png"
+                },
+                {
+                    "title": "Stranger Things",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image8.f4c6532d.png"
+                },
+                {
+                    "title": "Westworld",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image9.b992ce02.png"
+                },
+                {
+                    "title": "Peaky Blinders",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": "/img/Image10.76c2de47.png"
+                }
+
+            ]
+        },
+        {
+            "id":"pagetwo",
+            "content": [
+                {
+                    "title": "Boardwalk Empire1",
+                    "rate": 12312.5,
+                    "seasons": 6,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Game Of Trones1",
+                    "rate": 9.5,
+                    "seasons": 8,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Breaking Bad1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "TV Series Wiretap1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Sherlock Holmes1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "True Detective1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Fargo1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Stranger Things1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Westworld1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Peaky Blinders1",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                }
+
+            ]
+        },
+        {
+            "id":"pagethree",
+            "content": [
+                {
+                    "title": "Boardwalk Empire2",
+                    "rate": 9.5,
+                    "seasons": 6,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Game Of Trones2",
+                    "rate": 9.5,
+                    "seasons": 8,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Breaking Bad2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "TV Series Wiretap2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Sherlock Holmes2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "True Detective2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Fargo2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Stranger Things2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Westworld2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                },
+                {
+                    "title": "Peaky Blinders2",
+                    "rate": 9.5,
+                    "seasons": 5,
+                    "imgSource": ""
+                }
+
+            ]
+        }
+    ]
+}
