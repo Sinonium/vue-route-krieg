@@ -46,10 +46,10 @@
         </div>
       </div>
       <div class="catalog__block">
-        <ul>
-          <li class="catalog__block__item" v-for="(film, index) in catalog" :key="index">
+        <ul v-if="check">
+          <li  class="catalog__block__item" v-for="(film, index) in catalog" :key="index">
             <div class="IMDb-rate">
-              <img src="../assets/img/catalog-p2/Imdb.png" alt="">
+              <img src="../assets/img/Imdb.png" alt="">
               <span>{{film.rate}}</span>
             </div>
             <span class="catalog__block__item-seasons"> {{film.seasons}} Seasons </span>
@@ -65,6 +65,13 @@
             </div>
           </li>
         </ul>
+        <div class="lalala" v-else>
+          <hr>
+          <p>npx json-server --watch ./public/p2db.json</p>
+          <p>В терминал, для отображения контента</p>
+          <hr>
+        </div>
+        
         <div class="catalog__block__pages">
           <ul>
             <li @click="selectPage(index)" class="pages" v-for="(page, index) in pages" :key="page"> {{page}} </li>
@@ -173,6 +180,7 @@ export default {
       ],
       genresBoollean: false,
       catalog: [],
+      check: false,
       pages: [1,2,3,4,5,6,7,8,9,10]
     }
   },
@@ -194,7 +202,7 @@ export default {
       const response = await data.json()
       this.catalog = response.content
     }
-    fetchData()
+    fetchData().then(item => this.check = true).catch(item => this.check = false)
   }
 }
 </script>
@@ -305,6 +313,7 @@ export default {
     position: relative;
     &-img{
       img{
+        border-radius: vw(10);
         max-width: vw(350);
         height: vw(255);
       }
@@ -370,6 +379,13 @@ export default {
       background: #FFFFFF;
       box-shadow: 0px 2px 5px rgba(54, 61, 77, 0.23);
     }
+  }
+}
+.lalala{
+  width: vw(900);
+  p{
+    @include font(vw(30), 700, vw(40), $purple);
+    text-align: center;
   }
 }
 </style>
