@@ -9,9 +9,20 @@
 
 <style lang="scss">
 @import '@/assets/scss/index.scss';
+body{
+  background: #E4E7F0;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  li{
+    list-style: none;
+  }
+}
 #nav{
   display: flex;
   justify-content: center;
+  margin-bottom: 60px;
   a{
   text-decoration: none;
   color: inherit;
