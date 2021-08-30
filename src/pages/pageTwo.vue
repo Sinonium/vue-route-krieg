@@ -294,7 +294,7 @@ export default {
   }
 }
 .catalog__block{
-  max-width: vw(775);
+  max-width: vw(900);
   display: flex;
   ul{
     display: flex;
@@ -303,6 +303,12 @@ export default {
   &__item{
     margin: 0 vw(15) vw(30);
     position: relative;
+    &-img{
+      img{
+        max-width: vw(350);
+        height: vw(255);
+      }
+    }
     &-seasons{
       display: inline-block;
       position: absolute;
@@ -324,6 +330,10 @@ export default {
     max-width: vw(60);
     left:8%;
     top: 11%;
+    img{
+      max-width: vw(38);
+      height: vw(20);
+    }
     span{
       @include font(vw(12), 800, vw(20), $white);
       margin-left: vw(16);
@@ -331,18 +341,21 @@ export default {
     }
     button{
       position: absolute;
-      bottom: 8%;
+      bottom: 7%;
       right: 5%;
       background-color: inherit;
       border: none;
       cursor: pointer;
+      svg{
+         max-width: vw(40);
+      }
     }
   }
   &__pages{
     ul{
       display: flex;
       flex-direction: column;
-      margin: 0 vw(60) 0 vw(15);
+      margin: 0 vw(70) 0 vw(5);
       text-align: center;
       li{
         padding: vw(12.92) vw(17.55);
