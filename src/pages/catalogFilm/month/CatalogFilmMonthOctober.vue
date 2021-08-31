@@ -1,9 +1,29 @@
 <template>
    <main>
       <div class="content">
-      <div class="container">
+        <div class="container">
         <div class="Schedule__row">
-          <Header :ScheduleAddres="ScheduleAddres"  :catalogFilmsMonths="catalogFilmsMonths"/>
+          <div class="Schedule__films">
+          <div class="Schedule-films__week catalog__films">
+            <div class="col-2" v-for="day in catalogFilmsWeek" :key="day.title">
+              <router-link :to="day.to" class="catalog__films-item">
+                <h3>{{ day.title }}</h3>
+                <span>{{ day.data }}</span>
+              </router-link>
+            </div>
+          </div>
+          <div v-if="catalogFilms.length" class="catalog__films">
+            <div v-for="film in catalogFilms" :key="film.title" class="col-2">
+              <div @click="toggleShow" ref="catalogFilmsItem" class="catalog__films-item">
+                <h3> {{ film.title }} </h3>
+                <span>{{ film.data }}</span>
+                <p>{{ film.code }}</p>
+                <img :src="film.imageUrl" alt="film">
+              </div>
+            </div>
+          </div>
+          <span v-else class="catalogFilms__loading"></span>
+          </div>
         </div>
         </div>
       </div>
@@ -11,15 +31,12 @@
 </template>
 
 <script>
-import Header from "./components/CatalogFilmsHead.vue";
 
 export default {
-  components: { Header },
     data() {
         return {
             catalogFilms: [],
-            catalogFilmsMonths: [],
-            ScheduleAddres: {},
+            catalogFilmsWeek: [],
         }
     },
     methods:{
@@ -35,19 +52,13 @@ export default {
             const catalogFilmss  = await response.json();
             this.catalogFilms = catalogFilmss.catalogFilms;
         };
-        const ScheduleAddres = async () => {
+        const catalogFilmsWeek = async () => {
             const response = await fetch('http://localhost:8080/json/db.json');
-            const ScheduleAddress  = await response.json();
-            this.ScheduleAddres = ScheduleAddress.ScheduleAddres;
-        };
-        const catalogFilmsMonths = async () => {
-            const response = await fetch('http://localhost:8080/json/db.json');
-            const catalogFilmsMonthss  = await response.json();
-            this.catalogFilmsMonths = catalogFilmsMonthss.catalogFilmsMonths;
+            const catalogFilmsWeekk  = await response.json();
+            this.catalogFilmsWeek = catalogFilmsWeekk.catalogFilmsWeek;
         };
         setTimeout(cataogFilms , 2000);
-        ScheduleAddres();
-        catalogFilmsMonths();
+        catalogFilmsWeek();
         }
         getData();
     },

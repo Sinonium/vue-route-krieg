@@ -10,57 +10,50 @@
             "title": "Guydufefuy",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": ""
+            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
         },
         {
             "title": "Big Brother",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": ""
-        },
-        {
-            "title": "Big Brother",
-            "code": "s21e27",
-            "data": "19: 00",
-            "imageUrl": ""
+            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
         }
     ],
     "catalogFilmsWeek":[
         {
           "title": "Monday",
           "date": 26.05,
-          "catalogFilms": [
-            {},
-            {},
-            {},
-            {},
-            {},
-            {}
-          ]
+          "to": "/CatalogFilms/CatalogFilmMonthMay/CatalogFilmsWeekDayMonday"
         },
         {
           "title": "Tuesday",
-          "date": 27.05 
+          "date": 27.05 ,
+          "to": "/CatalogFilms/CatalogFilmsWeekDayTuesday"
         },
         {
           "title": "Wednesday",
-          "date": 28.05
+          "date": 28.05,
+          "to": "/CatalogFilms/CatalogFilmsWeekDayWednesday"
         },
         {
           "title": "Thursday",
-          "date": 29.05
+          "date": 29.05,
+          "to": "/CatalogFilms/CatalogFilmsWeekDayTrusday"
         },
         {
           "title": "Friday",
-          "date": 30.05
+          "date": 30.05,
+          "to": "/CatalogFilms/CatalogFilmsWeekDayFriday"
         },
         {
           "title": "Saturday",
-          "date": 31.05
+          "date": 31.05,
+          "to": "/CatalogFilms/CatalogFilmsWeekDaySaturday"
         },
         {
           "title": "Sunday",
-          "date": 32.05
+          "date": 32.05,
+          "to": "/CatalogFilms/CatalogFilmsWeekDaySunday"
         }
     ],
     "ScheduleAddres": {
@@ -68,11 +61,29 @@
         "imageUrl": "~@/assets/img/icons/email__icon-gray.svg"
     },
     "catalogFilmsMonths": [
-        "May",
-        "June",
-        "July",
-        "September",
-        "October",
-        "November"
+        {
+          "title": "May",
+          "to": "/CatalogFilms/CatalogFilmMonthMay"
+        },
+        {
+          "title": "June",
+          "to": "/CatalogFilms/CatalogFilmMonthJune"
+        },
+        {
+          "title": "July",
+          "to": "/CatalogFilms/CatalogFilmMonthJuly"
+        },
+        {
+          "title": "September",
+          "to": "/CatalogFilms/CatalogFilmMonthSeptember"
+        },
+        {
+          "title": "October",
+          "to": "/CatalogFilms/CatalogFilmMonthOctober"
+        },
+        {
+          "title": "November",
+          "to": "/CatalogFilms/CatalogFilmMonthNovember"
+        }
     ]
 }
