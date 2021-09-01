@@ -1,23 +1,35 @@
 <template>
  <div class="container">
-    <div id="nav">
+  <div id="nav">
     <router-link to="/1">1</router-link> |
     <router-link to="/2">2</router-link> |
     <router-link to="/3">3</router-link> |
     <router-link to="/4">4</router-link> |
-    <router-link to="/5">5</router-link> |
+    <router-link :to="{ name: 'CatalogFilms' }">5</router-link> | 
     <router-link to="/6">6</router-link> |
-    <router-link to="/7">7</router-link>
+    <router-link to="/7">7</router-link> 
   </div>
   <router-view/>
  </div>
 </template>
 
+
 <style lang="scss">
 @import '@/assets/scss/index.scss';
+body{
+  background: $bg-main;
+}
+ul{
+  padding: 0;
+  margin: 0;
+  li{
+    list-style: none;
+  }
+}
 #nav{
   display: flex;
   justify-content: center;
+  margin-bottom: 60px;
   a{
   text-decoration: none;
   color: inherit;
@@ -29,9 +41,16 @@
   max-width: vw(1510);
   margin: 0 auto;
 }
-
-    #nav.router-link-exact-active {
+#nav .router-link-exact-active {
       color: #42b983;
 }
-
+a{
+    text-decoration: none;
+}
+ul{
+    list-style-type: none;
+}
+h1,h3,h2,h5,h6{
+  margin: 0;
+}
 </style>
