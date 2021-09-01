@@ -13,6 +13,7 @@
  </div>
 </template>
 
+
 <style lang="scss">
 @import '@/assets/scss/index.scss';
 body{
@@ -40,7 +41,6 @@ ul{
   max-width: vw(1510);
   margin: 0 auto;
 }
-
 #nav .router-link-exact-active {
       color: #42b983;
 }
