@@ -1,7 +1,7 @@
 <template>
   <Header/>
   <Modal/>
-  <!-- <Footer/> -->
+
   <div class="favorite">
     <div class="favorite__header">
       <span class="favorite__title">Favorite</span>
@@ -638,9 +638,9 @@
 <script>
 import Header from '../components/Header.vue'
 import Modal from '../components/Modal.vue'
-// import Footer from '../components/Footer.vue'
+import Footer from '../components/Footer.vue'
 export default {
-  components: { Header, Modal,},
+  components: { Header, Modal, Footer},
 }
 </script>
 
@@ -662,8 +662,7 @@ export default {
   }
 }
 .favorite{
-  position: absolute;
-  left: 10%;
+  margin-left: 10%;
 }
 .favorite__catalog{
   margin-top: vw(60);

@@ -10,9 +10,17 @@
     <router-link to="/7">7</router-link>
   </div>
   <router-view/>
+   <Footer/>
  </div>
 </template>
-
+ <script>
+ import Footer from './components/Footer.vue'
+ 
+ export default {
+   components: {Footer}
+ }
+ </script>
+ 
 <style lang="scss">
 @import '@/assets/scss/index.scss';
 #nav{
