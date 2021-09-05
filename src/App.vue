@@ -9,7 +9,12 @@
     <router-link to="/6">6</router-link> |
     <router-link to="/7">7</router-link>
   </div>
+  <Header/>
+  <Modal/>
+  <div class="container">
   <router-view/>
+  <Footer/>
+  </div>
  </div>
 </template>
 
