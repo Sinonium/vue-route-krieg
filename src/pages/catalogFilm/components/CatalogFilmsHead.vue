@@ -13,10 +13,42 @@
         </li>
         <li class="Schedule__month-item">
           <span
+            @click="handelMonth('June')"
+            :class="{ active: currentMonth === 'June' }"
+          >
+            June
+          </span>
+        </li>
+        <li class="Schedule__month-item">
+          <span
             @click="handelMonth('July')"
             :class="{ active: currentMonth === 'July' }"
           >
             July
+          </span>
+        </li>
+        <li class="Schedule__month-item">
+          <span
+            @click="handelMonth('September')"
+            :class="{ active: currentMonth === 'September' }"
+          >
+            September
+          </span>
+        </li>
+        <li class="Schedule__month-item">
+          <span
+            @click="handelMonth('October')"
+            :class="{ active: currentMonth === 'October' }"
+          >
+            October
+          </span>
+        </li>
+        <li class="Schedule__month-item">
+          <span
+            @click="handelMonth('November')"
+            :class="{ active: currentMonth === 'November' }"
+          >
+            November
           </span>
         </li>
       </ul>

@@ -1,25 +1,25 @@
 {
-    "catalogFilms": [
+    "AvtoCatalogFilms": [
         {
             "id": 1,
             "title": "Big Brother",
             "code": "s21e27",
             "data": "19: 00",
-            "image": "<img src='~@/assets/img/catalog-films/catalog-film1.png'>"
+            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
         },
         {
             "id": 2,
             "title": "Guydufefuy",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
+            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
         },
         {
             "id": 3,
             "title": "Big Brother",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
+            "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
         }
     ],
     "catalogFilmsWeek":[
@@ -29,7 +29,7 @@
         },
         {
           "title": "Tuesday",
-          "data": 27.05 
+          "data": 27.05
         },
         {
           "title": "Wednesday",
@@ -54,25 +54,5 @@
     ],
     "ScheduleAddres": {
         "text": "Subscribe To Schedule"
-    },
-    "catalogFilmsMonths": [
-          {
-            "title": "May"
-          },
-          {
-            "title":"June"
-          },
-          {
-            "title": "July"
-          },
-          {
-            "title":"September"
-          },
-          {
-            "title":"October"
-          },
-          {
-            "title":"November"
-          }
-    ]
+    }
 }

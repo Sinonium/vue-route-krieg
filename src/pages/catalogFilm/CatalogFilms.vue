@@ -3,25 +3,29 @@
       <div class="content">
       <div class="container">
         <div class="Schedule__row">
-          <Header @chooseMonth="currentMonth = $event" :currentMonth="currentMonth" :ScheduleAddres="ScheduleAddres" :catalogFilmsMonths="catalogFilmsMonths"/>
+          <Header @chooseMonth="currentMonth = $event" :currentMonth="currentMonth" :ScheduleAddres="ScheduleAddres"/>
           <div v-if="currentMonth === 'May'" class="Schedule__films">
-          <div class="Schedule__week">
+          <!-- <div class="Schedule__week">
             <div v-for="day in catalogFilmsWeek" :key="day.title" class="col-2">
                   <div class="catalog__films-item Schedule__films-item">
                       <h3>{{ day.title }}</h3>
                       <span>{{ day.data }}</span>
                   </div>
             </div>
-          </div>
+          </div> -->
+          <!-- <div v-if="currentWeek.length">
+
+          </div> -->
           <div v-if="CatalogFilms.length" class="catalog__films">
-          <div @click="toggleShow(index)" class="col-2" v-for="(film,index) in CatalogFilms" :key="film.title">
+            <div @click="toggleShow(index)" class="col-2" v-for="(film,index) in AvtoCatalogFilms" :key="film.title">
                 <div ref="catalogFilmsItem" class="catalog__films-item catalog__film">
                   <h3>{{ film.title }}</h3>
                   <span>{{ film.data }}</span>
                   <p>{{ film.code }}</p>
                   <img src="~@/assets/img/catalog-films/catalog-film1.png" alt="">
+                  <!-- <img :src="film.imageUrl" alt=""> -->
                 </div>
-              </div>
+          </div>
           </div>
           <span v-else class="catalogFilms__loading"></span>
           </div>
@@ -59,11 +63,11 @@ export default {
   components: { Header },
     data() {
         return {
+            currentWeek: '',
             currentMonth: 'May',
-            catalogFilmsMonths: [],
             ScheduleAddres: {},
             catalogFilmsWeek: [],
-            CatalogFilms: [],
+            AvtoCatalogFilms: [],
             showCatalogFilm: false,
         }
     },
@@ -74,38 +78,32 @@ export default {
             const ScheduleAddress  = await response.json();
             this.ScheduleAddres = ScheduleAddress;
         };
-        const catalogFilmsMonths = async () => {
-            const response = await fetch('http://localhost:3000/catalogFilmsMonths');
-            const catalogFilmsMonthss = await response.json();
-            this.catalogFilmsMonths = catalogFilmsMonthss;
-        };
         const catalogFilmsWeek = async () => {
             const response = await fetch('http://localhost:3000/catalogFilmsWeek');
             const catalogFilmsWeekk  = await response.json();
             this.catalogFilmsWeek = catalogFilmsWeekk;
         }
-        const CatalogFilms = async () => {
-            const response = await fetch('http://localhost:3000/catalogFilms');
-            const CatalogFilmss  = await response.json();
-            this.CatalogFilms = CatalogFilmss;
+        const AvtoCatalogFilms = async () => {
+            const response = await fetch('http://localhost:3000/AvtoCatalogFilms');
+            const AvtoCatalogFilmss  = await response.json();
+            this.AvtoCatalogFilms = AvtoCatalogFilmss;
         };
-        setTimeout(CatalogFilms, 1500);
+        setTimeout(AvtoCatalogFilms, 1500);
         catalogFilmsWeek()
         ScheduleAddres();
-        catalogFilmsMonths();
         }
         getData();
     },
     methods:{
       toggleShow(id) {
         this.showCatalogFilm = !this.showCatalogFilm
-        const CatalogFilms = Array.from(document.querySelectorAll('.catalog__film'))
-        CatalogFilms.map(film => {
+        const AvtoCatalogFilms = Array.from(document.querySelectorAll('.catalog__film'))
+        AvtoCatalogFilms.map(film => {
           if(this.showCatalogFilm) {
-            CatalogFilms[id].classList.add('catalogFilms__active')
+            AvtoCatalogFilms[id].classList.add('catalogFilms__active')
           }
           else {
-            CatalogFilms[id].classList.remove('catalogFilms__active')
+            AvtoCatalogFilms[id].classList.remove('catalogFilms__active')
           }
         })
       },
