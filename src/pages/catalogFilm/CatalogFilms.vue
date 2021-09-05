@@ -3,7 +3,49 @@
       <div class="content">
       <div class="container">
         <div class="Schedule__row">
-          <Header :ScheduleAddres="ScheduleAddres"  :catalogFilmsMonths="catalogFilmsMonths"/>
+          <Header @chooseMonth="currentMonth = $event" :currentMonth="currentMonth" :ScheduleAddres="ScheduleAddres" :catalogFilmsMonths="catalogFilmsMonths"/>
+          <div v-if="currentMonth === 'May'" class="Schedule__films">
+          <div class="Schedule__week">
+            <div v-for="day in catalogFilmsWeek" :key="day.title" class="col-2">
+                  <div class="catalog__films-item Schedule__films-item">
+                      <h3>{{ day.title }}</h3>
+                      <span>{{ day.data }}</span>
+                  </div>
+            </div>
+          </div>
+          <div v-if="CatalogFilms.length" class="catalog__films">
+          <div @click="toggleShow(index)" class="col-2" v-for="(film,index) in CatalogFilms" :key="film.title">
+                <div ref="catalogFilmsItem" class="catalog__films-item catalog__film">
+                  <h3>{{ film.title }}</h3>
+                  <span>{{ film.data }}</span>
+                  <p>{{ film.code }}</p>
+                  <img src="~@/assets/img/catalog-films/catalog-film1.png" alt="">
+                </div>
+              </div>
+          </div>
+          <span v-else class="catalogFilms__loading"></span>
+          </div>
+          <div v-if="currentMonth === 'July'" class="Schedule__films">
+          <div class="Schedule__week">
+            <div v-for="day in catalogFilmsWeek" :key="day.title" class="col-2">
+                  <div class="catalog__films-item Schedule__films-item">
+                      <h3>{{ day.title }}</h3>
+                      <span>{{ day.data }}</span>
+                  </div>
+            </div>
+          </div>
+          <div v-if="CatalogFilms.length" class="catalog__films">
+          <div @click="toggleShow(index)" class="col-2" v-for="(film,index) in CatalogFilms" :key="film.title">
+                <div ref="catalogFilmsItem" class="catalog__films-item catalog__film">
+                  <h3>{{ film.title }}</h3>
+                  <span>{{ film.data }}</span>
+                  <p>{{ film.code }}</p>
+                  <img src="~@/assets/img/catalog-films/catalog-film1.png" alt="">
+                </div>
+              </div>
+          </div>
+          <span v-else class="catalogFilms__loading"></span>
+          </div>
         </div>
         </div>
       </div>
@@ -17,40 +59,57 @@ export default {
   components: { Header },
     data() {
         return {
-            catalogFilms: [],
+            currentMonth: 'May',
             catalogFilmsMonths: [],
             ScheduleAddres: {},
+            catalogFilmsWeek: [],
+            CatalogFilms: [],
+            showCatalogFilm: false,
         }
     },
-    methods:{
-        toggleShow() {
-        const catalogFilmsItem = this.$refs.catalogFilmsItem
-        catalogFilmsItem.classList.toggle('catalogFilms__active') 
-        },
-    },
     mounted() {
-        const getData =  () =>{
-        const cataogFilms = async () => {
-            const response = await fetch('http://localhost:8080/json/db.json');
-            const catalogFilmss  = await response.json();
-            this.catalogFilms = catalogFilmss.catalogFilms;
-        };
+        const getData =  () => {
         const ScheduleAddres = async () => {
-            const response = await fetch('http://localhost:8080/json/db.json');
+            const response = await fetch('http://localhost:3000/ScheduleAddres');
             const ScheduleAddress  = await response.json();
-            this.ScheduleAddres = ScheduleAddress.ScheduleAddres;
+            this.ScheduleAddres = ScheduleAddress;
         };
         const catalogFilmsMonths = async () => {
-            const response = await fetch('http://localhost:8080/json/db.json');
-            const catalogFilmsMonthss  = await response.json();
-            this.catalogFilmsMonths = catalogFilmsMonthss.catalogFilmsMonths;
+            const response = await fetch('http://localhost:3000/catalogFilmsMonths');
+            const catalogFilmsMonthss = await response.json();
+            this.catalogFilmsMonths = catalogFilmsMonthss;
         };
-        setTimeout(cataogFilms , 2000);
+        const catalogFilmsWeek = async () => {
+            const response = await fetch('http://localhost:3000/catalogFilmsWeek');
+            const catalogFilmsWeekk  = await response.json();
+            this.catalogFilmsWeek = catalogFilmsWeekk;
+        }
+        const CatalogFilms = async () => {
+            const response = await fetch('http://localhost:3000/catalogFilms');
+            const CatalogFilmss  = await response.json();
+            this.CatalogFilms = CatalogFilmss;
+        };
+        setTimeout(CatalogFilms, 1500);
+        catalogFilmsWeek()
         ScheduleAddres();
         catalogFilmsMonths();
         }
         getData();
     },
+    methods:{
+      toggleShow(id) {
+        this.showCatalogFilm = !this.showCatalogFilm
+        const CatalogFilms = Array.from(document.querySelectorAll('.catalog__film'))
+        CatalogFilms.map(film => {
+          if(this.showCatalogFilm) {
+            CatalogFilms[id].classList.add('catalogFilms__active')
+          }
+          else {
+            CatalogFilms[id].classList.remove('catalogFilms__active')
+          }
+        })
+      },
+    }
 }
 </script>
 
@@ -64,89 +123,88 @@ export default {
     padding-right: vw(60);
     .Schedule__films{
       width: vw(1111);
-      .Schedule-films__week{
+      .Schedule__week {
           display: flex;
+          flex-wrap: nowrap;
+                .col-2{
+                  width: 13.33%;
+                  margin-left: vw(10);
+                  margin-top: vw(5);
+                  .catalog__films-item{
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
+                    &:hover{
+                      background: lighten( #d3b8fa , 10%);
+                    }
+                    h3{
+                    @include font(vw(17),bold,vw(20),$greyBlue50);
+                    padding: vw(5);
+                    cursor: pointer;
+                    }
+                    span{
+                      @include font(vw(10),bold,vw(20),$greyBlue70);
+                      transition: 0.6s;
+                      padding: vw(5);
+                  }
+              }
+          }
       }
       .catalog__films {
         display: flex;
         flex-wrap: wrap;
-        &:first-child{
-            flex-wrap: nowrap;
-              .col-2{
-                width: 13.33%;
-                margin-left: vw(10);
-                margin-top: vw(5);
-                .catalog__films-item{
-                  display: flex;
-                  align-items: center;
-                  justify-content: space-between;
-                  &:hover{
-                    background: lighten( #d3b8fa , 10%);
+          .col-2 {
+            .catalog__films-item {
+                  overflow: hidden;
+                  &:hover {
+                    background: darken($white , 5%)
                   }
-                  h3{
-                  @include font(vw(17),bold,vw(20),$text-greyBlue50);
+                  h3 {
+                  @include font(vw(17),bold,vw(20),$greyBlue50);
                   padding: vw(5);
                   cursor: pointer;
+                  transition: 0.6s;
                   }
-                  span{
-                    @include font(vw(10),bold,vw(20),$text-greyBlue8C);
+                  span,p{
+                    @include font(vw(10),bold,vw(20),$greyBlue70);
+                    padding-left: vw(5);
                     transition: 0.6s;
-                    padding: vw(5);
                   }
+                  span {
+                    position: absolute;
+                    right: vw(10);
+                    top: vw(5);
+                    opacity: 0;
+                  }
+                  img {
+                    left: 0;
+                    top: 0;
+                    position: absolute;
+                    opacity: 0;
+                    height: vw(120);
+                    width: 100%;
+                    border-radius: vw(5);
+                    transition: 0.6s;
+                    z-index: -1;
                 }
-              }
-        }
-        .col-2{
-            width: 13.33%;
-            margin-left: vw(10);
-            margin-top: vw(5);
-            .catalog__films-item{
+            }
+          }
+      }
+      .col-2 {
+          width: 13.33%;
+          margin-left: vw(10);
+          margin-top: vw(5);
+          .catalog__films-item {
                   width: 100%;
                   transition: 0.6s;
                   box-shadow: 0 vw(2) vw(5) $bx-shadowBlack48;
                   border-radius: vw(5);
-                  background: $bg-white;
+                  background: $white;
                   position: relative;
                   height: vw(80);
                   cursor: pointer;
-            }
-        }
-        &:last-child{
-            .catalog__films-item{
-              overflow: hidden;
-              &:hover{
-                background: darken($bg-white , 5%)
-              }
-              h3{
-              @include font(vw(17),bold,vw(20),$text-greyBlue50);
-              padding: vw(5);
-              cursor: pointer;
-              transition: 0.6s;
-              }
-              span,p{
-                @include font(vw(10),bold,vw(20),$text-greyBlue8C);
-                padding-left: vw(5);
-                transition: 0.6s;
-              }
-              span{
-                position: absolute;
-                right: vw(10);
-                top: vw(5);
-                opacity: 0;
-              }
-              img{
-                left: 0;
-                top: 0;
-                position: absolute;
-                z-index: 3;
-                opacity: 1;
-                height: vw(120);
-                width: 100%;
-                border-radius: vw(5);
-                transition: 0.6s;
-            }
+
           }
-        }
       }
     }
   }
@@ -168,25 +226,25 @@ export default {
   }
   100%{
     background: $bg-blueRgbDark;
-    top: 123%;
+    top: 120%;
   }
 }
-.catalogFilms__active{
+.catalogFilms__active {
   span{
     opacity: 1 !important;;
     padding-left: vw(10) !important;;
-    color: #FFF !important;;
+    color: $white !important;;
     transition: 0.6s !important;;
   }
   h3{
     position: absolute !important;;
     bottom: vw(20) !important;;
     left: vw(5) !important;;
-    color: #ffff !important;;
+    color:$white !important;;
     transition: 0.6s !important;;
   }
   p{
-    color: #FFFF !important;;
+    color: $white !important;;
     position: static !important;;
     transition: 0.6s !important;;
   }

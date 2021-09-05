@@ -5,9 +5,9 @@
     <router-link to="/2">2</router-link> |
     <router-link to="/3">3</router-link> |
     <router-link to="/4">4</router-link> |
-    <router-link :to="{ name: 'CatalogFilms' }">5</router-link> | 
+    <router-link :to="{ name: 'CatalogFilms' }">5</router-link> |
     <router-link to="/6">6</router-link> |
-    <router-link to="/7">7</router-link> 
+    <router-link to="/7">7</router-link>
   </div>
   <router-view/>
  </div>
