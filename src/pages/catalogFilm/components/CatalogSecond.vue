@@ -9,7 +9,7 @@
         <h3>{{ film.title }}</h3>
         <span>{{ film.data }}</span>
         <p>{{ film.code }}</p>
-        <img src="~@/assets/img/catalog-films/catalog-film1.png" alt="" />
+        <div v-html="film.jopa"></div>
         <!-- <img :src="film.imageUrl" alt=""> -->
       </div>
     </div>

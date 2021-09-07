@@ -105,11 +105,6 @@ export default {
           @include font(vw(14), bold, vw(20), $greyBlue60);
           transition: 0.5s;
         }
-        &:hover {
-          span {
-            @include font(vw(14), bold, vw(20), $purple);
-          }
-        }
       }
     }
   }

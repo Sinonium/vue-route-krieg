@@ -1,6 +1,6 @@
 <template>
   <div class="Schedule__week">
-    <div
+      <div
       class="col-2"
       @click="currentWeek('MondayFirst')"
       :class="{ active: this.currentWeek === 'MondayFirst' }"
