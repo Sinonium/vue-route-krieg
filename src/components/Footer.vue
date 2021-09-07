@@ -133,7 +133,7 @@ ul{
 footer{
     display: flex;
     position: relative;
-   position: absolute;
+   
    bottom: 0;
    .footer__support{
         margin-right: vw(96);
