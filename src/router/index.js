@@ -6,6 +6,7 @@ import PageFour from '../pages/PageFour.vue'
 import PageFive from '../pages/PageFive.vue'
 import PageSix from '../pages/PageSix.vue'
 import PageSeven from '../pages/PageSeven.vue'
+
 import CatalogFilms from '../pages/catalogFilm/CatalogFilms'
 
 
