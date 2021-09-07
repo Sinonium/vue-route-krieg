@@ -1,6 +1,6 @@
 <template>
-  <Header/>
-  <Modal/>
+  <!-- <Header/> -->
+  <!-- <Modal/> -->
   <!-- <Footer/> -->
   <div class="favorite">
     <div class="favorite__header">
@@ -662,7 +662,7 @@ export default {
   }
 }
 .favorite{
-  position: absolute;
+  // position: absolute;
   left: 10%;
 }
 .favorite__catalog{
