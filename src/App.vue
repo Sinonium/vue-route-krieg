@@ -9,14 +9,25 @@
     <router-link to="/6">6</router-link> |
     <router-link to="/7">7</router-link>
   </div>
+ </div>
   <Header/>
   <Modal/>
   <div class="container">
   <router-view/>
   <Footer/>
   </div>
- </div>
 </template>
+
+
+<script>
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import Modal from "./components/Modal.vue";
+
+export default {
+  components: { Header , Footer , Modal }
+}
+</script>
 
 
 <style lang="scss">
