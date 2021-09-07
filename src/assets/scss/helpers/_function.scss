@@ -1,11 +1,4 @@
-// @function vw($px-vw, $base-vw: 1920px){
-//     @return ($px-vw * 100vw) / $base-vw
-// };
-  
-// @function vmin($value, $base: 375px) {
-//     @return ($value *100vmin) / $base
-// };
-@function vw($value, $base: 1920) {
+@function vw($value, $base: 1600) {
     @return $value / $base * 100vw;
 };
 
@@ -15,4 +8,4 @@
 // it's for mobile version
 @function vmin($value, $base: 375) {
     @return $value / $base * 100vmin;
-} ;
+};

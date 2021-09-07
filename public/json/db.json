@@ -1,0 +1,58 @@
+{
+    "AvtoCatalogFilms": [
+        {
+            "id": 1,
+            "title": "Big Brother",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
+        },
+        {
+            "id": 2,
+            "title": "Guydufefuy",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
+        },
+        {
+            "id": 3,
+            "title": "Big Brother",
+            "code": "s21e27",
+            "data": "19: 00",
+            "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
+        }
+    ],
+    "catalogFilmsWeek":[
+        {
+          "title": "Monday",
+          "data": 26.05
+        },
+        {
+          "title": "Tuesday",
+          "data": 27.05
+        },
+        {
+          "title": "Wednesday",
+          "data": 28.05
+        },
+        {
+          "title": "Thursday",
+          "data": 29.05
+        },
+        {
+          "title": "Friday",
+          "data": 30.05
+        },
+        {
+          "title": "Saturday",
+          "data": 31.05
+        },
+        {
+          "title": "Sunday",
+          "data": 32.05
+        }
+    ],
+    "ScheduleAddres": {
+        "text": "Subscribe To Schedule"
+    }
+}
