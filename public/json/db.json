@@ -1,5 +1,5 @@
 {
-    "AvtoCatalogFilms": [
+    "AutoCatalogFilms": [
         {
             "id": 1,
             "title": "Big Brother",
@@ -21,6 +21,31 @@
             "data": "19: 00",
             "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
         }
+    ],
+    "catalogFilms": [
+      {
+          "id": 1,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "sasa",
+          "jopa": "<img src='/src/assets/img/catalog-films/catalog-film1.png'/>"
+      },
+      {
+          "id": 2,
+          "title": "Guydufefuy",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "http://localhost:8080/img/catalog-film1.png",
+          "jopa": "<img src='http://127.0.0.1:5500/src/assets/img/catalog-films/catalog-film2.png'/>"
+      },
+      {
+          "id": 3,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
+      }
     ],
     "catalogFilmsWeek":[
         {
