@@ -5,7 +5,7 @@ import PageThree from '../pages/PageThree.vue'
 // import PageFour from '../pages/PageFour.vue'
 import PageFive from '../pages/PageFive.vue'
 import PageSix from '../pages/PageSix.vue'
-// import PageSeven from '../pages/PageSeven.vue'
+import PageSeven from '../pages/PageSeven.vue'
 
 const routes = [
   // {
@@ -38,11 +38,11 @@ const routes = [
     name: 'PageSix',
     component: PageSix
   },
-  // {
-  //   path: '/7',
-  //   name: 'PageSeven',
-  //   component: PageSeven
-  // },
+  {
+    path: '/7',
+    name: 'PageSeven',
+    component: PageSeven
+  },
 ]
 
 const router = createRouter({
