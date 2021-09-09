@@ -1,5 +1,5 @@
 <template>
- <div class="Modal">
+ <div style="display:none"  class="Modal">
     <div class="modal">
         <div class="popa">
             <img  class="modal__avatar" src="..\assets\img\Modal-avatar.png" alt="">
@@ -114,7 +114,7 @@
 <script>
 export default {
     data() {
-        
+
     },
 }
 </script>
@@ -182,7 +182,7 @@ export default {
     grid-template-columns: vw(130) vw(130);
     grid-template-rows: vw(125) vw(125) vw(125) vw(125);
     grid-column-gap: vw(19);
-    grid-row-gap: vw(17); 
+    grid-row-gap: vw(17);
     .modal__list-column{
          background-color:$greyBlue99;
          border-radius: vw(10);
@@ -218,7 +218,7 @@ export default {
     max-height: vw(195);
     margin-top: vw(10);
 
-}    
+}
 &-zoom{
     position: absolute;
     top: 0;
@@ -257,7 +257,7 @@ export default {
     border-radius: vw(10);
     background-color: $white;
     & span{
-       @include font(vw(13),700, vw(25), $greyBlue60); 
+       @include font(vw(13),700, vw(25), $greyBlue60);
        margin: 0 vw(50) 0 vw(21);
        cursor: pointer;
     }
@@ -271,11 +271,11 @@ export default {
      & ul{
          margin-left: vw(40);
          li{
-             @include font(vw(12),700, vw(25), $greyBlue60); 
+             @include font(vw(12),700, vw(25), $greyBlue60);
              margin-top: vw(30);
          }
      }
-  }  
+  }
 }
 
 @media screen and (max-width: 1024px){

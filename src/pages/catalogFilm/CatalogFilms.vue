@@ -8,791 +8,140 @@
             :currentMonth="currentMonth"
             :ScheduleAddres="ScheduleAddres"
           />
-          <div v-if="currentMonth === 'May'" class="Schedule__films">
-            <div style="margin-top:50px" class="Schedukle__films-first-block">
+          <div v-for="monthSchdeule in catalogFilmsMonths" v-bind:key="monthSchdeule" class="Schedule__films">
+              <div v-if="currentMonth === monthSchdeule">
+                <div style="margin-top:50px" class="Schedukle__films-first-block">
               <SheduleWeekFirst
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
+                @current="this.currentWeekFirst = $event"
+                :currentWeekFirst="currentWeekFirst"
                 :catalogFilmsWeek="catalogFilmsWeek"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'MondayFirst'"
+                v-if="this.currentWeekFirst === 'MondayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'TuesdayFirst'"
+                v-if="this.currentWeekFirst === 'TuesdayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'WednesdayFirst'"
+                v-if="this.currentWeekFirst === 'WednesdayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'ThursdayFirst'"
+                v-if="this.currentWeekFirst === 'ThursdayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'FridayFirst'"
+                v-if="this.currentWeekFirst === 'FridayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'SaturdayFirst'"
+                v-if="this.currentWeekFirst === 'SaturdayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="this.currentWeek === 'SundayFirst'"
+                v-if="this.currentWeekFirst === 'SundayFirst'"
                 :catalogFilms="catalogFilms"
               />
               <CatalogFirst
-                v-if="!currentWeek.length"
+                v-if="!currentWeekFirst.length"
                 :AutoCatalogFilms="AutoCatalogFilms"
               />
               <span
                 v-if="!catalogFilms.length"
                 class="catalogFilms__loading"
               ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-second-block">
-              <SheduleWeekSecond
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'MondaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'TuesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'WednesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'ThursdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'FridaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SaturdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SundaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-third-block">
-              <SheduleWeekThird
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'WednesdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'ThursdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'FridayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SaturdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SundayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-          </div>
-          <div v-if="currentMonth === 'June'" class="Schedule__films">
-            <div style="margin-top:50px" class="Schedukle__films-first-block">
-              <SheduleWeekFirst
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'MondayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'TuesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'WednesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'ThursdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'FridayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SaturdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SundayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-second-block">
-              <SheduleWeekSecond
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'MondaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'TuesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'WednesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'ThursdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'FridaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SaturdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SundaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-third-block">
-              <SheduleWeekThird
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'WednesdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'ThursdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'FridayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SaturdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SundayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-          </div>
-          <div v-if="currentMonth === 'July'" class="Schedule__films">
-            <div style="margin-top:50px" class="Schedukle__films-first-block">
-              <SheduleWeekFirst
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'MondayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'TuesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'WednesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'ThursdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'FridayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SaturdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SundayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-second-block">
-              <SheduleWeekSecond
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'MondaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'TuesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'WednesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'ThursdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'FridaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SaturdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SundaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-third-block">
-              <SheduleWeekThird
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'WednesdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'ThursdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'FridayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SaturdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SundayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-          </div>
-          <div v-if="currentMonth === 'September'" class="Schedule__films">
-            <div style="margin-top:50px" class="Schedukle__films-first-block">
-              <SheduleWeekFirst
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'MondayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'TuesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'WednesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'ThursdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'FridayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SaturdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SundayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-second-block">
-              <SheduleWeekSecond
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'MondaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'TuesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'WednesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'ThursdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'FridaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SaturdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SundaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-third-block">
-              <SheduleWeekThird
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'WednesdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'ThursdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'FridayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SaturdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SundayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-          </div>
-          <div v-if="currentMonth === 'October'" class="Schedule__films">
-            <div style="margin-top:50px" class="Schedukle__films-first-block">
-              <SheduleWeekFirst
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'MondayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'TuesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'WednesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'ThursdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'FridayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SaturdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SundayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-second-block">
-              <SheduleWeekSecond
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'MondaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'TuesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'WednesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'ThursdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'FridaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SaturdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SundaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-third-block">
-              <SheduleWeekThird
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'WednesdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'ThursdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'FridayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SaturdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SundayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-          </div>
-          <div v-if="currentMonth === 'November'" class="Schedule__films">
-            <div style="margin-top:50px" class="Schedukle__films-first-block">
-              <SheduleWeekFirst
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'MondayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'TuesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'WednesdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'ThursdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'FridayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SaturdayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="this.currentWeek === 'SundayFirst'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogFirst
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-second-block">
-              <SheduleWeekSecond
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'MondaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'TuesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'WednesdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'ThursdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'FridaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SaturdaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="this.currentWeek === 'SundaySecond'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogSecond
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
-            <div style="margin-top:50px"  class="Schedukle__films-third-block">
-              <SheduleWeekThird
-                @current="this.currentWeek = $event"
-                :currentWeek="currentWeek"
-                :catalogFilmsWeek="catalogFilmsWeek"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'MondayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'WednesdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'ThursdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'FridayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SaturdayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="this.currentWeek === 'SundayThird'"
-                :catalogFilms="catalogFilms"
-              />
-              <CatalogThird
-                v-if="!currentWeek.length"
-                :AutoCatalogFilms="AutoCatalogFilms"
-              />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
-            </div>
+                </div>
+                <div style="margin-top:50px"  class="Schedukle__films-second-block">
+                  <SheduleWeekSecond
+                    @current="this.currentWeekSecond = $event"
+                    :currentWeekSecond="currentWeekSecond"
+                    :catalogFilmsWeek="catalogFilmsWeek"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'MondaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'TuesdaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'WednesdaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'ThursdaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'FridaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'SaturdaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="this.currentWeekSecond === 'SundaySecond'"
+                    :catalogFilms="catalogFilms"
+                  />
+                  <CatalogSecond
+                    v-if="!currentWeekSecond.length"
+                    :AutoCatalogFilms="AutoCatalogFilms"
+                  />
+                  <span
+                    v-if="!catalogFilms.length"
+                    class="catalogFilms__loading"
+                  ></span>
+                </div>
+              <div style="margin-top:50px"  class="Schedukle__films-third-block">
+                <SheduleWeekThird
+                  @current="this.currentWeekThird = $event"
+                  :currentWeekThird="currentWeekThird"
+                  :catalogFilmsWeek="catalogFilmsWeek"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'MondayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'MondayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'WednesdayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'ThursdayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'FridayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'SaturdayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'SundayThird'"
+                  :catalogFilms="catalogFilms"
+                />
+                <CatalogThird
+                  v-if="!currentWeekThird.length"
+                  :AutoCatalogFilms="AutoCatalogFilms"
+                />
+                <span
+                  v-if="!catalogFilms.length"
+                  class="catalogFilms__loading"></span>
+                  <span
+                  v-if="!AutoCatalogFilms.length"
+                  class="catalogFilms__loading"></span>
+              </div>
+              </div>
           </div>
         </div>
       </div>
@@ -802,7 +151,6 @@
 
 <script>
 import Header from "./components/CatalogFilmsHead.vue";
-import AutoCatalog from "./components/AutoCatalog-films.vue";
 import CatalogFirst from "./components/CatalogFirst.vue";
 import CatalogSecond from "./components/CatalogSecond.vue";
 import CatalogThird from "./components/CatalogThird.vue";
@@ -811,14 +159,17 @@ import SheduleWeekSecond from "./components/SheduleWeekSecond.vue";
 import SheduleWeekThird from "./components/SheduleWeekSThird.vue";
 
 export default {
-  components: { Header, AutoCatalog, CatalogFirst  , CatalogSecond , CatalogThird , SheduleWeekFirst , SheduleWeekSecond , SheduleWeekThird },
+  components: { Header, CatalogFirst  , CatalogSecond , CatalogThird , SheduleWeekFirst , SheduleWeekSecond , SheduleWeekThird },
   data() {
     return {
-      currentWeek: "",
+      currentWeekFirst: "",
+      currentWeekSecond: "",
+      currentWeekThird: "",
       currentMonth: "May",
       ScheduleAddres: {},
       catalogFilmsWeek: [],
       catalogFilms: [],
+      catalogFilmsMonths: [],
       AutoCatalogFilms: [],
     };
   },
@@ -839,6 +190,11 @@ export default {
         const catalogFilmss = await response.json();
         this.catalogFilms = catalogFilmss;
       };
+      const catalogFilmsMonths = async () => {
+        const response = await fetch("http://localhost:3000/catalogFilmsMonths");
+        const catalogFilmsMonthss = await response.json();
+        this.catalogFilmsMonths = catalogFilmsMonthss;
+      };
       const AutoCatalogFilms = async () => {
         const response = await fetch("http://localhost:3000/AutoCatalogFilms");
         const AutoCatalogFilmss = await response.json();
@@ -846,25 +202,11 @@ export default {
       };
       setTimeout(catalogFilms, 1500);
       setTimeout(AutoCatalogFilms, 1300);
-      catalogFilmsWeek();
+      setTimeout(catalogFilmsWeek , 1200);
       ScheduleAddres();
+      catalogFilmsMonths()
     };
     getData();
-  },
-  methods: {
-    toggleShow(id) {
-      this.showCatalogFilm = !this.showCatalogFilm;
-      const AvtoCatalogFilms = Array.from(
-        document.querySelectorAll(".catalog__film")
-      );
-      AvtoCatalogFilms.map((film) => {
-        if (this.showCatalogFilm) {
-          AvtoCatalogFilms[id].classList.add("catalogFilms__active");
-        } else {
-          AvtoCatalogFilms[id].classList.remove("catalogFilms__active");
-        }
-      });
-    },
   },
 };
 </script>
@@ -888,18 +230,22 @@ export default {
   width: vw(50);
   border-radius: 50%;
   position: absolute;
-  top: 115%;
-  left: 50%;
+  z-index: 2;
+  top: 50%;
+  left: 40%;
+  transform: translate(-50%,-50%);
   animation: anim-catalogFilmsLoading 0.4s ease-in-out infinite alternate;
 }
 @keyframes anim-catalogFilmsLoading {
   0% {
-    top: 110%;
+    transform: translate(-50%,-50%);
+    top: 50%;
     background: $bg-greenRgbLight;
   }
   100% {
+    transform: translate(-50%,-50%);
     background: $bg-blueRgbDark;
-    top: 120%;
+    top: 60%;
   }
 }
 .catalogFilms__active {

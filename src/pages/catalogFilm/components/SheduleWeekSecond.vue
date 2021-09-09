@@ -3,7 +3,7 @@
     <div
       class="col-2"
       @click="currentWeek('MondaySecond')"
-      :class="{ active: this.currentWeek === 'MondaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'MondaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Monday</h3>
@@ -13,7 +13,7 @@
     <div
       class="col-2"
       @click="currentWeek('TuesdaySecond')"
-      :class="{ active: this.currentWeek === 'TuesdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'TuesdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Tuesday</h3>
@@ -23,7 +23,7 @@
     <div
       class="col-2"
       @click="currentWeek('WednesdaySecond')"
-      :class="{ active: this.currentWeek === 'WednesdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'WednesdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Wednesday</h3>
@@ -33,7 +33,7 @@
     <div
       class="col-2"
       @click="currentWeek('ThursdaySecond')"
-      :class="{ active: this.currentWeek === 'ThursdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'ThursdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Thursday</h3>
@@ -43,7 +43,7 @@
     <div
       class="col-2"
       @click="currentWeek('FridaySecond')"
-      :class="{ active: this.currentWeek === 'FridaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'FridaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Friday</h3>
@@ -53,7 +53,7 @@
     <div
       class="col-2"
       @click="currentWeek('SaturdaySecond')"
-      :class="{ active: this.currentWeek === 'SaturdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'SaturdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Saturday</h3>
@@ -75,11 +75,10 @@
 
 <script>
 export default {
-  props: ["catalogFilmsWeek", "currentWeek"],
+  props: ["catalogFilmsWeek", "currentWeekSecond"],
   methods: {
     currentWeek(week) {
       this.$emit('current' , week)
-      this.currentWeek = week
     },
   },
 };
@@ -95,7 +94,10 @@ export default {
     margin-left: vw(10);
     margin-top: vw(5);
     &:hover {
-      background: lighten(#d3b8fa, 10%);
+      background: lighten($purple, 1.9%);
+      h3 , span {
+        color: white;
+      }
     }
     .catalog__films-item {
       display: flex;
@@ -132,5 +134,10 @@ export default {
 }
 .active {
   background: purple;
+  .catalog__films-item {
+    h3 , span {
+      color: white !important;
+    }
+  }
 }
 </style>

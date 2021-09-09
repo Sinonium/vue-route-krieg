@@ -1,5 +1,5 @@
 <template>
-  <footer class="footer">
+  <footer style="display:none" class="footer">
       <div class="footer__support">
             <h6>Support 8 800 350 54 66</h6>
             <span>© 2019 Home Box Office, Inc. All rights reserved. </span>
@@ -59,7 +59,7 @@
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
                     </filter>
                     </defs>
-                </svg> 
+                </svg>
             </div>
             <div class="insta">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -78,7 +78,7 @@
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
                     </filter>
                     </defs>
-                </svg>                    
+                </svg>
             </div>
             <div class="pinterest">
                 <svg width="50" height="50" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -97,7 +97,7 @@
                     <feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow" result="shape"/>
                     </filter>
                     </defs>
-                </svg>                    
+                </svg>
             </div>
         </div>
         </div>
@@ -137,17 +137,17 @@ footer{
         }
         & span{
              @include font(vw(12),700, vw(20), $greyBlue70);
-            
+
         }
    }
-   .footer__list{ 
-       margin-right: vw(139);  
+   .footer__list{
+       margin-right: vw(139);
        ul{
         display: grid;
         grid-template-columns: vw(76) vw(50) vw(70) vw(50);
         grid-template-rows: vw(40);
         grid-column-gap: vw(20);
-        grid-row-gap: vw(50); 
+        grid-row-gap: vw(50);
            li{
                  @include font(vw(12),700, vw(20), $greyBlue70);
                  cursor: pointer;
@@ -364,5 +364,4 @@ footer{
 
     }
 }
-  
 </style>
