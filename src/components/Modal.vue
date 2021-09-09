@@ -1,5 +1,5 @@
 <template>
- <div style="display:none"  class="Modal">
+ <div  class="Modal">
     <div class="modal">
     <img  class="modal__avatar" src="..\assets\img\Modal-avatar.png" alt="">
     <span class="modal__name">Jean Cortez</span>

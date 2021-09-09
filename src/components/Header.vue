@@ -1,5 +1,5 @@
 <template>
-  <header style="display:none"  class="header">
+  <header  class="header">
         <div class="container">
             <div class="header__panel">
                 <div class="header__hamburger">

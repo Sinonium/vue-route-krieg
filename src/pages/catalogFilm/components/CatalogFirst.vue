@@ -2,15 +2,15 @@
   <div class="catalog__films">
     <div @click="toggleShow(index)"
       class="col-2"
-      v-for="(film, index) in catalogFilms"
+      v-for="(film, index) in AutoCatalogFilms"
       :key="film.title"
     >
       <div ref="catalogFilmsItem" class="catalog__films-item catalog__film">
         <h3>{{ film.title }}</h3>
         <span>{{ film.data }}</span>
         <p>{{ film.code }}</p>
-        <img src="~@/assets/img/catalog-films/catalog-film1.png" alt="" />
-        <!-- <img :src="film.imageUrl" alt=""> -->
+        <img :src="require(`@/assets/img/catalog-films/${film.imageUrl}.png`)" />
+          <!-- {{ film.imageUrl }} -->
       </div>
     </div>
   </div>
@@ -18,7 +18,7 @@
 
 <script>
 export default {
-  props: ["catalogFilms"],
+  props: ["AutoCatalogFilms"],
   data() {
     return {
         showCatalogFilm: false,
@@ -27,14 +27,14 @@ export default {
   methods: {
     toggleShow(id) {
       this.showCatalogFilm = !this.showCatalogFilm;
-      const catalogFilms = Array.from(
+      const AutoCatalogFilms = Array.from(
         document.querySelectorAll(".catalog__film")
       );
-      catalogFilms.map((film) => {
+      AutoCatalogFilms.map((film) => {
         if (this.showCatalogFilm) {
-          catalogFilms[id].classList.add("catalogFilms__active");
+          AutoCatalogFilms[id].classList.add("catalogFilms__active");
         } else {
-          catalogFilms[id].classList.remove("catalogFilms__active");
+          AutoCatalogFilms[id].classList.remove("catalogFilms__active");
         }
       });
     },

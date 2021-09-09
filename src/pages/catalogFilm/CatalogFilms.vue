@@ -18,40 +18,36 @@
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'MondayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'TuesdayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'WednesdayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'ThursdayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'FridayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'SaturdayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="this.currentWeekFirst === 'SundayFirst'"
-                :catalogFilms="catalogFilms"
+                :AutoCatalogFilms="AutoCatalogFilms"
               />
               <CatalogFirst
                 v-if="!currentWeekFirst.length"
                 :AutoCatalogFilms="AutoCatalogFilms"
               />
-              <span
-                v-if="!catalogFilms.length"
-                class="catalogFilms__loading"
-              ></span>
                 </div>
                 <div style="margin-top:50px"  class="Schedukle__films-second-block">
                   <SheduleWeekSecond
@@ -61,40 +57,36 @@
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'MondaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'TuesdaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'WednesdaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'ThursdaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'FridaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'SaturdaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="this.currentWeekSecond === 'SundaySecond'"
-                    :catalogFilms="catalogFilms"
+                    :AutoCatalogFilms="AutoCatalogFilms"
                   />
                   <CatalogSecond
                     v-if="!currentWeekSecond.length"
                     :AutoCatalogFilms="AutoCatalogFilms"
                   />
-                  <span
-                    v-if="!catalogFilms.length"
-                    class="catalogFilms__loading"
-                  ></span>
                 </div>
               <div style="margin-top:50px"  class="Schedukle__films-third-block">
                 <SheduleWeekThird
@@ -104,42 +96,38 @@
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'MondayThird'"
-                  :catalogFilms="catalogFilms"
-                />
-                <CatalogThird
-                  v-if="this.currentWeekThird === 'MondayThird'"
-                  :catalogFilms="catalogFilms"
+                  :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'WednesdayThird'"
-                  :catalogFilms="catalogFilms"
+                  :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'ThursdayThird'"
-                  :catalogFilms="catalogFilms"
+                  :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'FridayThird'"
-                  :catalogFilms="catalogFilms"
+                  :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'SaturdayThird'"
-                  :catalogFilms="catalogFilms"
+                  :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'SundayThird'"
-                  :catalogFilms="catalogFilms"
+                  :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
                   v-if="!currentWeekThird.length"
                   :AutoCatalogFilms="AutoCatalogFilms"
                 />
-                <span
+                <!-- <span
                   v-if="!catalogFilms.length"
                   class="catalogFilms__loading"></span>
                   <span
                   v-if="!AutoCatalogFilms.length"
-                  class="catalogFilms__loading"></span>
+                  class="catalogFilms__loading"></span> -->
               </div>
               </div>
           </div>
@@ -168,9 +156,242 @@ export default {
       currentMonth: "May",
       ScheduleAddres: {},
       catalogFilmsWeek: [],
-      catalogFilms: [],
+      // catalogFilms: [],
+      AutoCatalogFilms: [
+        {
+            id: 1,
+            title: "Big Brother",
+            code: "s21e27",
+            data: "19: 00",
+            imageUrl: 'catalog-film1'
+        },
+        {
+            id: 2,
+            title: "American Ninja War…",
+            code: "s21e27",
+            data: "19: 00",
+           imageUrl: '~@/assets/img/catalog-films/catalog-film2.png'
+        },
+        {
+          id: 3,
+          title: "Americas Got Talent",
+          code: "s21e27",
+          data: "19: 00",
+         imageUrl: '@/assets/img/catalog-films/catalog-film3.png'
+        },
+        {
+          id: 4,
+          title: "Big Brother",
+          code: "s21e27",
+          data: "19: 00",
+         imageUrl: '../assets/img/catalog-films/catalog-film4.png'
+        },
+        {
+          id: 5,
+          title: "The Outpost",
+          code: "s21e27",
+          data: "13: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film5.png"/>`
+        },
+        {
+          id: 6,
+          title: "BattleBots",
+          code: "s21e27",
+          data: "15: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film6.png"/>`
+        },
+        {
+          id: 7,
+          title: "Americas Got Talent",
+          code: "s21e27",
+          data: "9: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film7.png"/>`
+        },
+        {
+          id: 8,
+          title: "Power",
+          code: "s06e01",
+          data: "5: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film8.png"/>`
+        },
+        {
+          id: 9,
+          title: "Penn & Tellar",
+          code: "s06e01",
+          data: "18: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film9.png"/>`
+        },
+        {
+          id: 10,
+          title: "Tales",
+          code: "s06e01",
+          data: "20: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film10.png"/>`
+        },
+        {
+          id: 11,
+          title: "Masterchief",
+          code: "s06e01",
+          data: "23: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film11.png"/>`
+        },
+        {
+          id: 12,
+          title: "Queen of the South",
+          code: "s06e01",
+          data: "24: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film12.png"/>`
+        },
+        {
+          id: 13,
+          title: "Fargo",
+          code: "s21e27",
+          data: "19: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film13.png"/>`
+        },
+        {
+          id: 14,
+          title: "Tales",
+          code: "s06e01",
+          data: "16: 24",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film14.png"/>`
+        },
+        {
+          id: 15,
+          title: "Orange Is the New Black",
+          code: "s21e27",
+          data: "12: 24",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film15.png"/>`
+        },
+        {
+          id: 16,
+          title: "Whose Line Is It Any…",
+          code: "s01e02",
+          data: "15: 50",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film16.png"/>`
+        },
+        {
+          id: 17,
+          title: "Adam Ruins Everything",
+          code: "s01e02",
+          data: "19: 16.48",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film17.png"/>`
+        },
+        {
+          id: 18,
+          title: "Downton Abbey",
+          code: "s21e27",
+          data: "6: 47",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film18.png"/>`
+        },
+        {
+          id: 19,
+          title: "Reaed Break",
+          code: "s01e02",
+          data: "2: 30",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film1.png"/>`
+        },
+        {
+          id: 20,
+          title: "13 Reasons Why",
+          code: "s01e02",
+          data: "8: 25.54",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film2.png"/>`
+        },
+        {
+          id: 21,
+          title: "Pandora",
+          code: "s01e02",
+          data: "17: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film3.png"/>`
+        },
+        {
+          id: 22,
+          title: "Fear The Walking ...",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film4.png"/>`
+        },
+        {
+          id: 23,
+          title: "Instinct",
+          code: "s05e01",
+          data: "18: 14.22",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film5.png"/>`
+        },
+        {
+          id: 24,
+          title: "American Dad",
+          code: "s05e01",
+          data: "19: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film6.png"/>`
+        },
+        {
+          id: 25,
+          title: "Shameless",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film7.png"/>`
+        },
+        {
+          id: 26,
+          title: "Carnival Row",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film8.png"/>`
+        },
+        {
+          id: 27,
+          title: "Florida Girls",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film9.png"/>`
+        },
+        {
+          id: 28,
+          title: "Conan",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film10.png"/>`
+        },
+        {
+          id: 29,
+          title: "Fear The Walking ...",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film11.png"/>`
+        },
+        {
+          id: 30,
+          title: "Conan",
+          code: "s05e01",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film12.png"/>`
+        },
+        {
+          id: 31,
+          title: "Westworld",
+          code: "s05e01",
+          data: "19: 00",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film13.png"/>`
+        },
+        {
+          id: 32,
+          title: "Boardwalk Empire",
+          code: "fw216f",
+          data: "20: 38",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film14.png"/>`
+        },
+        {
+          id: 33,
+          title: "Harlots",
+          code: "D6SBJF",
+          data: "14: 34",
+         imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film15.png"/>`
+        }
+      ],
       catalogFilmsMonths: [],
-      AutoCatalogFilms: [],
+      // AutoCatalogFilms: [],
     };
   },
   mounted() {
@@ -185,23 +406,11 @@ export default {
         const catalogFilmsWeekk = await response.json();
         this.catalogFilmsWeek = catalogFilmsWeekk;
       };
-      const catalogFilms = async () => {
-        const response = await fetch("http://localhost:3000/catalogFilms");
-        const catalogFilmss = await response.json();
-        this.catalogFilms = catalogFilmss;
-      };
       const catalogFilmsMonths = async () => {
         const response = await fetch("http://localhost:3000/catalogFilmsMonths");
         const catalogFilmsMonthss = await response.json();
         this.catalogFilmsMonths = catalogFilmsMonthss;
       };
-      const AutoCatalogFilms = async () => {
-        const response = await fetch("http://localhost:3000/AutoCatalogFilms");
-        const AutoCatalogFilmss = await response.json();
-        this.AutoCatalogFilms = AutoCatalogFilmss;
-      };
-      setTimeout(catalogFilms, 1500);
-      setTimeout(AutoCatalogFilms, 1300);
       setTimeout(catalogFilmsWeek , 1200);
       ScheduleAddres();
       catalogFilmsMonths()

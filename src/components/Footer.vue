@@ -1,5 +1,5 @@
 <template>
-  <footer style="display:none" class="footer">
+  <footer class="footer">
       <div class="footer__support">
             <h6>Support 8 800 350 54 66</h6>
             <span>© 2019 Home Box Office, Inc. All rights reserved. </span>
