@@ -1,5 +1,5 @@
 <template>
- <div style="display:none"  class="Modal">
+ <div style=""  class="Modal">
     <div class="modal">
         <div class="popa">
             <img  class="modal__avatar" src="..\assets\img\Modal-avatar.png" alt="">
@@ -122,9 +122,10 @@ export default {
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
 .Modal{
-    position: absolute;
-    right: 2%;
-    margin-top: vw(60);
+    // position: absolute;
+    // right: 2%;
+    z-index: 222;
+    margin-left: 80%;
 }
 .modal{
     text-align: center;
@@ -149,7 +150,7 @@ export default {
     }
     &__subscription{
         @include font(vw(14),700,vw(30));
-        margin: vw(20) vw(90) vw(0) vw(20);
+        margin: vw(20) vw(80) vw(0) vw(20);
         cursor: pointer;
     }
     &__data{
@@ -211,7 +212,7 @@ export default {
     max-width: vw(280);
     max-height: vw(195);
     position: relative;
-    margin-top: vw(30);
+    margin-top: vw(10);
     margin-left: vw(20);
 & img{
     max-width: vw(280);
@@ -262,7 +263,7 @@ export default {
        cursor: pointer;
     }
     & svg{
-        margin: vw(35) vw(21) 0 vw(35);
+        margin: vw(35) vw(21) 0 vw(25);
         cursor: pointer;
     }
     &__list{

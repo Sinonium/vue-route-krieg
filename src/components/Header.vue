@@ -1,6 +1,5 @@
 <template>
   <header class="header">
-        <div class="container">
             <div class="header__panel">
                 <div class="header__hamburger">
                     <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -58,6 +57,7 @@ export default {
 @import '@/assets/scss/index.scss';
 
 .header{
+    margin-bottom: vw(60);
     background-color: #fff;
     &__panel{
         display: flex;
