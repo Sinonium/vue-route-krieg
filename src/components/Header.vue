@@ -1,5 +1,5 @@
 <template>
-  <header class="header">
+  <header  class="header">
         <div class="container">
             <div class="header__panel">
                 <div class="header__hamburger">
@@ -45,6 +45,7 @@
                     </svg>
                 </div>
             </div>
+        </div>
    </header>
 </template>
 
@@ -56,13 +57,18 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
-
+ul{
+    padding: 0;
+    li{
+        list-style: none;
+    }
+}
 .header{
     background-color: #fff;
+    margin: vw(35) 0;
     &__panel{
         display: flex;
         align-items: center;
-        margin-left: vw(66);
     }
     &__logo{
        margin-left: vw(31);
@@ -74,14 +80,11 @@ export default {
            display: flex;
         & li{
             margin-right: vw(40);
-            @include font(vw(13),700, vw(25));
-            cursor: pointer;
-            transition: 0.3s;
+            @include font(vw(13),700, vw(25))
         }
-      }
+       }
    }
    &__search{
-       margin: vw(20) 0;
       & input{
         width: vw(445);
         height: vw(60);
@@ -100,27 +103,20 @@ export default {
           z-index: 1;
           margin-top: vw(20);
           margin-left: vw(140);
-          cursor: pointer;
       }
       & svg{
           position: absolute;
           margin-left: vw(-50);
           margin-top: vw(20);
-          cursor: pointer;
       }
    }
    &__profile{
        display: flex;
        align-items: center;
        margin-left: vw(70);
-       & span{ 
-        margin-left: vw(22);   
-        @include font(vw(13),700, vw(25));
-        cursor: pointer;
-        transition: 0.3s;
-       }
-       & :hover{
-           color: #FF6633;
+       & span{
+        margin-left: vw(22);
+        @include font(vw(13),700, vw(25))
        }
    }
    &__natifications{
@@ -133,185 +129,5 @@ export default {
        }
    }
 }
-.header ul li:hover{
-        color: #FF6633;
-}
-@media screen and (max-width: 1024px){
-    .header{
-         &__natifications{
-             & svg:last-child{
-           margin-top: vw(5);
-           margin-left: vw(25);
-       } 
-    }
-}
-}
-@media screen and (max-width: 875px){
- .header{
-        &__logo{
-            font-size: vw(30);
-        }
-        &__navigation{
-         margin-left: vw(90) ;
-        & ul{
-        & li{
-          font-size: vw(15);
-        }
-       }
-     }
-        &__search{
-         margin-left: vw(-90);
-        & svg:first-child{
-          margin-top: vw(19);
-      }
-      & svg{
-          margin-top: vw(19);
-      }   
-     }
-        &__profile{
-          margin-left: vw(13);
-           & span{
-            font-size: vw(15);
-           }
-     }
-        &__natifications{
-            margin-left: vw(30);
-     }
-    }  
-}
-@media screen and (max-width: 768px){
-    .header{
-        &__logo{
-            font-size: vw(30);
-        }
-         &__navigation{
-         margin-left: vw(70) ;
-        & ul{
-        & li{
-          font-size: vw(17);
-        }
-       }
-     }
-     &__search{
-         margin-left: vw(-110);
-        & input{
-        width: vmin(145);
-        height: vmin(20);
-        margin-left: vw(121);
-        border-radius:vw(35) ;
-        @include font(vmin(6),600, vw(25),$greyBlue85)
-      }
-        & svg:first-child{
-          margin-top: vw(20);
-          width: vmin(9.05);
-          height: vmin(9.05);
-      }
-      & svg{
-          margin-left: vw(-60);
-          width: vmin(9.05);
-          height: vmin(9.05);
-      }
-     }
-      &__profile{
-          margin-left: vw(13);
-           & span{
-            font-size: vw(15);
-           }
-      }
-    }  
-}
-@media screen and (max-width: 578px){
-    .header{
-        &__logo{
-            font-size: vmin(10);
-        }
-          &__navigation{
-              display: none;
-          }
-            &__profile{
-                display: none;
-            }
-              &__search{
-                  margin-left: vw(30);
-        & input{
-        width: vmin(145);
-        height: vmin(20);
-        margin-left: vw(121);
-        border-radius:vw(35) ;
-        @include font(vmin(6),600, vw(25),$greyBlue85)
-      }
-        & svg:first-child{
-          margin-top: vw(22);
-          margin-left: vw(140);
-          margin-right: vw(40);
-          width: vmin(10.05);
-          height: vmin(10.05);
-      }
-      & svg{
-          margin-left: vw(-70);
-          margin-top: vw(20);
-          width: vmin(10.05);
-          height: vmin(10.05);
-      }
-     }
-     &__natifications{
-           & svg:last-child{
-           margin-top: vw(5);
-           margin-left: vw(75);
-       }
-     }
-    }
-}
-@media screen and (max-width: 425px){
-    .header{
-         &__natifications{
-             display: none;
-            }
-          &__search{
-                  margin-left: vw(250);
-        & svg:first-child{
-          width: vmin(9.05);
-          height: vmin(9.05);
-      }
-      & svg{
-          width: vmin(9.05);
-          height: vmin(9.05);
-      }   
-    }
-    }
-}   
-@media screen and (max-width: 375px){
-    .header{
-         &__natifications{
-             display: none;
-            }
-          &__search{
-                  margin-left: vw(250);
-        & svg:first-child{
-          margin-top: vw(30);
-          width: vmin(8.05);
-          height: vmin(8.05);
-      }
-      & svg{
-          margin-left: vw(-90);
-          margin-top: vw(30);
-          width: vmin(8.05);
-          height: vmin(8.05);
-      }   
-    }
-    }
-}  
-@media screen and (max-width: 320px){
-    .header{
-          &__search{
-                  margin-left: vw(280);
-        & svg:first-child{
-          margin-top: vw(40);
-      }
-      & svg{
-          margin-top: vw(40);
-      }   
-    }
-    }
-} 
+
 </style>

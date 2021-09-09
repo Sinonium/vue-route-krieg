@@ -1,4 +1,7 @@
 <template>
+  <!-- <Header/> -->
+  <!-- <Modal/> -->
+  <!-- <Footer/> -->
   <div class="favorite">
     <div class="favorite__header">
       <span class="favorite__title">Favorite</span>
@@ -628,10 +631,16 @@
         </div>
       </div>
   </div>
+
+
 </template>
 
 <script>
+import Header from '../components/Header.vue'
+import Modal from '../components/Modal.vue'
+// import Footer from '../components/Footer.vue'
 export default {
+  components: { Header, Modal,},
 }
 </script>
 
@@ -641,16 +650,11 @@ export default {
   .favorite__title{
      @include font(vw(30),700, vw(50), $greyBlue50);
      margin-right: vw(155);
-     margin-top: vw(60);
+     margin-top: vw(5);
   }
   & span{
     @include font(vw(13),700, vw(25), $greyBlue50);
     margin-right: vw(30);
-    cursor: pointer;
-    transition: 0.3s;
-  }
-  & :hover{
-    color:  #FF6633;
   }
   & svg{
     margin-left: vw(450);
@@ -659,11 +663,10 @@ export default {
 }
 .favorite{
   // position: absolute;
-  margin-left: 10%;
-  margin-top: vw(60);
+  left: 10%;
 }
 .favorite__catalog{
-  margin-top: vw(40);
+  margin-top: vw(60);
   display: grid;
   grid-template-columns: vw(225) vw(225) vw(225) vw(225);
   grid-template-rows: vw(160);
@@ -680,19 +683,13 @@ export default {
       margin: vw(25) 0 vw(30) vw(63);
     }
     & span{
-      display: inline-block;
       position: absolute;
       @include font(vw(13),700, vw(25), $white);
       z-index: 100;
       bottom: 0;
       left: 0;
       margin: vw(20) vw(20) vw(40) vw(30);
-      cursor: pointer;
-      transition: 0.3s;
     }
-       :hover{
-        color: #FF6633;
-      }
     & img{
       max-width: vw(225);
       max-height: vw(160);
@@ -706,142 +703,6 @@ export default {
     }
   
 
-  }
-}
-
-@media screen and (max-width: 2560px) {
-  .favorite__catalog{
-     & img{
-      min-width: vw(225);
-      max-height: vw(160);
-    }
-  }
-}
-@media screen and (max-width: 1024px) {
-  .favorite{
-    margin-left: 5%;
-  }
-}
-@media screen and (max-width: 768px) {
-  .favorite{
-    margin-left: 0;
-  }
-
-  .favorite__header{
-      .favorite__title{
-      font-size: vw(45) ;
-      }
-      & span{
-         font-size: vw(25)
-      }
-     & svg{
-    margin-left: vw(250);
-    margin-right: vw(25);
-  }
-  }
-  .favorite__catalog{
-    grid-template-columns: vw(525) vw(525);
-    grid-template-rows: vw(360) ;
-    grid-column-gap: vw(30);
-    grid-row-gap: vw(30); 
-     & img{
-      min-width: vw(525);
-      min-height: vw(360);
-     }
-      .favorite__series{
-         & h6{
-           margin: vw(35) 0 vw(30) vw(100);
-          font-size: vw(25)
-         }
-          & span{
-             margin: vw(20) vw(0) vw(70) vw(50);
-              font-size: vw(25)
-          }
-    }
-  }
-}
-@media screen and (max-width:570px){
- 
-  .favorite__header{
-      .favorite__title{
-      font-size: vmin(20) ;
-      }
-      & span{
-         font-size: vmin(10)
-      }
-     & svg{
-    margin-left: vmin(15);
-    margin-right: vw(25);
-  }
-  }
-  .favorite__catalog{
-    margin-left: 5%;
-    grid-template-columns: vw(255);
-    grid-template-rows: 42.5vw;;
-    grid-row-gap: vw(30); 
-     & img{
-      min-width: vmin(255);
-      min-height: vmin(160);
-     }
-      .favorite__series{
-         & h6{
-           margin: vmin(25) 0 vmin(30) vmin(63);
-          font-size: vmin(12)
-         }
-          & span{
-             margin: vmin(15) vmin(0) vmin(20) vmin(25);
-              font-size: vmin(12);
-              line-height: vmin(20);
-              width: vmin(80);
-          }
-           & svg{
-            margin: vmin(20) 0 0 vmin(20);
-          }
-    }
-  }
-}
-@media screen and (max-width:425px){
-  .favorite__catalog{
-    margin-left: 10%;
-    grid-template-columns: vw(280);
-    grid-template-rows: 50.5vw;;
-     & img{
-      min-width: vmin(280);
-      min-height: vmin(185);
-     }
-    .favorite__series{
-        & h6{
-          margin: vmin(30) 0 vmin(30) vmin(63);
-         }
-          & span{
-             margin: vmin(15) vmin(0) vmin(20) vmin(25);
-          }
-      }
-  }
-}
-@media screen and (max-width:320px){
-  .favorite__header{
-    margin-left: 5%;
-  }
-  .favorite__catalog{
-    margin-left: 5%;
-    grid-template-columns: vw(350);
-    grid-template-rows: 65.5vw;;
-     & img{
-      min-width: vmin(350);
-      min-height: vmin(230);
-     }
-    .favorite__series{
-        & h6{
-          margin: vmin(30) 0 vmin(30) vmin(63);
-          font-size: vmin(16)
-         }
-          & span{
-             margin: vmin(15) vmin(0) vmin(30) vmin(25);
-             font-size: vmin(16);
-             width: vmin(90);
-          }
-      }
   }
 }
 </style>

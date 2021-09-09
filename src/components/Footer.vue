@@ -1,5 +1,5 @@
 <template>
-  <footer style="display:none" class="footer">
+  <footer class="footer">
       <div class="footer__support">
             <h6>Support 8 800 350 54 66</h6>
             <span>© 2019 Home Box Office, Inc. All rights reserved. </span>
@@ -101,10 +101,10 @@
             </div>
         </div>
         </div>
-        <div class="footer__chat">
+        <!-- <div class="footer__chat">
         <div class="footer__chat-icon">
           <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path fill-rule="evenodd" clip-rule="evenodd" d="M18 4H17V12C17 12.55 16.55 13 16 13H4V14C4 15.1 4.9 16 6 16H16L20 20V6C20 4.9 19.1 4 18 4ZM15 9V2C15 0.9 14.1 0 13 0H2C0.9 0 0 0.9 0 2V15L4 11H13C14.1 11 15 10.1 15 9Z" fill="white"/>
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M18 4H17V12C17 12.55 16.55 13 16 13H4V14C4 15.1 4.9 16 6 16H16L20 20V6C20 4.9 19.1 4 18 4ZM15 9V2C15 0.9 14.1 0 13 0H2C0.9 0 0 0.9 0 2V15L4 11H13C14.1 11 15 10.1 15 9Z" fill="black"/>
             </svg>
         </div>
         <div class="footer__up-icon">
@@ -112,7 +112,7 @@
             <path fill-rule="evenodd" clip-rule="evenodd" d="M8.5925 14.5825V3.41249L13.4725 8.29249C13.8625 8.68249 14.5025 8.68249 14.8925 8.29249C15.2825 7.90249 15.2825 7.27249 14.8925 6.88249L8.3025 0.292486C8.11567 0.105233 7.86202 0 7.5975 0C7.33298 0 7.07933 0.105233 6.8925 0.292486L0.2925 6.87249C-0.0975 7.26249 -0.0975 7.89249 0.2925 8.28249C0.6825 8.67249 1.3125 8.67249 1.7025 8.28249L6.5925 3.41249V14.5825C6.5925 15.1325 7.0425 15.5825 7.5925 15.5825C8.1425 15.5825 8.5925 15.1325 8.5925 14.5825Z" fill="#C3CAD9"/>
             </svg>
         </div>
-        </div>
+        </div> -->
   </footer>
 </template>
 
@@ -124,16 +124,23 @@ export default {
 
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
-
+ul{
+    padding: 0;
+    li{
+        list-style: none;
+    }
+}
 footer{
     display: flex;
     position: relative;
-    margin: vw(85) 0 vw(105) 0;
+   position: absolute;
+   bottom: 0;
    .footer__support{
         margin-right: vw(96);
         & h6{
             @include font(vw(13),700, vw(25), $greyBlue50);
-            margin-bottom: vw(65);
+            margin-bottom: vw(60);
+            margin-top: vw(24);
         }
         & span{
              @include font(vw(12),700, vw(20), $greyBlue70);
@@ -150,11 +157,6 @@ footer{
         grid-row-gap: vw(50);
            li{
                  @include font(vw(12),700, vw(20), $greyBlue70);
-                 cursor: pointer;
-                 transition: 0.3s;
-           }
-           & :hover{
-                color: #FF6633;
            }
        }
    }
@@ -165,203 +167,32 @@ footer{
         grid-column-gap: vw(30);
            li{
                  @include font(vw(12),700, vw(20), $greyBlue70);
-                  cursor: pointer;
-                 transition: 0.3s;
-           }
-            & :hover{
-                color: #FF6633;
            }
        }
    }
     .footer__socials{
         display: flex;
         margin: vw(50) 0 0 vw(-20);
-        & svg{
-            cursor: pointer;
-            margin-right: vw(15);
-        }
    }
-   
-    .footer__chat{
-        display: flex;
-        position: absolute;
-        bottom: 0;
-        right: 0;
-        margin-bottom: vw(50);
-        .footer__chat-icon{
-       text-align: center;
-       background-color: #FF6633;
-       min-width: vw(60);
-       min-height: vw(60);
-       border-radius: vw(30);
-       margin-right: vw(20);
-      & svg{
-          max-width: vw(20);
-          max-height: vw(20);
-          margin-top: 35%;
-      }
-   }
-        .footer__up-icon{
-            margin-top: vw(20);
-        }
-}
-}
-@media screen and (max-width: 875px){
-       .footer{
-         .footer__list{
-              & ul{
-                    grid-row-gap: vw(62);
-                }
-         }
-         .footer__chat{
-             margin-right: vw(30);
-         } 
+//     .footer__chat{
+//         display: flex;
+//         position: absolute;
+//         bottom: 0;
+//         right: 0;
+//         margin-bottom: vw(50);
+//         .footer__chat-icon{
+//        text-align: center;
+//        background-color: blue;
+//        max-width: vw(60);
+//        max-height: vw(60);
+//        border-radius: vw(30);
+//        margin-right: vw(20);
+//       & svg{
+//           max-width: vw(20);
+//           max-height: vw(20);
+//       }
+//    }
+// }
     }
-}
-@media screen and (max-width: 769px){
-    footer{
-         .footer__list{
-            & ul{
-                  grid-row-gap: vw(65); 
-            }
-         }
-         .footer__socials{
-           & svg{
-               margin-right: vw(0); 
-               width: vw(80);
-           } 
-        } 
-         .footer__chat{
-            margin-bottom: vw(90);
-             .footer__chat-icon{
-                margin-right: vw(30); 
-             }
-              .footer__up-icon{
-               margin-right: vmin(30);
-         }
-         }  
-    }
-}
-@media screen and (max-width: 578px){
-    footer{
-        display: block;
-         .footer__support{
-             display: flex;
-              & h6{
-                  font-size: vmin(7);
-                   line-height: vmin(20);
-              }
-              & span{
-                  font-size: vmin(7);
-                  margin-left: vmin(40);
-                  margin-top: vmin(6);
-                  
-              }
-         }
-         .footer__list{
-             & ul{
-                    grid-template-columns: 13.25vw 6.25vw 11.25vw 7.25vw;;
-                    grid-template-rows: vw(40);
-                    grid-column-gap:13.625vw;
-                    grid-row-gap: vw(60); 
-                 & li{
-                     font-size: vmin(7);
-                     margin-left: vw(10);
-                 }
-             }
-          }
-         .footer__about-list{
-             margin-top: vmin(40);
-             & ul{
-                  grid-template-columns: 11.25vw 14.25vw 6.25vw 6.25vw;;
-                  grid-column-gap: 5.625vw;;
 
-                 & li{
-                      font-size: vmin(7);
-                 }
-             }
-         }
-        .footer__socials {
-            display: none;
-        }
-        .footer__chat{
-        .footer__chat-icon{
-       min-width: vmin(30);
-       min-height: vmin(30);
-       border-radius: vmin(30);
-      & svg{
-          max-width: vmin(10);
-          max-height: vmin(10);
-      }
-    } 
-   }
-}
-}
-@media screen and (max-width: 425px){
-    .footer{
-         .footer__list{
-              & ul{
-                    grid-column-gap:11.625vw;
-                }
-         }
-         .footer__chat{
-            margin-right: vmin(20);
-
-         }
-    }
-}
-@media screen and (max-width: 375px){
-    .footer{
-        margin-left: 10%;
-         .footer__support{
-             & h6{
-                  font-size: vmin(8);
-                   line-height: vmin(20);
-              }
-             & span{
-                font-size: vmin(8);
-                margin-left: 5.66667vmin;
-                margin-top: 2.2vmin; 
-             }
-         }
-         .footer__list{
-             & ul{
-                    grid-column-gap:7.625vw;
-                 & li{
-                     font-size: vmin(7);
-                     margin-left: vw(10);
-                 }
-             }
-          }
-    }
-}
-@media screen and (max-width: 320px){
-    .footer{
-        margin-left: 5%;
-         .footer__support{
-             & h6{
-                  font-size: vmin(9);
-                   line-height: vmin(20);
-              }
-             & span{
-                font-size: vmin(8.5);
-                margin-left: 5.6vmin;
-                margin-top: 2.2vmin; 
-             }
-         }
-         .footer__list{
-            & ul{
-                    grid-template-columns: 14.25vw.25vw 12.25vw 7.25vw;;
-                    grid-column-gap:13.625vw;
-                 & li{
-                     font-size: vmin(8);
-                 }
-             }
-          }
-           .footer__about-list{
-             margin-top: vmin(30);
-           }
-
-    }
-}
 </style>
