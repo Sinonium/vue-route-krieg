@@ -1,5 +1,5 @@
 <template>
- <div class="Modal">
+ <div style="display:none"  class="Modal">
     <div class="modal">
     <img  class="modal__avatar" src="..\assets\img\Modal-avatar.png" alt="">
     <span class="modal__name">Jean Cortez</span>
@@ -118,7 +118,7 @@
 <script>
 export default {
     data() {
-        
+
     },
 }
 </script>
@@ -165,7 +165,7 @@ export default {
     grid-template-columns: vw(130) vw(130);
     grid-template-rows: vw(125) vw(125) vw(125) vw(125);
     grid-column-gap: vw(19);
-    grid-row-gap: vw(17); 
+    grid-row-gap: vw(17);
     .modal__list-column{
          background-color:$greyBlue99;
          border-radius: vw(10);
@@ -191,7 +191,7 @@ export default {
     max-height: vw(195);
     margin-top: vw(10);
 
-}    
+}
 &-zoom{
     position: absolute;
     top: 0;
@@ -225,7 +225,7 @@ ul{
     border-radius: vw(10);
     background-color: #E4E7F0;
     & span{
-       @include font(vw(13),700, vw(25), $greyBlue60); 
+       @include font(vw(13),700, vw(25), $greyBlue60);
        margin: 0 vw(50) 0 vw(21);
     }
     & svg{
@@ -236,10 +236,10 @@ ul{
      & ul{
          margin-left: vw(50);
          li{
-             @include font(vw(12),700, vw(25), $greyBlue60); 
+             @include font(vw(12),700, vw(25), $greyBlue60);
              margin-top: vw(30);
          }
      }
-  }  
+  }
 }
 </style>
