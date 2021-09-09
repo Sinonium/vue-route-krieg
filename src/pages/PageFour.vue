@@ -705,10 +705,8 @@ export default {
       margin: vw(20) 0 0 vw(20);
     }
   
-
   }
 }
-
 @media screen and (max-width: 2560px) {
   .favorite__catalog{
      & img{
@@ -726,7 +724,6 @@ export default {
   .favorite{
     margin-left: 0;
   }
-
   .favorite__header{
       .favorite__title{
       font-size: vw(45) ;

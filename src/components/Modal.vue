@@ -1,5 +1,5 @@
 <template>
- <div style=""  class="Modal">
+ <div class="Modal">
     <div class="modal">
         <div class="popa">
             <img  class="modal__avatar" src="..\assets\img\Modal-avatar.png" alt="">
@@ -114,7 +114,6 @@
 <script>
 export default {
     data() {
-
     },
 }
 </script>
@@ -218,7 +217,6 @@ export default {
     max-width: vw(280);
     max-height: vw(195);
     margin-top: vw(10);
-
 }
 &-zoom{
     position: absolute;
@@ -278,9 +276,7 @@ export default {
      }
   }
 }
-
 @media screen and (max-width: 1024px){
-
 }
 @media screen and (max-width: 1024px){
     

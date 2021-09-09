@@ -118,13 +118,11 @@
 
 <script>
 export default {
-
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
-
 footer{
     display: flex;
     position: relative;
@@ -137,7 +135,6 @@ footer{
         }
         & span{
              @include font(vw(12),700, vw(20), $greyBlue70);
-
         }
    }
    .footer__list{
@@ -275,7 +272,6 @@ footer{
              & ul{
                   grid-template-columns: 11.25vw 14.25vw 6.25vw 6.25vw;;
                   grid-column-gap: 5.625vw;;
-
                  & li{
                       font-size: vmin(7);
                  }
@@ -306,7 +302,6 @@ footer{
          }
          .footer__chat{
             margin-right: vmin(20);
-
          }
     }
 }
@@ -361,7 +356,6 @@ footer{
            .footer__about-list{
              margin-top: vmin(30);
            }
-
     }
 }
 </style>

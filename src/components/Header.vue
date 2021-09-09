@@ -49,13 +49,11 @@
 
 <script>
 export default {
-
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
-
 .header{
     margin-bottom: vw(60);
     background-color: #fff;

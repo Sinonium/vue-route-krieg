@@ -749,8 +749,6 @@ export default {
          font-size: vw(15);
        }
     }
-
-
   }
 }
 @media screen and (max-width: 768px){
@@ -813,8 +811,6 @@ export default {
          font-size: vw(16);
        }
     }
-
-
   }
 }
 @media screen and (max-width: 578px){
@@ -1052,7 +1048,6 @@ export default {
   grid-template-rows:34.1875vw  34.125vw  28.125vw;
   grid-column-gap: vw(30);
   grid-row-gap: 3.25vw;
-
    .catalog__dora{
     max-width: vw(750);
     min-height: vw(355);
@@ -1444,4 +1439,3 @@ export default {
   }
 }
 </style>
-
