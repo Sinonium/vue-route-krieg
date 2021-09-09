@@ -9,7 +9,9 @@
         <h3>{{ film.title }}</h3>
         <span>{{ film.data }}</span>
         <p>{{ film.code }}</p>
-        {{ film.imageUrl }}
+        <img src="~@/assets/img/catalog-films/catalog-film3.png" alt="">
+        <!-- <img v-bind:src="`@/assets/img/catalog-films/${film.imageUrl}.png`" /> -->
+        <!-- {{ film.imageUrl }} -->
       </div>
     </div>
   </div>

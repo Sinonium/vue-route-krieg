@@ -480,30 +480,41 @@ export default {
     top: 60%;
   }
 }
-.catalogFilms__active {
-  span {
-    opacity: 1 !important;
-    padding-left: vw(10) !important;
-    color: $white !important;
-    transition: 0.6s !important;
+@media screen and (max-width: 584px) {
+  .content {
+    .Schedule__row {
+      padding-top: vmin(100);
+      padding-right: vmin(60);
+      position: absolute;
+      top: vmin(60);
+      .Schedule__films {
+        width: vmin(1111);
+      }
+    }
   }
-  h3 {
-    position: absolute !important;
-    bottom: vw(20) !important;
-    left: vw(5) !important;
-    color: $white !important;
-    transition: 0.6s !important;
+  .catalogFilms__loading {
+    background: $bg-blueRgbDark;
+    height: vmin(50);
+    width: vmin(50);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    top: 50%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    animation: anim-catalogFilmsLoading 0.4s ease-in-out infinite alternate;
   }
-  p {
-    color: $white !important;
-    position: static !important;
-    transition: 0.6s !important;
+  @keyframes anim-catalogFilmsLoading {
+    0% {
+      transform: translate(-50%, -50%);
+      top: 50%;
+      background: $bg-greenRgbLight;
+    }
+    100% {
+      transform: translate(-50%, -50%);
+      background: $bg-blueRgbDark;
+      top: 60%;
+    }
   }
-  img {
-    opacity: 1 !important;
-    transition: 0.6s !important;
-  }
-  background: none !important;
-  height: vw(120) !important;
 }
 </style>
