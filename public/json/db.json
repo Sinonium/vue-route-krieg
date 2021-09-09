@@ -1,89 +1,83 @@
 {
-    "catalogFilms": [
+    "AutoCatalogFilms": [
         {
+            "id": 1,
             "title": "Big Brother",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
+            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
         },
         {
+            "id": 2,
             "title": "Guydufefuy",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
+            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
         },
         {
+            "id": 3,
             "title": "Big Brother",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "/img/catalog-film2.0b65c3e7.png"
+            "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
         }
+    ],
+    "catalogFilms": [
+      {
+          "id": 1,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "sasa",
+          "jopa": "<img src='/src/assets/img/catalog-films/catalog-film1.png'/>"
+      },
+      {
+          "id": 2,
+          "title": "Guydufefuy",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "http://localhost:8080/img/catalog-film1.png",
+          "jopa": "<img src='http://127.0.0.1:5500/src/assets/img/catalog-films/catalog-film2.png'/>"
+      },
+      {
+          "id": 3,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
+      }
     ],
     "catalogFilmsWeek":[
         {
           "title": "Monday",
-          "date": 26.05,
-          "to": "/CatalogFilms/CatalogFilmMonthMay/CatalogFilmsWeekDayMonday"
+          "data": 26.05
         },
         {
           "title": "Tuesday",
-          "date": 27.05 ,
-          "to": "/CatalogFilms/CatalogFilmsWeekDayTuesday"
+          "data": 27.05
         },
         {
           "title": "Wednesday",
-          "date": 28.05,
-          "to": "/CatalogFilms/CatalogFilmsWeekDayWednesday"
+          "data": 28.05
         },
         {
           "title": "Thursday",
-          "date": 29.05,
-          "to": "/CatalogFilms/CatalogFilmsWeekDayTrusday"
+          "data": 29.05
         },
         {
           "title": "Friday",
-          "date": 30.05,
-          "to": "/CatalogFilms/CatalogFilmsWeekDayFriday"
+          "data": 30.05
         },
         {
           "title": "Saturday",
-          "date": 31.05,
-          "to": "/CatalogFilms/CatalogFilmsWeekDaySaturday"
+          "data": 31.05
         },
         {
           "title": "Sunday",
-          "date": 32.05,
-          "to": "/CatalogFilms/CatalogFilmsWeekDaySunday"
+          "data": 32.05
         }
     ],
     "ScheduleAddres": {
-        "text": "Subscribe To Schedule",
-        "imageUrl": "~@/assets/img/icons/email__icon-gray.svg"
-    },
-    "catalogFilmsMonths": [
-        {
-          "title": "May",
-          "to": "/CatalogFilms/CatalogFilmMonthMay"
-        },
-        {
-          "title": "June",
-          "to": "/CatalogFilms/CatalogFilmMonthJune"
-        },
-        {
-          "title": "July",
-          "to": "/CatalogFilms/CatalogFilmMonthJuly"
-        },
-        {
-          "title": "September",
-          "to": "/CatalogFilms/CatalogFilmMonthSeptember"
-        },
-        {
-          "title": "October",
-          "to": "/CatalogFilms/CatalogFilmMonthOctober"
-        },
-        {
-          "title": "November",
-          "to": "/CatalogFilms/CatalogFilmMonthNovember"
-        }
-    ]
+        "text": "Subscribe To Schedule"
+    }
 }

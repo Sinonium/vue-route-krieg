@@ -641,7 +641,7 @@ export default {
   .favorite__title{
      @include font(vw(30),700, vw(50), $greyBlue50);
      margin-right: vw(155);
-     margin-top: vw(5);
+     margin-top: vw(60);
   }
   & span{
     @include font(vw(13),700, vw(25), $greyBlue50);
@@ -658,6 +658,7 @@ export default {
   }
 }
 .favorite{
+  // position: absolute;
   margin-left: 10%;
   margin-top: vw(60);
 }
