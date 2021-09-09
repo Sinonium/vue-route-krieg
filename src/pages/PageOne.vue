@@ -206,7 +206,7 @@
        </svg>
        </div>
        <h6>Westworld Season 2</h6> 
-       <span class="catalog-data">2019, action</span>
+       <span class="catalog__data">2019, action</span>
       <img src="..\assets\img\PageOneImg\catalog-img-4.png" alt="">
    </div>
    <div class="catalog__sharDare">
@@ -228,7 +228,7 @@
        </svg>
       </div>
        <h6>Sherlock</h6> 
-       <span class="catalog-data">2019, action</span>
+       <span class="catalog__data">2019, action</span>
       <img src="..\assets\img\PageOneImg\catalog-img-5.png" alt="">
      </div>
       <div class="catalog__daredevil">
@@ -249,7 +249,7 @@
        </svg>
       </div>
        <h6>Daredevil</h6> 
-       <span class="catalog-data">2019, action</span>
+       <span class="catalog__data">2019, action</span>
       <img src="..\assets\img\PageOneImg\catalog-img-6.png" alt="">
    </div>
    </div>
@@ -408,7 +408,7 @@ export default {
     max-width: vw(350);
     min-height: vw(255);
     position: relative;
-    background-color: $text-white;
+    background-color: $white;
     border-radius: vw(10);
      & img{
       max-width: vw(350);
@@ -429,7 +429,7 @@ export default {
       }
     }
      & h6{
-       @include font(vw(13),700, vw(25), $text-greyBlue50);
+       @include font(vw(13),700, vw(25),$greyBlue50);
        margin: vw(30) 0 vw(10) vw(30) ;
     }
      & h6:hover{
@@ -488,7 +488,7 @@ export default {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color:$text-white ;
+    background-color:$white ;
     border-radius: vw(10);
     box-sizing: border-box;
     padding-left: vw(30);
@@ -543,7 +543,7 @@ export default {
         cursor: pointer;
         transition: 0.3s;
       }
-    .catalog-data{
+    .catalog__data{
       @include font(vw(13),700, vw(25), $white);
       position: absolute;
       bottom: 0;
@@ -587,7 +587,7 @@ export default {
         cursor: pointer;
         transition: 0.3s;
       }
-    .catalog-data{
+    .catalog__data{
       @include font(vw(13),700, vw(25),  $white);
       position: absolute;
       bottom: 0;
@@ -629,7 +629,7 @@ export default {
         cursor: pointer;
         transition: 0.3s;
       }
-    .catalog-data{
+    .catalog__data{
       @include font(vw(13),700, vw(25),  $white);
       position: absolute;
       bottom: 0;
@@ -936,34 +936,6 @@ export default {
      font-size: vmin(5);
     }
   }
-  .catalog__list{
-    max-width: vw(350);
-    min-height: vw(350);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:$text-white ;
-    border-radius: vw(10);
-    box-sizing: border-box;
-    padding-left: vw(30);
-    & ul{
-      margin-right: vw(50);
-      margin-bottom: vw(30);
-      & li{
-        @include font(vw(13),700, vw(25),$greyBlue60);
-        margin-top: vw(30);
-        margin-right: vw(-20);
-        cursor: pointer;
-        transition: 0.3s;
-        & svg{
-          margin-top: vw(-5) ;
-        }
-      }
-        & :hover{
-          color: #8833FF;
-        }
-    }
-  }
   .catalog__westworld-2{
     max-width: vw(450);
     min-height: vw(355);
@@ -1051,8 +1023,8 @@ export default {
     }
   }
   .catalog__list{
-    max-width: vw(450);
-    min-height: vw(450);
+    width: vw(450);
+    height: vw(450);
     padding-left: vw(30);
     & ul{
       margin-right: vw(60);
@@ -1063,15 +1035,23 @@ export default {
     }  
   }
   }
-  @media screen and (max-width: 425px){
+ 
+}
+ @media screen and (max-width: 425px){
+    .back{
+  & img{
+        width: vmin(360);
+        height: vmin(190);
+      }
+  }
      .slider__text{
        width: vw(900);
       }
   .catalog{
   grid-template-columns: vw(750) vw(750);
-  grid-template-rows:34.1875vw vw(450) vw(450);
-  grid-column-gap: vw(20);
-  grid-row-gap: vw(100);
+  grid-template-rows:34.1875vw  34.125vw  28.125vw;
+  grid-column-gap: vw(30);
+  grid-row-gap: 3.25vw;
 
    .catalog__dora{
     max-width: vw(750);
@@ -1147,36 +1127,8 @@ export default {
        font-size: vmin(7);
        margin: 0 0 vmin(15) vw(30);
     }
-    .catalog__data{
-     font-size: vmin(7);
-    }
-  }
-  .catalog__list{
-    max-width: 48.125vw;
-    min-height: vw(450);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color:$text-white ;
-    border-radius: vw(10);
-    box-sizing: border-box;
-    padding-left: vw(30);
-    & ul{
-      margin-right: vw(50);
-      margin-bottom: vw(30);
-      & li{
-        @include font(vw(13),700, vw(25),$greyBlue60);
-        margin-top: vw(30);
-        margin-right: vw(-20);
-        cursor: pointer;
-        transition: 0.3s;
-        & svg{
-          margin-top: vw(-5) ;
-        }
-      }
-        & :hover{
-          color: #8833FF;
-        }
+    .catalog-data{
+     display: none;
     }
   }
   .catalog__westworld-2{
@@ -1202,82 +1154,292 @@ export default {
        margin: 0 0 vmin(0) vw(30);
     }
     .catalog__data{
-     font-size: vmin(6);
-     margin-top: vmin(10);
+     display: none;
     }
   }
   .catalog__sharDare{
-   
-    max-width: vw(450);
+    max-width: vw(750);
     min-height: vw(450);
     .catalog__sherlock{
-     margin-bottom: vw(6);  
-    max-width: vw(450);
-    min-height: vw(240);
+    max-width: vw(750);
+    min-height: vw(450);
     & img{
-      max-width: vw(450);
+      max-width: vw(750);
       min-height: vw(180);
     }
-     .catalog-icons{
-      margin: vmin(6) 0  0 vw(30);
+       .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
       & span{
-         font-size: vmin(4);
-         margin: vw(30) vw(170) 0 vw(15);
+         font-size: vmin(5);
+         margin: vw(50) vmin(80) 0 vw(15);
       }
       & svg{
-        width: vmin(20);
-        height: vmin(20);
+        width: vmin(30);
+        height: vmin(30);
       }
     }
       & h6{
-       font-size: vmin(6);
-       margin: 0 0 vw(90) vw(30);
+       font-size: vmin(7);
+       margin: 0 0 vmin(50) vw(30);
     }
     .catalog__data{
-     font-size: vmin(5);
-      margin-top: vw(20);
+     display: none;
     }
     }
   }
   .catalog__daredevil{
-    max-width: vw(450);
-    min-height: vw(240);
+    max-width: vw(750);
+    min-height: vw(450);
+    margin-top: vmin(-10);
     & img{
-      max-width: vw(450);
+      max-width: vw(750);
       min-height: vw(180);
     }
-     .catalog-icons{
-      margin: vmin(6) 0  0 vw(30);
+       .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
       & span{
-         font-size: vmin(4);
-         margin: vw(30) vw(170) 0 vw(15);
+         font-size: vmin(5);
+         margin: vw(50) vmin(80) 0 vw(15);
       }
       & svg{
-        width: vmin(20);
-        height: vmin(20);
+        width: vmin(30);
+        height: vmin(30);
       }
     }
       & h6{
-       font-size: vmin(6);
-       margin: 0 0 vw(90) vw(30);
+       font-size: vmin(7);
+       margin: 0 0 vmin(50) vw(30);
     }
     .catalog__data{
-     font-size: vmin(5);
-     margin-top: vw(20);
+     display: none;
     }
   }
   .catalog__list{
-    max-width: vw(450);
-    min-height: vw(450);
-    padding-left: vw(30);
+    min-width:46.875vw;
+    min-height: 34.1875vw ;
     & ul{
-      margin-right: vw(60);
-      margin-bottom: vw(30);
+      margin-right: vw(80);
+      margin-bottom: vw(50);
       & li{
-        font-size: vmin(5);
+        font-size: vmin(7);
+        margin-top: vw(60);
+      & svg{
+        width: vmin(8);
+        height: vmin(8);
+      }  
       }
     }  
   }
+  }
+  }
+@media screen and (max-width: 320px){
+    .back{
+    & img{
+        width: vmin(350);
+        height: vmin(200);
+      }
+    }
+    .tabs{
+      & ul{
+        & li{
+          font-size: vmin(9);
+        }
+      }
+    }
+     .slider__text{
+       width: vw(900);
+       margin-top: vmin(3);
+       & h4{
+         font-size: vmin(13);
+       }
+       & span{
+         font-size: vmin(7);
+       }
+        .slider__navigation{
+          display: none;
+        }
+      }
+  .catalog{
+  grid-template-columns: vw(1110);
+  grid-template-rows:50.1875vw  50.125vw  50.125vw 50.1875vw 69.1875vw;
+  grid-column-gap: vw(30);
+  grid-row-gap: 3.25vw;
+  margin-left: 10%;
+   .catalog__dora{
+    max-width: vw(1110);
+    min-height: vw(555);
+    & img{
+      max-width: vw(1110);
+      min-height: vw(555);
+    }
+    .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
+      & span{
+         font-size: vmin(7);
+         margin: vw(80) vmin(140) 0 vw(15);
+      }
+      & svg{
+        width: vmin(40);
+        height: vmin(40);
+      }
+    }
+      & h6{
+       font-size: vmin(9);
+       margin: 0 0 vw(130) vw(30);
+    }
+    .catalog__data{
+     font-size: vmin(7);
+     margin-bottom: vmin(10);
+    }
+  }
+  .catalog__empire{
+    max-width: vw(1110);
+    min-height: vw(555);
+     & img{
+      max-width: vw(1110);
+      min-height: vw(180);
+    }
+     .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
+      & span{
+         font-size: vmin(7);
+         margin: vw(80) vmin(140) 0 vw(15);
+      }
+      & svg{
+        width: vmin(40);
+        height: vmin(40);
+      }
+    }
+      & h6{
+       font-size: vmin(9);
+       margin: vw(40) 0 vw(90) vw(30);
+    }
+    .catalog__data{
+     font-size: vmin(7);
+     margin-bottom: vmin(10);
+    }
+  }
+  .catalog__westworld{
+    max-width: vw(1110);
+    min-height: vw(555);
+    & img{
+      max-width: vw(1110);
+      min-height: vw(555);
+    }
+    .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
+      & span{
+         font-size: vmin(7);
+         margin: vw(80) vmin(140) 0 vw(15);
+      }
+      & svg{
+        width: vmin(40);
+        height: vmin(40);
+      }
+    }
+      & h6{
+       font-size: vmin(9);
+       margin: 0 0 vw(130) vw(30);
+    }
+  }
+  .catalog__westworld-2{
+   max-width: vw(1110);
+    min-height: vw(555);
+    & img{
+      max-width: vw(1110);
+      min-height: vw(555);
+    }
+    .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
+      & span{
+         font-size: vmin(7);
+         margin: vw(80) vmin(140) 0 vw(15);
+      }
+      & svg{
+        width: vmin(40);
+        height: vmin(40);
+      }
+    }
+      & h6{
+       font-size: vmin(10);
+       margin: 0 0 vw(150) vw(50);
+    }
+    .catalog__data{
+     display: none;
+    }
+  }
+  .catalog__sharDare{
+    max-width: vw(1110);
+    min-height: vw(555);
+    .catalog__sherlock{
+    max-width: vw(1110);
+    min-height: vw(450);
+    margin-bottom: vw(40);
+    & img{
+      max-width: vw(1110);
+      min-height: vw(180);
+    }
+      .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
+      & span{
+         font-size: vmin(7);
+         margin: vw(80) vmin(140) 0 vw(15);
+      }
+      & svg{
+        width: vmin(40);
+        height: vmin(40);
+      }
+    }
+      & h6{
+       font-size: vmin(10);
+       margin: 0 0 vw(150) vw(50);
+    }
+    .catalog__data{
+     display: none;
+    }
+    }
+  }
+  .catalog__daredevil{
+    max-width: vw(1110);
+    min-height: vw(450);
+    & img{
+      max-width: vw(1110);
+      min-height: vw(180);
+    }
+      .catalog-icons{
+      margin: vmin(10) 0  0 vw(30);
+      & span{
+         font-size: vmin(7);
+         margin: vw(80) vmin(140) 0 vw(15);
+      }
+      & svg{
+        width: vmin(40);
+        height: vmin(40);
+      }
+    }
+      & h6{
+       font-size: vmin(10);
+       margin: 0 0 vw(150) vw(50);
+    }
+    .catalog__data{
+     display: none;
+    }
+  }
+  .catalog__list{
+    min-width: vw(1110);
+    min-height: vw(755);
+    & ul{
+      margin-right: vw(100);
+      margin-bottom: vw(50);
+      & li{
+        font-size: vmin(9);
+        margin-top: vw(80);
+      & svg{
+        width: vmin(9);
+        height: vmin(9);
+      }  
+      }
+    }  
   }
   }
 }

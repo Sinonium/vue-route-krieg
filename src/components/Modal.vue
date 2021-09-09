@@ -124,14 +124,14 @@ export default {
 .Modal{
     position: absolute;
     right: 2%;
-    // margin-top: vw(60);
+    margin-top: vw(60);
 }
 .modal{
     text-align: center;
     max-width: vw(340);
     height: vw(1015);
     border-radius: vw(10);
-    background-color:$bg-white;
+    background-color:$white;
     position: relative;
     .popa{
         display: flex;
@@ -200,10 +200,10 @@ export default {
     .modal__list-column:hover{
         background-color:#FF6633;
         & svg path{
-            fill:$text-white;
+            fill:$white;
         }
         & span{
-            color: $text-white;
+            color: $white;
         }
     }
 }
@@ -255,7 +255,7 @@ export default {
     max-width: vw(340);
     height: vw(350);
     border-radius: vw(10);
-    background-color: $bg-white;
+    background-color: $white;
     & span{
        @include font(vw(13),700, vw(25), $greyBlue60); 
        margin: 0 vw(50) 0 vw(21);
