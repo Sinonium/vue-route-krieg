@@ -129,11 +129,12 @@ export default {
 }
 @media screen and (max-width: 592px){
   .catalog__films {
-  max-width: 100%;
+  max-width: vw(850);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  display: flex;
   .col-2 {
     .catalog__films-item {
       overflow: hidden;
@@ -173,9 +174,10 @@ export default {
   }
 }
 .col-2 {
-  width: 50%;
+  width: 100%;
   margin-left: vmin(-5);
   margin-top: vmin(10);
+  transform: translateX(96px);
   .catalog__films-item {
     width: 90%;
     transition: 0.6s;
@@ -217,11 +219,13 @@ export default {
 }
 @media screen and (max-width: 358px){
   .catalog__films {
-  max-width: 100%;
+    margin-top: vw(40);
+  max-width: vw(700);
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
+  display: flex;
   .col-2 {
     .catalog__films-item {
       overflow: hidden;
@@ -229,14 +233,14 @@ export default {
         background: darken($white, 5%);
       }
       h3 {
-        @include font(vmin(24), bold, vmin(20), $greyBlue50);
+        @include font(vmin(17), bold, vmin(20), $greyBlue50);
         padding: vmin(5);
         cursor: pointer;
         transition: 0.6s;
       }
       span,
       p {
-        @include font(vmin(19), bold, vmin(20), $greyBlue70);
+        @include font(vmin(10), bold, vmin(20), $greyBlue70);
         padding-left: vmin(5);
         transition: 0.6s;
       }
@@ -261,7 +265,7 @@ export default {
   }
 }
 .col-2 {
-  width: 50%;
+  width: 100%;
   margin-left: vmin(-5);
   margin-top: vmin(10);
   .catalog__films-item {
@@ -302,5 +306,5 @@ export default {
   background: none !important;
   height: vmin(120) !important;
 }
-}
+} 
 </style>

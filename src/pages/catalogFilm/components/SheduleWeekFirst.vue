@@ -74,11 +74,28 @@
 </template>
 
 <script>
-// import { Splide, SplideSlide } from "@splidejs/vue-splide";
-// import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 
 export default {
   props: ["catalogFilmsWeek", "currentWeekFirst"],
+  components: {
+        Splide,
+        SplideSlide,
+  },
+  data() {
+    return {
+      options: {
+                rewind: true,
+                gap: "20rem",
+                perPage: 1,
+		            pagination : false,
+                arrows: false,
+                autoplay: true,
+                speed: 800,
+      },
+    }
+  }, 
   methods: {
     currentWeek(week) {
       this.$emit("current", week);

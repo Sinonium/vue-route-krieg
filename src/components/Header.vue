@@ -6,7 +6,7 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12H17C17.55 12 18 11.55 18 11C18 10.45 17.55 10 17 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM1 7H17C17.55 7 18 6.55 18 6C18 5.45 17.55 5 17 5H1C0.45 5 0 5.45 0 6C0 6.55 0.45 7 1 7ZM0 1C0 1.55 0.45 2 1 2H17C17.55 2 18 1.55 18 1C18 0.45 17.55 0 17 0H1C0.45 0 0 0.45 0 1Z" fill="#C3CAD9"/>
                     </svg>
                 </div>
-                <div class="header__logo"><a href="">Constructor</a></div>
+                <div class="header__logo"><a href="#">Constructor</a></div>
                 <div class="header__navigation">
                     <ul>
                         <li>Series</li>
@@ -24,7 +24,7 @@
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 8.59249H12.17L7.29 13.4725C6.9 13.8625 6.9 14.5025 7.29 14.8925C7.68 15.2825 8.31 15.2825 8.7 14.8925L15.29 8.30249C15.68 7.91249 15.68 7.28249 15.29 6.89249L8.71 0.292486C8.52317 0.105233 8.26952 0 8.005 0C7.74048 0 7.48683 0.105233 7.3 0.292486C6.91 0.682486 6.91 1.31249 7.3 1.70249L12.17 6.59249H1C0.45 6.59249 0 7.04249 0 7.59249C0 8.14249 0.45 8.59249 1 8.59249Z" fill="#C3CAD9"/>
                     </svg>
                 </div>
-                <div class="header__profile">
+                <div style="cursor:pointer;" @click="changeShowModal" class="header__profile">
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V15C0 15.55 0.45 16 1 16H15C15.55 16 16 15.55 16 15V14C16 11.34 10.67 10 8 10Z" fill="#C3CAD9"/>
                     </svg>
@@ -49,6 +49,12 @@
 
 <script>
 export default {
+    props: ['showModal'],
+    methods: {
+        changeShowModal() {
+            this.$emit('handleShowModal')
+        }
+    }
 }
 </script>
 
