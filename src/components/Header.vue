@@ -1,11 +1,10 @@
 <template>
   <header class="header">
-        <div class="container">
             <div class="header__panel">
                 <div class="header__hamburger">
                     <svg width="18" height="12" viewBox="0 0 18 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M1 12H17C17.55 12 18 11.55 18 11C18 10.45 17.55 10 17 10H1C0.45 10 0 10.45 0 11C0 11.55 0.45 12 1 12ZM1 7H17C17.55 7 18 6.55 18 6C18 5.45 17.55 5 17 5H1C0.45 5 0 5.45 0 6C0 6.55 0.45 7 1 7ZM0 1C0 1.55 0.45 2 1 2H17C17.55 2 18 1.55 18 1C18 0.45 17.55 0 17 0H1C0.45 0 0 0.45 0 1Z" fill="#C3CAD9"/>
-                    </svg>  
+                    </svg>
                 </div>
                 <div class="header__logo"><a href="">Constructor</a></div>
                 <div class="header__navigation">
@@ -29,7 +28,7 @@
                     <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path fill-rule="evenodd" clip-rule="evenodd" d="M8 8C10.21 8 12 6.21 12 4C12 1.79 10.21 0 8 0C5.79 0 4 1.79 4 4C4 6.21 5.79 8 8 8ZM8 10C5.33 10 0 11.34 0 14V15C0 15.55 0.45 16 1 16H15C15.55 16 16 15.55 16 15V14C16 11.34 10.67 10 8 10Z" fill="#C3CAD9"/>
                     </svg>
-                    <span>Profile</span>   
+                    <span>Profile</span>
                 </div>
                 <div class="header__natifications">
                     <svg width="43" height="45" viewBox="0 0 43 45" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -45,30 +44,23 @@
                     </svg>
                 </div>
             </div>
-        </div>
    </header>
 </template>
 
 <script>
 export default {
-
 }
 </script>
 
 <style lang="scss" scoped>
 @import '@/assets/scss/index.scss';
-ul{
-    padding: 0;
-    li{
-        list-style: none;
-    }
-}
 .header{
+    margin-bottom: vw(60);
     background-color: #fff;
-    margin: vw(35) 0;
     &__panel{
         display: flex;
         align-items: center;
+        margin-left: vw(66);
     }
     &__logo{
        margin-left: vw(31);
@@ -80,11 +72,14 @@ ul{
            display: flex;
         & li{
             margin-right: vw(40);
-            @include font(vw(13),700, vw(25))
+            @include font(vw(13),700, vw(25));
+            cursor: pointer;
+            transition: 0.3s;
         }
-       }
+      }
    }
    &__search{
+       margin: vw(20) 0;
       & input{
         width: vw(445);
         height: vw(60);
@@ -103,11 +98,13 @@ ul{
           z-index: 1;
           margin-top: vw(20);
           margin-left: vw(140);
+          cursor: pointer;
       }
       & svg{
           position: absolute;
           margin-left: vw(-50);
           margin-top: vw(20);
+          cursor: pointer;
       }
    }
    &__profile{
@@ -116,7 +113,12 @@ ul{
        margin-left: vw(70);
        & span{ 
         margin-left: vw(22);   
-        @include font(vw(13),700, vw(25))
+        @include font(vw(13),700, vw(25));
+        cursor: pointer;
+        transition: 0.3s;
+       }
+       & :hover{
+           color: #FF6633;
        }
    }
    &__natifications{
@@ -129,5 +131,185 @@ ul{
        }
    }
 }
-
+.header ul li:hover{
+        color: #FF6633;
+}
+@media screen and (max-width: 1024px){
+    .header{
+         &__natifications{
+             & svg:last-child{
+           margin-top: vw(5);
+           margin-left: vw(25);
+       } 
+    }
+}
+}
+@media screen and (max-width: 875px){
+ .header{
+        &__logo{
+            font-size: vw(30);
+        }
+        &__navigation{
+         margin-left: vw(90) ;
+        & ul{
+        & li{
+          font-size: vw(15);
+        }
+       }
+     }
+        &__search{
+         margin-left: vw(-90);
+        & svg:first-child{
+          margin-top: vw(19);
+      }
+      & svg{
+          margin-top: vw(19);
+      }   
+     }
+        &__profile{
+          margin-left: vw(13);
+           & span{
+            font-size: vw(15);
+           }
+     }
+        &__natifications{
+            margin-left: vw(30);
+     }
+    }  
+}
+@media screen and (max-width: 768px){
+    .header{
+        &__logo{
+            font-size: vw(30);
+        }
+         &__navigation{
+         margin-left: vw(70) ;
+        & ul{
+        & li{
+          font-size: vw(17);
+        }
+       }
+     }
+     &__search{
+         margin-left: vw(-110);
+        & input{
+        width: vmin(145);
+        height: vmin(20);
+        margin-left: vw(121);
+        border-radius:vw(35) ;
+        @include font(vmin(6),600, vw(25),$greyBlue85)
+      }
+        & svg:first-child{
+          margin-top: vw(20);
+          width: vmin(9.05);
+          height: vmin(9.05);
+      }
+      & svg{
+          margin-left: vw(-60);
+          width: vmin(9.05);
+          height: vmin(9.05);
+      }
+     }
+      &__profile{
+          margin-left: vw(13);
+           & span{
+            font-size: vw(15);
+           }
+      }
+    }  
+}
+@media screen and (max-width: 578px){
+    .header{
+        &__logo{
+            font-size: vmin(10);
+        }
+          &__navigation{
+              display: none;
+          }
+            &__profile{
+                display: none;
+            }
+              &__search{
+                  margin-left: vw(30);
+        & input{
+        width: vmin(145);
+        height: vmin(20);
+        margin-left: vw(121);
+        border-radius:vw(35) ;
+        @include font(vmin(6),600, vw(25),$greyBlue85)
+      }
+        & svg:first-child{
+          margin-top: vw(22);
+          margin-left: vw(140);
+          margin-right: vw(40);
+          width: vmin(10.05);
+          height: vmin(10.05);
+      }
+      & svg{
+          margin-left: vw(-70);
+          margin-top: vw(20);
+          width: vmin(10.05);
+          height: vmin(10.05);
+      }
+     }
+     &__natifications{
+           & svg:last-child{
+           margin-top: vw(5);
+           margin-left: vw(75);
+       }
+     }
+    }
+}
+@media screen and (max-width: 425px){
+    .header{
+         &__natifications{
+             display: none;
+            }
+          &__search{
+                  margin-left: vw(250);
+        & svg:first-child{
+          width: vmin(9.05);
+          height: vmin(9.05);
+      }
+      & svg{
+          width: vmin(9.05);
+          height: vmin(9.05);
+      }   
+    }
+    }
+}   
+@media screen and (max-width: 375px){
+    .header{
+         &__natifications{
+             display: none;
+            }
+          &__search{
+                  margin-left: vw(250);
+        & svg:first-child{
+          margin-top: vw(30);
+          width: vmin(8.05);
+          height: vmin(8.05);
+      }
+      & svg{
+          margin-left: vw(-90);
+          margin-top: vw(30);
+          width: vmin(8.05);
+          height: vmin(8.05);
+      }   
+    }
+    }
+}  
+@media screen and (max-width: 320px){
+    .header{
+          &__search{
+                  margin-left: vw(280);
+        & svg:first-child{
+          margin-top: vw(40);
+      }
+      & svg{
+          margin-top: vw(40);
+      }   
+    }
+    }
+} 
 </style>

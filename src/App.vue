@@ -7,12 +7,12 @@
     <router-link :to="{ name: 'CatalogFilms' }">5</router-link> |
     <router-link to="/7">7</router-link>
   </div>
-  <Header/>
-  <Modal/>
-  <div class="container">
-  <router-view/>
-  <Footer/>
-  </div>
+    <Header/>
+    <Modal/>
+      <div class="container">
+      <router-view/>
+      <Footer/>
+      </div>
 </template>
 
 <script>
@@ -23,7 +23,6 @@ export default {
   components: {Header, Modal, Footer}
 }
 </script>
-
 <style lang="scss">
 @import '@/assets/scss/index.scss';
 body{
@@ -50,7 +49,7 @@ ul{
 }
 .container {
   max-width: vw(1510);
-  margin: 0 auto;
+  margin: vw(-1455) auto 0;
 }
 #nav .router-link-exact-active {
       color: #42b983;

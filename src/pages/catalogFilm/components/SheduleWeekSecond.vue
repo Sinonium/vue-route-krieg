@@ -3,7 +3,7 @@
     <div
       class="col-2"
       @click="currentWeek('MondaySecond')"
-      :class="{ active: this.currentWeek === 'MondaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'MondaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Monday</h3>
@@ -13,7 +13,7 @@
     <div
       class="col-2"
       @click="currentWeek('TuesdaySecond')"
-      :class="{ active: this.currentWeek === 'TuesdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'TuesdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Tuesday</h3>
@@ -23,7 +23,7 @@
     <div
       class="col-2"
       @click="currentWeek('WednesdaySecond')"
-      :class="{ active: this.currentWeek === 'WednesdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'WednesdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Wednesday</h3>
@@ -33,7 +33,7 @@
     <div
       class="col-2"
       @click="currentWeek('ThursdaySecond')"
-      :class="{ active: this.currentWeek === 'ThursdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'ThursdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Thursday</h3>
@@ -43,7 +43,7 @@
     <div
       class="col-2"
       @click="currentWeek('FridaySecond')"
-      :class="{ active: this.currentWeek === 'FridaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'FridaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Friday</h3>
@@ -53,7 +53,7 @@
     <div
       class="col-2"
       @click="currentWeek('SaturdaySecond')"
-      :class="{ active: this.currentWeek === 'SaturdaySecond' }"
+      :class="{ active: this.currentWeekSecond === 'SaturdaySecond' }"
     >
       <div class="catalog__films-item">
         <h3>Saturday</h3>
@@ -75,11 +75,10 @@
 
 <script>
 export default {
-  props: ["catalogFilmsWeek", "currentWeek"],
+  props: ["catalogFilmsWeek", "currentWeekSecond"],
   methods: {
     currentWeek(week) {
       this.$emit('current' , week)
-      this.currentWeek = week
     },
   },
 };
@@ -95,7 +94,10 @@ export default {
     margin-left: vw(10);
     margin-top: vw(5);
     &:hover {
-      background: lighten(#d3b8fa, 10%);
+      background: lighten($purple, 1.9%);
+      h3 , span {
+        color: white;
+      }
     }
     .catalog__films-item {
       display: flex;
@@ -132,5 +134,194 @@ export default {
 }
 .active {
   background: purple;
+  .catalog__films-item {
+    h3 , span {
+      color: white !important;
+    }
+  }
+}
+@media screen and (max-width: 592px) {
+  .Schedule__week {
+    justify-content: center;
+    align-items: center;
+    .col-2 {
+      width: 90%;
+      margin-left: vmin(10);
+      margin-top: vmin(5);
+      &:hover {
+        background: lighten($purple, 1.9%);
+        h3,
+        span {
+          color: white;
+        }
+      }
+      .catalog__films-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+          @include font(vmin(17), bold, vmin(20), $greyBlue50);
+          padding: vmin(5);
+          cursor: pointer;
+        }
+        span {
+          @include font(vmin(10), bold, vmin(20), $greyBlue70);
+          transition: 0.6s;
+          padding: vmin(5);
+        }
+      }
+    }
+  }
+  .col-2 {
+    width: 90%;
+    margin-left: vmin(10);
+    margin-top: vmin(5);
+    background: $white;
+    border-radius: vmin(5);
+    box-shadow: 0 vmin(2) vmin(5) $bx-shadowBlack48;
+    transition: 0.6s;
+    .catalog__films-item {
+      width: 100%;
+      height: vmin(80);
+    }
+  }
+}
+@media screen and (max-width: 541px) {
+  .Schedule__week {
+    justify-content: center;
+    align-items: center;
+    .col-2 {
+      width: 90%;
+      margin-left: vmin(10);
+      margin-top: vmin(5);
+      &:hover {
+        background: lighten($purple, 1.9%);
+        h3,
+        span {
+          color: white;
+        }
+      }
+      .catalog__films-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+          @include font(vmin(20), bold, vmin(20), $greyBlue50);
+          padding: vmin(5);
+          cursor: pointer;
+        }
+        span {
+          @include font(vmin(15), bold, vmin(20), $greyBlue70);
+          transition: 0.6s;
+          padding: vmin(5);
+        }
+      }
+    }
+  }
+  .col-2 {
+    width: 90%;
+    margin-left: vmin(10);
+    margin-top: vmin(5);
+    background: $white;
+    border-radius: vmin(5);
+    box-shadow: 0 vmin(2) vmin(5) $bx-shadowBlack48;
+    transition: 0.6s;
+    .catalog__films-item {
+      width: 100%;
+      height: vmin(80);
+    }
+  }
+}
+@media screen and (max-width: 482px) {
+  .Schedule__week {
+    justify-content: center;
+    align-items: center;
+    .col-2 {
+      width: 90%;
+      margin-left: vmin(10);
+      margin-top: vmin(5);
+      &:hover {
+        background: lighten($purple, 1.9%);
+        h3,
+        span {
+          color: white;
+        }
+      }
+      .catalog__films-item {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        h3 {
+          @include font(vmin(26), bolder, vmin(20), $greyBlue50);
+          padding: vmin(5);
+          cursor: pointer;
+        }
+        span {
+          @include font(vmin(20), bolder, vmin(20), $greyBlue70);
+          transition: 0.6s;
+          padding: vmin(5);
+        }
+      }
+    }
+  }
+  .col-2 {
+    width: 90%;
+    margin-left: vmin(10);
+    margin-top: vmin(5);
+    background: $white;
+    border-radius: vmin(5);
+    box-shadow: 0 vmin(2) vmin(5) $bx-shadowBlack48;
+    transition: 0.6s;
+    .catalog__films-item {
+      width: 100%;
+      height: vmin(100);
+    }
+  }
+}
+@media screen and (max-width: 390px) {
+  .Schedule__week {
+    justify-content: center;
+    align-items: center;
+    .col-2 {
+      width: 95%;
+      margin-left: vmin(10);
+      margin-top: vmin(5);
+      &:hover {
+        background: lighten($purple, 1.9%);
+        h3,
+        span {
+          color: white;
+        }
+      }
+      .catalog__films-item {
+        display: flex;
+        align-items: center;
+        h3 {
+          @include font(vmin(32), bolder, vmin(20), $greyBlue50);
+          padding: vmin(5);
+          cursor: pointer;
+        }
+        span {
+          @include font(vmin(25), bolder, vmin(20), $greyBlue70);
+          transition: 0.6s;
+          padding: vmin(5);
+        }
+      }
+    }
+  }
+  .col-2 {
+    position: relative;
+    width: 94%;
+    margin-left: vmin(10);
+    margin-top: vmin(5);
+    background: $white;
+    border-radius: vmin(5);
+    box-shadow: 0 vmin(2) vmin(5) $bx-shadowBlack48;
+    transition: 0.6s;
+    .catalog__films-item {
+      width: 100%;
+      height: vmin(150);
+    }
+  }
 }
 </style>
