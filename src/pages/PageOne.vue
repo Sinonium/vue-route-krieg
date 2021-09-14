@@ -1,5 +1,5 @@
 <template>
-    <div class="slider">
+    <div class="slider"  v-on:click="next">
     <div class="slider__text">
          <div class="slider__icon">
             <svg width="39" height="20" viewBox="0 0 39 20" fill="none" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
@@ -18,8 +18,8 @@
          <span>Jhon and Sansa face Ramsay Bolton on the fields of Winterfell. Daenerys strikes back at her enemies. Theon and Yara arrive in Meereen.</span>
          <div class="slider__navigation">
            Games of Trones
-           <div class="slider__line">
-             <span style="width: 50%"></span>
+           <div class="slider__line" >
+             <span style="width: 50%" id="vue"></span>
            </div>
          </div>
     </div>
@@ -272,12 +272,27 @@ export default {
                 perPage: 1,
 		            pagination : false,
                 arrows: false,
-                autoplay: true,
+                // autoplay: true,
                 interval: 4000,
                 speed: 800,
             },
+            counter: true,
         };
     },
+    methods: {
+    next() {
+      if (this.counter) {
+        var val = (parseInt(document.getElementById('vue').style.left, 10) || 10) + 50;
+        document.getElementById('vue').style.left = val + '%';
+        this.counter = !this.counter
+      } else {
+        var val = (parseInt(document.getElementById('vue').style.left, 10) || 10) - 50;
+      document.getElementById('vue').style.left = val + '%';
+      this.counter = !this.counter
+      }
+      
+}
+    }
 }
 </script>
 
