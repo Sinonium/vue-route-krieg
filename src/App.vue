@@ -7,60 +7,73 @@
     <router-link :to="{ name: 'CatalogFilms' }">5</router-link> |
     <router-link to="/7">7</router-link>
   </div>
-    <Header/>
-    <Modal/>
-      <div class="container">
-      <router-view/>
-      <Footer/>
-      </div>
+  <Header
+    @handleShowModal="this.showModal = !this.showModal"
+    :showModal="showModal"
+  />
+  <Modal
+    :showModal="showModal"
+  />
+  <div class="container">
+    <router-view />
+    <Footer />
+  </div>
 </template>
 
 <script>
-import Header from './components/Header.vue'
-import Modal from './components/Modal.vue'
-import Footer from './components/Footer.vue'
+import Header from "./components/Header.vue";
+import Modal from "./components/Modal.vue";
+import Footer from "./components/Footer.vue";
 export default {
-  components: {Header, Modal, Footer}
-}
+  components: { Header, Modal, Footer },
+  data() {
+    return {
+      showModal: false,
+    };
+  },
+};
 </script>
 <style lang="scss">
-@import '@/assets/scss/index.scss';
-body{
+@import "@/assets/scss/index.scss";
+body {
   background: $bg-main;
   margin: 0;
 }
-ul{
+ul {
   padding: 0;
   margin: 0;
-  li{
+  li {
     list-style: none;
   }
 }
-#nav{
+#nav {
   display: flex;
   justify-content: center;
   margin: 30px;
-  a{
-  text-decoration: none;
-  color: inherit;
-  margin: 0 15px;
-}
-
+  a {
+    text-decoration: none;
+    color: inherit;
+    margin: 0 15px;
+  }
 }
 .container {
   max-width: vw(1510);
   margin: vw(-1455) auto 0;
 }
 #nav .router-link-exact-active {
-      color: #42b983;
+  color: #42b983;
 }
-a{
-    text-decoration: none;
+a {
+  text-decoration: none;
 }
-ul{
-    list-style-type: none;
+ul {
+  list-style-type: none;
 }
-h1,h3,h2,h5,h6{
+h1,
+h3,
+h2,
+h5,
+h6 {
   margin: 0;
 }
 </style>

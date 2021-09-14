@@ -91,6 +91,7 @@ export default {
 }
 .Schedule__head {
   display: flex;
+  margin-top: vw(100);
   justify-content: space-between;
   width: 100%;
   align-items: center;
@@ -274,86 +275,6 @@ export default {
       @include font(vmin(19), bolder, vmin(25), $greyBlue50);
       &:hover {
         @include font(vmin(19), bold, vmin(25), darken($greyBlue50, 5%));
-      }
-      img {
-        margin-right: vmin(15);
-      }
-    }
-  }
-}
-@media screen and (max-width: 192px) {
-  .Schedule__head {
-    margin-top: vmin(60);
-    display: block;
-    width: 100%;
-    align-items: center;
-    padding: vmin(5) vmin(15);
-    .Schedule__month-nav {
-      .Schedule__month-list {
-        display: flex;
-        flex-wrap: wrap;
-        .Schedule__month-item {
-          margin-left: vmin(10);
-          cursor: pointer;
-          span {
-            @include font(vmin(22), bolder, vmin(20), $greyBlue60);
-            transition: 0.5s;
-          }
-        }
-      }
-    }
-    .Schedule__title {
-      margin: 0;
-      @include font(vmin(33), bold, vmin(50), $greyBlue50);
-    }
-    .Schedule__addres {
-      margin-top: vmin(15);
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      @include font(vmin(22), bolder, vmin(25), $greyBlue50);
-      &:hover {
-        @include font(vmin(22), bold, vmin(25), darken($greyBlue50, 5%));
-      }
-      img {
-        margin-right: vmin(15);
-      }
-    }
-  }
-}
-@media screen and (max-width: 173px) {
-  .Schedule__head {
-    margin-top: vmin(80);
-    display: block;
-    width: 100%;
-    align-items: center;
-    padding: vmin(5) vmin(15);
-    .Schedule__month-nav {
-      .Schedule__month-list {
-        display: flex;
-        flex-wrap: wrap;
-        .Schedule__month-item {
-          margin-left: vmin(10);
-          cursor: pointer;
-          span {
-            @include font(vmin(24), bolder, vmin(20), $greyBlue60);
-            transition: 0.5s;
-          }
-        }
-      }
-    }
-    .Schedule__title {
-      margin: 0;
-      @include font(vmin(33), bold, vmin(50), $greyBlue50);
-    }
-    .Schedule__addres {
-      margin-top: vmin(15);
-      align-items: center;
-      justify-content: center;
-      display: flex;
-      @include font(vmin(24), bolder, vmin(25), $greyBlue50);
-      &:hover {
-        @include font(vmin(24), bold, vmin(25), darken($greyBlue50, 5%));
       }
       img {
         margin-right: vmin(15);
