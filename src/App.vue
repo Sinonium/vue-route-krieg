@@ -5,10 +5,8 @@
     <router-link to="/3">3</router-link> |
     <router-link to="/4">4</router-link> |
     <router-link :to="{ name: 'CatalogFilms' }">5</router-link> |
-    <router-link to="/6">6</router-link> |
     <router-link to="/7">7</router-link>
   </div>
- </div>
   <Header/>
   <Modal/>
   <div class="container">
@@ -25,18 +23,6 @@ export default {
   components: {Header, Modal, Footer}
 }
 </script>
-
-
-<script>
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
-import Modal from "./components/Modal.vue";
-
-export default {
-  components: { Header , Footer , Modal }
-}
-</script>
-
 
 <style lang="scss">
 @import '@/assets/scss/index.scss';
