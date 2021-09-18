@@ -22,8 +22,8 @@
     </div>
     <div
       class="col-2"
-      @click="currentWeek('WednesdayFirst')"
-      :class="{ active: this.currentWeekThird === 'WednesdayFirst' }"
+      @click="currentWeek('WednesdayThird')"
+      :class="{ active: this.currentWeekThird === 'WednesdayThird' }"
     >
       <div class="catalog__films-item">
         <h3>Wednesday</h3>
@@ -32,8 +32,8 @@
     </div>
     <div
       class="col-2"
-      @click="currentWeek('ThursdayFirst')"
-      :class="{ active: this.currentWeekThird === 'ThursdayFirst' }"
+      @click="currentWeek('ThursdayThird')"
+      :class="{ active: this.currentWeekThird === 'ThursdayThird' }"
     >
       <div class="catalog__films-item">
         <h3>Thursday</h3>
@@ -42,8 +42,8 @@
     </div>
     <div
       class="col-2"
-      @click="currentWeek('FridayFirst')"
-      :class="{ active: this.currentWeekThird === 'FridayFirst' }"
+      @click="currentWeek('FridayThird')"
+      :class="{ active: this.currentWeekThird === 'FridayThird' }"
     >
       <div class="catalog__films-item">
         <h3>Friday</h3>
@@ -52,8 +52,8 @@
     </div>
     <div
       class="col-2"
-      @click="currentWeek('SaturdayFirst')"
-      :class="{ active: this.currentWeekThird === 'SaturdayFirst' }"
+      @click="currentWeek('SaturdayThird')"
+      :class="{ active: this.currentWeekThird === 'SaturdayThird' }"
     >
       <div class="catalog__films-item">
         <h3>Saturday</h3>
@@ -62,8 +62,8 @@
     </div>
     <div
       class="col-2"
-      @click="currentWeek('SundayFirst')"
-      :class="{ active: this.currentWeekThird === 'SundayFirst' }"
+      @click="currentWeek('SundayThird')"
+      :class="{ active: this.currentWeekThird === 'SundayThird' }"
     >
       <div class="catalog__films-item">
         <h3>Sunday</h3>
@@ -99,8 +99,8 @@
     <splide-slide>
       <div
         class="col-2"
-        @click="currentWeek('WednesdayFirst')"
-        :class="{ active: this.currentWeekThird === 'WednesdayFirst' }"
+        @click="currentWeek('WednesdayThird')"
+        :class="{ active: this.currentWeekThird === 'WednesdayThird' }"
       >
         <div class="catalog__films-item">
           <h3>Wednesday</h3>
@@ -111,8 +111,8 @@
     <splide-slide>
       <div
         class="col-2"
-        @click="currentWeek('ThursdayFirst')"
-        :class="{ active: this.currentWeekThird === 'ThursdayFirst' }"
+        @click="currentWeek('ThursdayThird')"
+        :class="{ active: this.currentWeekThird === 'ThursdayThird' }"
       >
         <div class="catalog__films-item">
           <h3>Thursday</h3>
@@ -123,8 +123,8 @@
     <splide-slide>
       <div
         class="col-2"
-        @click="currentWeek('FridayFirst')"
-        :class="{ active: this.currentWeekThird === 'FridayFirst' }"
+        @click="currentWeek('FridayThird')"
+        :class="{ active: this.currentWeekThird === 'FridayThird' }"
       >
         <div class="catalog__films-item">
           <h3>Friday</h3>
@@ -135,8 +135,8 @@
     <splide-slide>
       <div
         class="col-2"
-        @click="currentWeek('SaturdayFirst')"
-        :class="{ active: this.currentWeekThird === 'SaturdayFirst' }"
+        @click="currentWeek('SaturdayThird')"
+        :class="{ active: this.currentWeekThird === 'SaturdayThird' }"
       >
         <div class="catalog__films-item">
           <h3>Saturday</h3>
@@ -147,8 +147,8 @@
     <splide-slide>
       <div
         class="col-2"
-        @click="currentWeek('SundayFirst')"
-        :class="{ active: this.currentWeekThird === 'SundayFirst' }"
+        @click="currentWeek('SundayThird')"
+        :class="{ active: this.currentWeekThird === 'SundayThird' }"
       >
         <div class="catalog__films-item">
           <h3>Sunday</h3>
