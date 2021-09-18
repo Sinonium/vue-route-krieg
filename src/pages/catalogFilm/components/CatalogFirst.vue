@@ -2,7 +2,7 @@
   <div class="catalog__films">
     <div @click="toggleShow(index)"
       class="col-2"
-      v-for="(film, index) in AutoCatalogFilms"
+      v-for="(film, index) in AutoCatalogFilmsFirst"
       :key="film.title"
     >
       <div ref="catalogFilmsItem" class="catalog__films-item catalog__film">
@@ -19,7 +19,7 @@
 
 <script>
 export default {
-  props: ["AutoCatalogFilms"],
+  props: ["AutoCatalogFilmsFirst"],
   data() {
     return {
         showCatalogFilm: false,

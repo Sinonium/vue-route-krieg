@@ -27,7 +27,7 @@
       <span class="modal__subscription">Your Subscription</span>
       <span class="modal__data">Left 30 days</span>
       <div class="modal__sub__line">
-        <span style="width: 80%"></span>
+        <span :style="widthLineLeft"></span>
       </div>
       <div class="modal__list">
         <div class="modal__list-column">
@@ -205,35 +205,37 @@
       </div>
     </div>
     <div class="modal-2">
-      <svg
-        width="18"
-        height="20"
-        viewBox="0 0 18 20"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M16 2H15V1C15 0.45 14.55 0 14 0C13.45 0 13 0.45 13 1V2H5V1C5 0.45 4.55 0 4 0C3.45 0 3 0.45 3 1V2H2C0.89 2 0.01 2.9 0.01 4L0 18C0 19.1 0.89 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2ZM15 18H3C2.45 18 2 17.55 2 17V7H16V17C16 17.55 15.55 18 15 18ZM5 9H8C8.55 9 9 9.45 9 10V13C9 13.55 8.55 14 8 14H5C4.45 14 4 13.55 4 13V10C4 9.45 4.45 9 5 9Z"
-          fill="#C3CAD9"
-        />
-      </svg>
-      <span>Show Schedule</span>
-      <svg
-        width="16"
-        height="4"
-        viewBox="0 0 16 4"
-        fill="none"
-        xmlns="http://www.w3.org/2000/svg"
-      >
-        <path
-          fill-rule="evenodd"
-          clip-rule="evenodd"
-          d="M2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0ZM14 0C12.9 0 12 0.9 12 2C12 3.1 12.9 4 14 4C15.1 4 16 3.1 16 2C16 0.9 15.1 0 14 0ZM8 0C6.9 0 6 0.9 6 2C6 3.1 6.9 4 8 4C9.1 4 10 3.1 10 2C10 0.9 9.1 0 8 0Z"
-          fill="#C3CAD9"
-        />
-      </svg>
+      <div class="modal-2__head">
+        <svg
+          width="18"
+          height="20"
+          viewBox="0 0 18 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M16 2H15V1C15 0.45 14.55 0 14 0C13.45 0 13 0.45 13 1V2H5V1C5 0.45 4.55 0 4 0C3.45 0 3 0.45 3 1V2H2C0.89 2 0.01 2.9 0.01 4L0 18C0 19.1 0.89 20 2 20H16C17.1 20 18 19.1 18 18V4C18 2.9 17.1 2 16 2ZM15 18H3C2.45 18 2 17.55 2 17V7H16V17C16 17.55 15.55 18 15 18ZM5 9H8C8.55 9 9 9.45 9 10V13C9 13.55 8.55 14 8 14H5C4.45 14 4 13.55 4 13V10C4 9.45 4.45 9 5 9Z"
+            fill="#C3CAD9"
+          />
+        </svg>
+        <span>Show Schedule</span>
+        <svg
+          width="16"
+          height="4"
+          viewBox="0 0 16 4"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fill-rule="evenodd"
+            clip-rule="evenodd"
+            d="M2 0C0.9 0 0 0.9 0 2C0 3.1 0.9 4 2 4C3.1 4 4 3.1 4 2C4 0.9 3.1 0 2 0ZM14 0C12.9 0 12 0.9 12 2C12 3.1 12.9 4 14 4C15.1 4 16 3.1 16 2C16 0.9 15.1 0 14 0ZM8 0C6.9 0 6 0.9 6 2C6 3.1 6.9 4 8 4C9.1 4 10 3.1 10 2C10 0.9 9.1 0 8 0Z"
+            fill="#C3CAD9"
+          />
+        </svg>
+      </div>
       <div class="modal-2__list">
         <ul>
           <li>05.12</li>
@@ -259,21 +261,28 @@
       </div>
     </div>
   </div>
+  <div class="overlay"></div>
 </template>
 
 <script>
 export default {
   props: ["showModal"],
   data() {
-    return {};
+    return {
+      widthLineLeft: `width: 30%`,
+    };
   },
   updated(showModal) {
     if (this.showModal) {
+      const Overlay = document.querySelector('.overlay') 
       const Modall = document.querySelector(".Modal");
       Modall.classList.add("modalTrue");
+      Overlay.classList.add('overlaySowModal')
     } else {
+      const Overlay = document.querySelector('.overlay') 
       const Modall = document.querySelector(".Modal");
       Modall.classList.remove("modalTrue");
+      Overlay.classList.remove('overlaySowModal')
     }
   },
 };
@@ -281,291 +290,89 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
+.overlay {
+  display: none;
+}
 .modalTrue {
+  transform: scale(1) !important;
   right: 0%;
   transition: 1s;
 }
 .Modal {
   position: absolute;
   z-index: 222;
-  right: 140%;
+  transform: scale(0) !important;
   transition: 1s;
-}
-.modal {
-  text-align: center;
-  max-width: vw(340);
-  height: vw(1015);
-  border-radius: vw(10);
-  background-color: $white;
-  position: relative;
-  .popa {
-    display: flex;
-    & .modal__setting {
-      margin-top: vw(48);
-      margin-left: -3vw;
-    }
-  }
-  &__avatar {
-    margin: vw(30) 0 vw(20) vw(20);
-  }
-  &__name {
-    @include font(vw(14), 700, vw(30));
-    margin: auto vw(83) auto vw(25);
-    cursor: pointer;
-  }
-  &__subscription {
-    @include font(vw(14), 700, vw(30));
-    margin: vw(20) vw(80) vw(0) vw(20);
-    cursor: pointer;
-  }
-  &__data {
-    @include font(vw(14), 700, vw(30));
-    margin-right: vw(20);
-    cursor: pointer;
-  }
-  &__sub__line {
-    height: vw(5);
-    width: vw(260);
-    position: relative;
-    background-color: #f0f2f7;
-    border-radius: vw(5);
-    margin: vw(20) vw(23) vw(15);
-    padding: vw(2);
-    & span {
-      position: relative;
-      width: vw(180);
-      height: vw(5);
-      background-color: #8833ff;
-      border-radius: vw(5);
-      display: block;
-    }
-  }
-}
-.modal__list {
-  margin-left: vw(20);
-  margin-top: vw(43);
-  display: grid;
-  grid-template-columns: vw(130) vw(130);
-  grid-template-rows: vw(125) vw(125) vw(125) vw(125);
-  grid-column-gap: vw(19);
-  grid-row-gap: vw(17);
-  .modal__list-column {
-    background-color: $greyBlue99;
+  right: 0%;
+  .modal {
+    text-align: center;
+    max-width: vw(340);
+    height: vw(1015);
     border-radius: vw(10);
-    cursor: pointer;
-    text-align: center;
-    transition: 0.3s;
-    & svg {
-      margin: vw(36) vw(50) vw(21) vw(50);
-    }
-    & span {
-      @include font(vw(12), 700, vw(25), $greyBlue60);
-      margin: vw(30) 0 vw(30) 0;
-    }
-  }
-  .modal__list-column:hover {
-    background-color: #ff6633;
-    & svg path {
-      fill: $white;
-    }
-    & span {
-      color: $white;
-    }
-  }
-}
-.modal__episode {
-  max-width: vw(280);
-  max-height: vw(195);
-  position: relative;
-  margin-top: vw(10);
-  margin-left: vw(20);
-  & img {
-    max-width: vw(280);
-    max-height: vw(195);
-    margin-top: vw(10);
-  }
-  &-zoom {
-    position: absolute;
-    top: 0;
-    left: 0;
-    margin: vw(25) 0 0 vw(15);
-    cursor: pointer;
-  }
-  &-play {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    margin: vw(50) vw(110);
-    cursor: pointer;
-  }
-  & span {
-    position: absolute;
-    @include font(vw(14), 700, vw(25), $white);
-    bottom: 0;
-    left: 0;
-    margin: 0 0 vw(15) vw(25);
-  }
-}
-.modal__episode-play rect:hover {
-  fill: #ff6633;
-  opacity: 1;
-  transition: 0.2s;
-}
-.modal__episode-zoom rect:hover {
-  fill: #ff6633;
-  opacity: 1;
-  transition: 0.2s;
-}
-.modal-2 {
-  margin-top: vw(30);
-  max-width: vw(340);
-  height: vw(350);
-  border-radius: vw(10);
-  background-color: $white;
-  & span {
-    @include font(vw(13), 700, vw(25), $greyBlue60);
-    margin: 0 vw(50) 0 vw(21);
-    cursor: pointer;
-  }
-  & svg {
-    margin: vw(35) vw(21) 0 vw(25);
-    cursor: pointer;
-  }
-  &__list {
-    display: flex;
-
-    & ul {
-      margin-left: vw(40);
-      li {
-        @include font(vw(12), 700, vw(25), $greyBlue60);
-        margin-top: vw(30);
-      }
-    }
-  }
-}
-@media screen and (max-width: 1160px) {
-  .modalTrue {
-    right: 0% !important;
-  }
-  .Modal {
-    position: absolute;
-    right: -100%;
-  }
-}
-@media screen and (max-width: 1064px) {
-}
-@media screen and (max-width: 981px) {
-  .Modal {
-    position: absolute;
-  }
-  .modal-2 {
-    svg:last-child {
-      margin: 1.1875vw 1.3125vw 0 1.5625vw;
-    }
-  }
-}
-@media screen and (max-width: 979px) {
-  .Modal {
-    margin-left: 80%;
-  }
-}
-@media screen and (max-width: 907px) {
-  .modal {
-    height: 72vw;
-  }
-  .modal {
-    .modal__episode {
-      margin-top: 1.625vw;
-    }
-  }
-  .modal__list {
-    grid-template-columns: 8.125vw 8.125vw;
-    grid-template-rows: 7.8125vw 9.8125vw 8.8125vw 7.8125vw;
-    grid-column-gap: 1.1875vw;
-    grid-row-gap: 2.0625vw;
-  }
-}
-@media screen and (max-width: 580px) {
-  .modalTrue {
-    right: 0%;
-    transition: 1s;
-  }
-  .Modal {
-    position: absolute;
-    z-index: 222;
-    right: 140%;
-    transition: 1s;
-  }
-  .modal {
-    text-align: center;
-    max-width: vmin(340);
-    height: vmin(1015);
-    border-radius: vmin(10);
     background-color: $white;
     position: relative;
     .popa {
       display: flex;
       & .modal__setting {
-        margin-top: vmin(48);
-        margin-left: -3vmin;
+        margin-top: vw(48);
+        margin-left: -3vw;
       }
     }
     &__avatar {
-      margin: vmin(30) 0 vmin(20) vmin(20);
+      margin: vw(30) 0 vw(20) vw(20);
     }
     &__name {
-      @include font(vmin(14), 700, vmin(30));
-      margin: auto vmin(83) auto vmin(25);
+      @include font(vw(14), 700, vw(30));
+      margin: auto vw(83) auto vw(25);
       cursor: pointer;
     }
     &__subscription {
-      @include font(vmin(14), 700, vmin(30));
-      margin: vmin(20) vmin(80) vmin(0) vmin(20);
+      @include font(vw(14), 700, vw(30));
+      margin: vw(20) vw(80) vw(0) vw(20);
       cursor: pointer;
     }
     &__data {
-      @include font(vmin(14), 700, vmin(30));
-      margin-right: vmin(20);
+      @include font(vw(14), 700, vw(30));
+      margin-right: vw(20);
       cursor: pointer;
     }
     &__sub__line {
-      height: vmin(5);
-      width: vmin(260);
+      height: vw(5);
+      width: vw(260);
       position: relative;
       background-color: #f0f2f7;
-      border-radius: vmin(5);
-      margin: vmin(20) vmin(23) vmin(15);
-      padding: vmin(2);
+      border-radius: vw(5);
+      margin: vw(20) vw(23) vw(15);
+      padding: vw(2);
       & span {
         position: relative;
-        width: vmin(180);
-        height: vmin(5);
+        height: vw(5);
         background-color: #8833ff;
-        border-radius: vmin(5);
+        border-radius: vw(5);
         display: block;
       }
     }
   }
   .modal__list {
-    margin-left: vmin(20);
-    margin-top: vmin(43);
+    margin-left: vw(20);
+    margin-top: vw(43);
     display: grid;
-    grid-template-columns: vmin(130) vmin(130);
-    grid-template-rows: vmin(125) vmin(125) vmin(125) vmin(125);
-    grid-column-gap: vmin(19);
-    grid-row-gap: vmin(17);
+    grid-template-columns: vw(130) vw(130);
+    grid-template-rows: vw(125) vw(125) vw(125) vw(125);
+    grid-column-gap: vw(19);
+    grid-row-gap: vw(17);
     .modal__list-column {
       background-color: $greyBlue99;
-      border-radius: vmin(10);
+      border-radius: vw(10);
       cursor: pointer;
       text-align: center;
       transition: 0.3s;
       & svg {
-        margin: vmin(36) vmin(50) vmin(21) vmin(50);
+        margin: vw(36) vw(50) vw(21) vw(50);
       }
       & span {
-        @include font(vmin(12), 700, vmin(25), $greyBlue60);
-        margin: vmin(30) 0 vmin(30) 0;
+        @include font(vw(12), 700, vw(25), $greyBlue60);
+        margin: vw(30) 0 vw(30) 0;
       }
     }
     .modal__list-column:hover {
@@ -579,11 +386,11 @@ export default {
     }
   }
   .modal__episode {
-    max-width: vmin(280);
-    max-height: vmin(195);
+    max-width: vw(280);
+    max-height: vw(195);
     position: relative;
-    margin-top: vmin(10);
-    margin-left: vmin(20);
+    margin-top: vw(10);
+    margin-left: vw(20);
     & img {
       max-width: vw(280);
       max-height: vw(195);
@@ -627,13 +434,12 @@ export default {
     height: vw(350);
     border-radius: vw(10);
     background-color: $white;
+    padding-top: vw(7);
     & span {
       @include font(vw(13), 700, vw(25), $greyBlue60);
-      margin: 0 vw(50) 0 vw(21);
       cursor: pointer;
     }
     & svg {
-      margin: vw(35) vw(21) 0 vw(25);
       cursor: pointer;
     }
     &__list {
@@ -647,6 +453,452 @@ export default {
         }
       }
     }
+  }
+  .modal-2__head {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-top: vw(10);
+    svg:first-child {
+      margin-right: vw(40);
+    }
+    svg:last-child {
+      margin-left: vw(35);
+    }
+  }
+}
+@media screen and (max-width: 1260px) {
+  .modalTrue {
+    transform: scale(1) !important;
+    right: 0%;
+    transition: 0.7s;
+  }
+  .Modal {
+    position: absolute;
+    transition: 0.7s;
+    transform: scale(0);
+  }
+}
+@media screen and (max-width: 907px) {
+  .modal {
+    height: 72vw;
+  }
+  .modal {
+    .modal__episode {
+      margin-top: 1.625vw;
+    }
+  }
+  .modal__list {
+    grid-template-columns: 8.125vw 8.125vw;
+    grid-template-rows: 7.8125vw 9.8125vw 8.8125vw 7.8125vw;
+    grid-column-gap: 1.1875vw;
+    grid-row-gap: 2.0625vw;
+  }
+}
+@media screen and (max-width: 840px) {
+  .modal-2 {
+    height: vw(390);
+  }
+  .modal {
+    .modal__list {
+      .modal__list-column {
+        margin: vw(-15.25) vw(3.125) vw(1.3125) vw(3.125);
+      }
+    }
+  }
+}
+@media screen and (max-width: 795px) {
+  .Modal {
+    .modal {
+      display: flex;
+      flex-direction: column;
+      height: 77vw;
+      .popa {
+        padding-top: vw(10);
+        .modal__name {
+          font-size: vw(24);
+        }
+        .modal__setting {
+          margin-top: vw(1);
+          margin-left: vw(-100);
+        }
+      }
+      &__subscription {
+        @include font(vw(30), 700, vw(30));
+        margin: vw(1.25) vw(5) vw(20) vw(4.25);
+        display: block;
+      }
+      &__data {
+        @include font(vw(30), 700, vw(30));
+        margin-right: 0;
+      }
+      .modal__list {
+        .modal__list-column {
+          span {
+            @include font(vw(15), 700, vw(25), $greyBlue60);
+          }
+          &:hover {
+            span {
+              color: $white;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 748px) {
+  .Modal {
+    right: -1%;
+    .modal {
+      .popa {
+        padding-right: vw(25);
+        .modal__name {
+          font-size: vw(28) !important;
+        }
+      }
+    }
+    .modal-2 {
+      .modal-2__head {
+        svg:first-child {
+          margin-right: 3vw;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 752px) {
+  .Modal {
+    right: -1%;
+    .modal {
+      .modal__episode {
+        & .modal__episode-play {
+          height: 7vw;
+        }
+        & .modal__episode-zoom {
+          height: 5vw;
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .Modal {
+    .modal {
+      height: 84vw;
+      .modal__list {
+        grid-template-columns: 9.125vw 9.125vw;
+        grid-template-rows: 10vw 10vw 10vw 10vw;
+        grid-column-gap: 0.1875vw;
+        grid-row-gap: 3.0625vw;
+        .modal__list-column {
+          padding: vw(15);
+          svg {
+            margin: 2.25vw 3.125vw 1.3125vw 2.125vw;
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .Modal {
+    .modal {
+      height: 86vw;
+    }
+  }
+}
+@media screen and (max-width: 612px) {
+  .Modal {
+    .modal {
+      height: 92vw;
+      .modal__list {
+        grid-template-columns: 9.125vw 9.125vw;
+        grid-template-rows: 11vw 11vw 11vw 11vw;
+        grid-column-gap: 0.1875vw;
+        grid-row-gap: 3.0625vw;
+        .modal__list-column {
+          span {
+            font-size: vw(19);
+          }
+        }
+      }
+    }
+    .modal-2 {
+      height: 30vw;
+      padding: vw(15) vw(10);
+      width: 49vw;
+      .modal-2__head {
+        display: flex;
+        flex-direction: column;
+        & svg:first-child {
+          margin-top: 2vw;
+        }
+        & span {
+          margin-top: 2vw;
+          margin-left: -3vw;
+          font-size: vw(18);
+        }
+        & svg:last-child {
+          margin-top: 2vw;
+          margin-left: -1.8125vw;
+        }
+      }
+      .modal-2__list {
+        ul {
+          margin-left: 1.5vw;
+          li {
+            font-size: vw(16);
+          }
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 593px) {
+  .modalTrue {
+    transform: scale(1) !important;
+    right: 0%;
+    transition: 1s;
+  }
+  .overlaySowModal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0,0,0,0.5);
+    display: block;
+    z-index: 1;
+  }
+  .Modal {
+    position: absolute;
+    z-index: 222;
+    transform: scale(1) !important;
+    transition: 1s;
+    right: -10%;
+  }
+  .Modal .modal .popa .modal__name {
+    font-size: 3vmin !important;
+    line-height: 3vmin !important;
+  }
+  .modal {
+    text-align: center !important;
+    max-width: vmin(200) !important;
+    height: 150vmin !important;
+    border-radius: vmin(10) !important;
+    position: relative !important;
+    .popa {
+      display: flex;
+      & .modal__setting {
+        width: 5vmin;
+        height: 5vmin;
+        margin-left: -3vmin !important;
+      }
+    }
+    &__avatar {
+      margin: vmin(30) 0 vmin(20) vmin(20);
+      height: 20vmin;
+      width: 20vmin;
+    }
+    &__name {
+      font-size: 40vmin !important;
+    }
+    &__subscription {
+      @include font(vmin(20) !important, 700 !important, vmin(30) !important);
+      margin: vmin(20) vmin(80) vmin(0) vmin(20);
+    }
+    &__data {
+      @include font(vmin(20) !important, 700 !important, vmin(30) !important);
+      margin-right: vmin(20);
+    }
+    &__sub__line {
+      height: vmin(5) !important;
+      width: 40vmin !important;
+      position: relative;
+      background-color: #f0f2f7;
+      border-radius: vmin(5);
+      margin: vmin(20) vmin(23) vmin(15) !important;
+      padding: vmin(2) !important;
+      & span {
+        position: relative;
+        height: 100% !important;
+        background-color: #8833ff;
+        border-radius: vmin(5) !important;
+        display: block;
+      }
+    }
+  }
+  .modal__list {
+    margin-top: vmin(43);
+    display: grid;
+    grid-template-columns: 23.125vmin 21.125vmin !important;
+    grid-template-rows: 11vmin 11vmin 11vmin 12vmin !important;
+    grid-column-gap: 2.1875vmin !important;
+    grid-row-gap: 4.0625vmin !important;
+    margin-top: 1vmin;
+    align-items: center;
+    justify-content: center;
+    .modal__list-column {
+      background-color: $greyBlue99;
+      border-radius: vmin(10);
+      cursor: pointer;
+      text-align: center;
+      transition: 0.3s;
+      & svg {
+        margin: vmin(36) vmin(50) vmin(21) vmin(50);
+      }
+      & span {
+        @include font(
+          vmin(8) !important,
+          700 !important,
+          vmin(25) !important,
+          $greyBlue60
+        );
+        margin: vmin(30) 0 vmin(30) 0;
+      }
+    }
+    .modal__list-column:hover {
+      background-color: #ff6633;
+      & svg path {
+        fill: $white;
+      }
+      & span {
+        color: $white;
+      }
+    }
+  }
+  .modal__episode {
+    max-width: vmin(280) !important;
+    max-height: vmin(195) !important;
+    margin-top: vmin(10) !important;
+    margin-left: 0 !important;
+    & img {
+      max-width: 110vmin !important;
+      max-height: 55vmin !important;
+      margin-top: vmin(10) !important;
+    }
+    &-zoom {
+      height: 6vmin !important;
+      width: 6vmin !important;
+      margin: vmin(25) 0 0 vmin(15) !important;
+      cursor: pointer;
+    }
+    &-play {
+      width: 20vmin !important;
+      height: 15vmin !important;
+      margin: vmin(50) vmin(50) !important;
+    }
+    & span {
+      @include font(
+        vmin(14) !important,
+        700 !important,
+        vmin(25) !important,
+        $white
+      );
+      margin: 0 0 0.9375vmin 4.5625vmin !important;
+    }
+  }
+  .modal-2 {
+    margin-top: vmin(30) !important;
+    max-width: vmin(360) !important;
+    height: 62.33333vmin !important;
+    border-radius: vw(10) !important;
+    & span {
+      font-size: vmin(17) !important;
+      margin: -1vmin 9vmin -36px 4.6vmin;
+      cursor: pointer;
+    }
+    & svg {
+      margin-left: 0 !important;
+      margin-top: 0 !important;
+      margin: 2.33333vmin 43.33333vmin 2vmin 7.66667vmin !important;
+      width: 10.66667vmin !important;
+      height: 7.66667vmin !important;
+    }
+    & svg:last-child {
+      cursor: pointer;
+      margin: 1.33333vmin -25.66667vmin 0 6.66667vmin !important;
+      width: 8.66667vmin !important;
+      height: 0vmin;
+    }
+    &__list {
+      display: flex;
+      flex-wrap: wrap;
+      & ul {
+        margin-left: 2vmin !important;
+        li {
+          @include font(
+            vmin(12) !important,
+            700 !important,
+            vmin(25) !important,
+            $greyBlue60
+          );
+          margin-top: vmin(30);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 584px) {
+  .modal {
+    width: 87vmin;
+    max-width: 86.33333vmin !important;
+    height: 300vmin !important;
+    border-radius: 2.66667vmin !important;
+  }
+  .modal__avatar {
+    margin: 8vmin 0 5.33333vmin 5.33333vmin;
+    height: 40vmin;
+    width: 38vmin;
+  }
+  .modal__list {
+    margin-top: 11.46667vmin !important;
+    grid-template-columns: 38.125vmin 36.125vmin !important;
+    grid-template-rows: 50vmin 50vmin 50vmin 50vmin !important;
+    grid-column-gap: 5.1875vmin !important;
+    grid-row-gap: -8.9375vmin !important;
+    margin-top: 1vmin !important;
+  }
+  .modal__list .modal__list-column span {
+    font-size: 8vmin !important;
+    line-height: 10vmin;
+  }
+  .Modal .modal .modal__list .modal__list-column svg {
+    margin: 12.25vmin 3.125vmin 9.3125vmin 3.125vmin;
+  }
+  .Modal .modal .modal__list .modal__list-column {
+    padding: 4vmin;
+  }
+  .modal__sub__line {
+    height: 1.33333vmin !important;
+    width: 87% !important;
+    margin: 5.33333vmin 6.13333vmin 4vmin !important;
+    padding: 0.53333vmin !important;
+  }
+  .Modal .modal .popa .modal__name {
+    font-size: 10vmin !important;
+    line-height: 10vmin !important;
+  }
+  .modal .popa .modal__setting {
+    width: 27vmin;
+    height: 19vmin;
+    margin-left: -4vmin !important;
+  }
+  .modal__subscription {
+    font-size: 9.33333vmin !important;
+    line-height: 14vmin !important;
+  }
+  .modal__data {
+    font-size: 10.33333vmin !important;
+    font-weight: 700 !important;
+    line-height: 12vmin !important;
+    font-style: normal;
+    color: #4d5e80;
+    margin-right: 5.33333vmin;
+  }
+  .Modal {
+    right: -100%;
   }
 }
 </style>
