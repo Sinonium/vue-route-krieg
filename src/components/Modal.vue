@@ -654,7 +654,7 @@ export default {
 @media screen and (max-width: 768px) {
   .modalTrue {
     transform: scale(1) !important;
-    right: 0%;
+    right: 0;
     transition: 0.7s;
   }
   .Modal {
