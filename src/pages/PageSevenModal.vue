@@ -6,21 +6,22 @@
             <div class="modal">
                 <span>s2 e1, The North Remembers</span>
                 <p>Tyrion arrives at King's Landing to take his father's place as Hand of the King. Stannis Baratheon plans to take the Iron Throne for his own. Robb tries to decide his next move in the war. The Night's Watch arrive at the house of Craster.</p>
-                <div class="bio">
+                <span class="bio">
                    
                         Director: 
                    
-                </div>
-                <div class="bio">
+                </span>
+                <span class="bio">
                     
                         Writers: 
                     
-                </div>
-                <div class="bio">
+                </span>
+                <span class="bio">
                     
                        Stars: 
                     
-                </div>
+                </span>
+                
                  </div>
                  <div class="card">
     <button class="vbutton"><svg width="40" height="40" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -48,6 +49,8 @@
     <p class="card-text22">2 Season, 2 Episode</p>
   </div>
 </div>
+
+
 <div class="closebtn">
     <button @click="closeModal"><svg width="60" height="60" viewBox="0 0 60 60" fill="none" xmlns="http://www.w3.org/2000/svg">
 <rect opacity="0.05" width="60" height="60" rx="30" fill="white"/>
@@ -73,7 +76,7 @@ export default {
 @import '@/assets/scss/index.scss';
 .modal{position: absolute;
     left: vw(245);
-    top: vw(850);
+    top: vw(800);
     height: vw(540);
     width: vw(825);
     padding: 20px;
@@ -127,6 +130,8 @@ mix-blend-mode: normal;
 opacity: 0.8;
 }
 .bio{
+  display: flex;
+  flex-direction: column;
     
         font-family: SF Pro Display;
 font-style: normal;
@@ -355,6 +360,27 @@ top: 0px;
 
     }
     
+}
+.autor{
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+    
+        font-family: SF Pro Display;
+font-style: normal;
+font-weight: bold;
+margin-left: vw(300);
+font-size: 18px;
+line-height: 20px;
+margin-bottom: vw(25);
+/* identical to box height, or 167% */
+
+
+/* White */
+
+color: #FFFFFF;
+
+mix-blend-mode: normal;
 }
 
     
