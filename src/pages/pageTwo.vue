@@ -3,7 +3,7 @@
       <div class="catalog__panel">
         <div class="catalog__panel-sort">
           <ul>
-            <li>Sort by IMDB rating
+            <li @click="sort('imdb')">Sort by IMDB rating
             <button>
               <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path fill-rule="evenodd" clip-rule="evenodd" d="M0.2925 0.293762C-0.0975 0.683762 -0.0975 1.31376 0.2925 1.70376L4.1725 5.58376L0.2925 9.46376C-0.0975 9.85376 -0.0975 10.4838 0.2925 10.8738C0.6825 11.2638 1.3125 11.2638 1.7025 10.8738L6.2925 6.28376C6.6825 5.89376 6.6825 5.26376 6.2925 4.87376L1.7025 0.283762C1.3225 -0.0962378 0.6825 -0.0962378 0.2925 0.293762Z" fill="#C3CAD9"/>
@@ -11,7 +11,7 @@
             </button>
 
             </li>
-            <li>Sort by IMDB rating
+            <li @click="sort('alpha')">Sort Alphabetically
               <button>
                 <svg width="7" height="12" viewBox="0 0 7 12" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path fill-rule="evenodd" clip-rule="evenodd" d="M0.2925 0.293762C-0.0975 0.683762 -0.0975 1.31376 0.2925 1.70376L4.1725 5.58376L0.2925 9.46376C-0.0975 9.85376 -0.0975 10.4838 0.2925 10.8738C0.6825 11.2638 1.3125 11.2638 1.7025 10.8738L6.2925 6.28376C6.6825 5.89376 6.6825 5.26376 6.2925 4.87376L1.7025 0.283762C1.3225 -0.0962378 0.6825 -0.0962378 0.2925 0.293762Z" fill="#C3CAD9"/>
@@ -188,6 +188,24 @@ export default {
     }
   },
   methods: {
+    sort(by){
+      if(by === 'alpha'){
+        this.catalog.sort((a,b) =>{
+          let fa = a.title.toLowerCase(), fb = b.title.toLowerCase()
+          if(fa < fb) {
+            return -1
+          }
+          if (fb < fa) {
+            return 1
+          }
+          return 0
+        })
+      }
+      if (by === 'imdb') {
+        this.catalog.sort((a,b) => b.rate - a.rate)
+      }
+      
+    },
     selectGenre(id){
       const lala = Array.from(document.querySelectorAll('.genres__list'))
       lala.forEach(item => item.classList.remove('active'))
@@ -392,7 +410,7 @@ export default {
   }
 }
 
-@media screen and(max-width:768px) {
+@media screen and(max-width:769px) {
   .catalog__panel-sort{
   max-width: vw(350);
   ul {
@@ -470,6 +488,107 @@ export default {
     button{
       svg{
          max-width: vw(60);
+      }
+    }
+  }
+}
+}
+@media screen and(max-width: 571px) {
+  .catalog__panel{
+    margin-right: 0;
+  }
+   .catalog__panel-sort{
+  max-width: vmin(90);
+  ul {
+    li{
+      @include font (vmin(7), 700, vmin(10), $greyBlue70);
+      button{
+        margin: 0 vw(26) 0 auto;
+      }
+    }
+  }
+}
+.catalog__panel-genre{
+  width: vmin(90);
+  &-title{
+    & span{
+      @include font(vmin(8), 700, vmin(10), $greyBlue50);
+      margin: vw(40) auto vw(40) vw(35);
+    } 
+  }
+  ul{
+    li{
+       margin-bottom: vmin(4);
+    }
+    li:last-child{
+      margin-bottom: vmin(25);
+    }
+  }
+}
+.genres__list{
+  padding: vmin(8) vmin(5);
+  height: vmin(30);
+  &-title{
+    @include font(vmin(7), 800, vmin(10), $greyBlue60);
+    margin: auto auto auto vw(25);
+  }
+  &-count{
+    @include font(vmin(6), 800, vmin(10), $greyBlue60);
+    margin: auto 10px auto vmin(5);
+  }
+}
+  .active{
+    .genres__list-title{
+      @include font(vmin(7), 800, vmin(10), $purple);
+   }
+}
+  .catalog__block{
+  max-width: vmin(160);
+  &__item{
+    margin: 0 vw(15) vw(30);
+    &-img{
+      img{
+        border-radius: vw(10);
+        max-width: vmin(150);
+        height: vmin(100);
+      }
+    }
+    &-seasons{
+      padding: vmin(4) vmin(6);
+      @include font(vmin(7), 700, vw(20), $white);
+    }
+    &-title{
+      @include font(vmin(8), 700, vw(30), $white);
+    }
+  .IMDb-rate{
+    top: 10%;
+    img{
+      max-width: vmin(17);
+      height: vmin(10);
+    }
+    span{
+      margin-top: vmin(2);
+      @include font(vmin(6), 800, vw(20), $white);
+      margin-left: vw(16);
+    }
+    }
+    button{
+      svg{
+         max-width: vmin(20);
+      }
+    }
+  }
+  &__pages{
+    ul{
+      margin: 0 0 0 vw(5);
+      text-align: center;
+      li{
+        padding: vw(30.92) vw(19.55);
+        border: 2px solid $greyBlue95;
+        border-radius: vmin(5);
+        margin-bottom: vmin(3);
+        cursor: pointer;
+        @include font(vmin(9), 700, vw(25), $greyBlue50);
       }
     }
   }
