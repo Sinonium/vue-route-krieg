@@ -11,8 +11,7 @@
           <div
             v-for="monthSchdeule in catalogFilmsMonths"
             v-bind:key="monthSchdeule"
-            class="Schedule__films"
-          >
+            class="Schedule__films">
             <div v-if="currentMonth === monthSchdeule">
               <div
                 style="margin-top: 50px"
@@ -25,36 +24,40 @@
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'MondayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'TuesdayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'WednesdayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'ThursdayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'FridayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'SaturdayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="this.currentWeekFirst === 'SundayFirst'"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
                 <CatalogFirst
                   v-if="!currentWeekFirst.length"
-                  :AutoCatalogFilms="AutoCatalogFilms"
+                  :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
+                <!-- <div
+                  v-if="!AutoCatalogFilms.length"
+                  class="catalogFilms__loading">
+                  </div> -->
               </div>
               <div
                 style="margin-top: 50px"
@@ -97,6 +100,9 @@
                   v-if="!currentWeekSecond.length"
                   :AutoCatalogFilms="AutoCatalogFilms"
                 />
+                <!-- <div
+                  v-if="!AutoCatalogFilms.length"
+                  class="catalogFilms__loading"></div> -->
               </div>
               <div
                 style="margin-top: 50px"
@@ -135,12 +141,9 @@
                   v-if="!currentWeekThird.length"
                   :AutoCatalogFilms="AutoCatalogFilms"
                 />
-                <!-- <span
-                  v-if="!catalogFilms.length"
-                  class="catalogFilms__loading"></span>
-                  <span
+                  <!-- <div
                   v-if="!AutoCatalogFilms.length"
-                  class="catalogFilms__loading"></span> -->
+                  class="catalogFilms__loading"></div> -->
               </div>
             </div>
           </div>
@@ -174,11 +177,7 @@ export default {
       currentWeekFirst: "",
       currentWeekSecond: "",
       currentWeekThird: "",
-      currentMonth: "May",
-      ScheduleAddres: {},
-      catalogFilmsWeek: [],
-      // catalogFilms: [],
-      AutoCatalogFilms: [
+      AutoCatalogFilmsFirst: [
         {
           id: 1,
           title: "Big Brother",
@@ -411,8 +410,138 @@ export default {
           imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film15.png"/>`,
         },
       ],
-      catalogFilmsMonths: [],
-      // AutoCatalogFilms: [],
+      currentMonth: "May",
+      ScheduleAddres: {},
+      catalogFilmsWeek: [],
+      AutoCatalogFilms: [
+        {
+          id: 1,
+          title: "Big Brother",
+          code: "s21e27",
+          data: "19: 00",
+          imageUrl: "catalog-film1",
+        },
+        {
+          id: 2,
+          title: "American Ninja War…",
+          code: "s21e27",
+          data: "19: 00",
+          imageUrl: "~@/assets/img/catalog-films/catalog-film2.png",
+        },
+        {
+          id: 3,
+          title: "Americas Got Talent",
+          code: "s21e27",
+          data: "19: 00",
+          imageUrl: "@/assets/img/catalog-films/catalog-film3.png",
+        },
+        {
+          id: 4,
+          title: "Big Brother",
+          code: "s21e27",
+          data: "19: 00",
+          imageUrl: "../assets/img/catalog-films/catalog-film4.png",
+        },
+        {
+          id: 5,
+          title: "The Outpost",
+          code: "s21e27",
+          data: "13: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film5.png"/>`,
+        },
+        {
+          id: 6,
+          title: "BattleBots",
+          code: "s21e27",
+          data: "15: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film6.png"/>`,
+        },
+        {
+          id: 7,
+          title: "Americas Got Talent",
+          code: "s21e27",
+          data: "9: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film7.png"/>`,
+        },
+        {
+          id: 8,
+          title: "Power",
+          code: "s06e01",
+          data: "5: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film8.png"/>`,
+        },
+        {
+          id: 9,
+          title: "Penn & Tellar",
+          code: "s06e01",
+          data: "18: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film9.png"/>`,
+        },
+        {
+          id: 10,
+          title: "Tales",
+          code: "s06e01",
+          data: "20: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film10.png"/>`,
+        },
+        {
+          id: 11,
+          title: "Masterchief",
+          code: "s06e01",
+          data: "23: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film11.png"/>`,
+        },
+        {
+          id: 12,
+          title: "Queen of the South",
+          code: "s06e01",
+          data: "24: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film12.png"/>`,
+        },
+        {
+          id: 13,
+          title: "Fargo",
+          code: "s21e27",
+          data: "19: 00",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film13.png"/>`,
+        },
+        {
+          id: 14,
+          title: "Tales",
+          code: "s06e01",
+          data: "16: 24",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film14.png"/>`,
+        },
+        {
+          id: 15,
+          title: "Orange Is the New Black",
+          code: "s21e27",
+          data: "12: 24",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film15.png"/>`,
+        },
+        {
+          id: 16,
+          title: "Whose Line Is It Any…",
+          code: "s01e02",
+          data: "15: 50",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film16.png"/>`,
+        },
+        {
+          id: 17,
+          title: "Adam Ruins Everything",
+          code: "s01e02",
+          data: "19: 16.48",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film17.png"/>`,
+        },
+        {
+          id: 18,
+          title: "Downton Abbey",
+          code: "s21e27",
+          data: "6: 47",
+          imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film18.png"/>`,
+        },
+      ],
+      catalogFilmsMonths: []
     };
   },
   mounted() {
@@ -422,6 +551,11 @@ export default {
         const ScheduleAddress = await response.json();
         this.ScheduleAddres = ScheduleAddress;
       };
+      // const AutoCatalogFilms = async () => {
+      //   const response = await fetch("http://localhost:3000/ScheduleAddres");
+      //   const AutoCatalogFilmss = await response.json();
+      //   this.AutoCatalogFilms = AutoCatalogFilmss;
+      // };
       const catalogFilmsWeek = async () => {
         const response = await fetch("http://localhost:3000/catalogFilmsWeek");
         const catalogFilmsWeekk = await response.json();
@@ -434,6 +568,7 @@ export default {
         const catalogFilmsMonthss = await response.json();
         this.catalogFilmsMonths = catalogFilmsMonthss;
       };
+      // setTimeout(AutoCatalogFilms,1500)
       setTimeout(catalogFilmsWeek, 1200);
       ScheduleAddres();
       catalogFilmsMonths();
