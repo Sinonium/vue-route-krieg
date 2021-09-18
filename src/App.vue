@@ -11,9 +11,9 @@
     @handleShowModal="this.showModal = !this.showModal"
     :showModal="showModal"
   />
-  <!-- <Modal
+  <Modal
     :showModal="showModal"
-  /> -->
+  />
   <div class="container">
     <router-view />
     <Footer />
