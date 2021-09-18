@@ -5,15 +5,15 @@
     <router-link to="/3">3</router-link> |
     <router-link to="/4">4</router-link> |
     <router-link :to="{ name: 'CatalogFilms' }">5</router-link> |
-    <router-link to="/7">7</router-link>
+    <router-link to="/7">7</router-link> |
   </div>
   <Header
     @handleShowModal="this.showModal = !this.showModal"
     :showModal="showModal"
   />
-  <Modal
+  <!-- <Modal
     :showModal="showModal"
-  />
+  /> -->
   <div class="container">
     <router-view />
     <Footer />
@@ -58,7 +58,7 @@ ul {
 }
 .container {
   max-width: vw(1510);
-  margin: vw(-1455) auto 0;
+  margin: 0 auto;
 }
 #nav .router-link-exact-active {
   color: #42b983;

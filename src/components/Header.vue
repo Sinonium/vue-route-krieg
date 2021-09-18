@@ -224,7 +224,7 @@ export default {
       }
     }  
 }
-@media screen and (max-width: 578px){
+@media screen and (max-width: 580px){
     .header{
         &__logo{
             font-size: vmin(10);
@@ -233,7 +233,13 @@ export default {
               display: none;
           }
             &__profile{
-                display: none;
+              & svg{
+                  width: vmin(12);
+                  height: vmin(12);
+              }
+              & span{
+                  font-size: vmin(5);
+              }
             }
               &__search{
                   margin-left: vw(30);
@@ -261,7 +267,7 @@ export default {
      &__natifications{
            & svg:last-child{
            margin-top: vw(5);
-           margin-left: vw(75);
+           margin-left: vw(45);
        }
      }
     }
