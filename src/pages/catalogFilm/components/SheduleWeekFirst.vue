@@ -174,7 +174,7 @@ export default {
       sliderScheduleWeek: true,
       options: {
         rewind: false,
-        gap: "1rem",
+        gap: "5rem",
         perPage: 4,
         pagination: false,
         arrows: false,
@@ -259,31 +259,13 @@ export default {
   }
   .Schedule__week.ScheduleWeekSlider {
     display: block !important;
-    overflow: hidden;
   }
   .splide {
     .splide__track {
-      .splide__list {
         width: 25%;
         overflow: hidden;
-      }
     }
   }
-  // .splide.is-active .splide__list {
-  //   width: 25% ;
-  //   overflow: hidden ;
-  // }
-  // .splide__track {
-  //   .splide__list {
-  //   width: 1000px ;
-  //   overflow: hidden ;
-  // }
-  // }
-  // #splide01-list {
-  //   width: 1000px ;
-  //   overflow: hidden ;
-  // }
-
   .Schedule__week {
     justify-content: center;
     align-items: center;

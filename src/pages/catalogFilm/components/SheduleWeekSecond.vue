@@ -272,10 +272,8 @@ export default {
   }
   .splide {
     .splide__track {
-      .splide__list {
         width: 25%;
         overflow: hidden;
-      }
     }
   }
   // .splide.is-active .splide__list {
