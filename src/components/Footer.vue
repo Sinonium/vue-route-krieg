@@ -126,7 +126,7 @@ export default {
 footer{
     display: flex;
     position: relative;
-    margin: vw(85) 0 vw(105) 0;
+    margin: vw(155) 0 vw(105) 0;
    .footer__support{
         margin-right: vw(96);
         & h6{
