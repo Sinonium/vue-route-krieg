@@ -1,7 +1,4 @@
 <template>
-  <Header />
-  <Modal />
-  <Footer />
   <PageSevenModal v-if="ShowModal" @closeModal="closeModal" />
 
   <section class="hero">
@@ -106,66 +103,7 @@
       </div>
       <div class="hero__block-play">
         <button>
-          <svg
-            width="180"
-            height="180"
-            viewBox="0 0 180 180"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <g filter="url(#filter0_d)">
-              <rect class="rect"
-                x="60"
-                y="30"
-                width="60"
-                height="60"
-                rx="30"
-                fill="#8833FF"
-              />
-            </g>
-            <path class="path"
-              fill-rule="evenodd"
-              clip-rule="evenodd"
-              d="M85 55.0014V65.3614C85 66.1514 85.87 66.6314 86.54 66.2014L94.68 61.0214C95.3 60.6314 95.3 59.7314 94.68 59.3314L86.54 54.1614C85.87 53.7314 85 54.2114 85 55.0014Z"
-              fill="white"
-            />
-            <defs>
-              <filter
-                id="filter0_d"
-                x="0"
-                y="0"
-                width="180"
-                height="180"
-                filterUnits="userSpaceOnUse"
-                color-interpolation-filters="sRGB"
-              >
-                <feFlood flood-opacity="0" result="BackgroundImageFix" />
-                <feColorMatrix
-                  in="SourceAlpha"
-                  type="matrix"
-                  values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"
-                  result="hardAlpha"
-                />
-                <feOffset dy="30" />
-                <feGaussianBlur stdDeviation="30" />
-                <feColorMatrix
-                  type="matrix"
-                  values="0 0 0 0 0.533333 0 0 0 0 0.2 0 0 0 0 1 0 0 0 0.5 0"
-                />
-                <feBlend
-                  mode="normal"
-                  in2="BackgroundImageFix"
-                  result="effect1_dropShadow"
-                />
-                <feBlend
-                  mode="normal"
-                  in="SourceGraphic"
-                  in2="effect1_dropShadow"
-                  result="shape"
-                />
-              </filter>
-            </defs>
-          </svg>
+          <img src="@/assets/img/Play.png" alt="" />
         </button>
         <span class="span">Start Watch</span>
       </div>
@@ -185,27 +123,15 @@
   <section class="video">
     <div class="card">
       <button class="vbutton" ref="vd" @click="handleClick()">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">Winter is coming</p>
@@ -213,28 +139,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video2.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video2.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">Wolf and Lion</p>
@@ -242,28 +156,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video3.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video3.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">The Pointy End</p>
@@ -271,28 +173,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video4.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video4.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">The Kingsroad</p>
@@ -300,28 +190,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video5.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video5.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">A Golden Crown</p>
@@ -329,28 +207,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video6.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video6.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">Fire and Blood</p>
@@ -358,28 +224,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video7.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video7.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">Lord Snow</p>
@@ -387,28 +241,18 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video8.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div>
+        <div class="card-img">
+          <img
+            src="../assets/img/PageSeven/video8.png"
+            class="card-img-top"
+            alt=""
+          />
+        </div>
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">You Win or Die</p>
@@ -416,28 +260,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video9.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video9.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">The Remembers</p>
@@ -445,28 +277,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video10.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video10.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">Broren Things</p>
@@ -474,28 +294,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video11.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video11.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">The Pointy End</p>
@@ -503,28 +311,16 @@
       </div>
     </div>
     <div class="card">
-      <button class="vbutton">
-        <svg
-          width="40"
-          height="40"
-          viewBox="0 0 40 40"
-          fill="none"
-          xmlns="http://www.w3.org/2000/svg"
-        >
-          <rect opacity="0.5" width="40" height="40" rx="20" fill="#0D111A" />
-          <path
-            fill-rule="evenodd"
-            clip-rule="evenodd"
-            d="M16 16.0011V24.2891C16 24.9211 16.696 25.3051 17.232 24.9611L23.744 20.8171C24.24 20.5051 24.24 19.7851 23.744 19.4651L17.232 15.3291C16.696 14.9851 16 15.3691 16 16.0011Z"
-            fill="#FFCB33"
-          />
-        </svg>
+      <button class="vbutton" ref="vd" @click="handleClick()">
+        <img src="@/assets/img/Play1.png" alt="" />
       </button>
-      <img
-        src="../assets/img/PageSeven/video12.png"
-        class="card-img-top"
-        alt=""
-      />
+      <div class="card-img">
+        <img
+          src="../assets/img/PageSeven/video12.png"
+          class="card-img-top"
+          alt=""
+        />
+      </div>
       <span>01:01:41</span>
       <div class="card-body">
         <p class="card-text">The Night Lands</p>
@@ -686,7 +482,7 @@ export default {
   width: vw(1100);
   height: vw(635);
   left: 3%;
-  top: vw(140);
+  top: vw(130);
   border-radius: 10px;
   z-index: -1;
 }
@@ -707,36 +503,31 @@ export default {
   flex-wrap: wrap;
 }
 .card {
+  position: relative;
   margin-bottom: vw(30);
   margin-right: vw(30);
   height: vw(255);
   width: vw(255);
   margin-left: vw(10);
-
-  /* White */
-
   background: #ffffff;
   box-shadow: 0px 2px 5px rgba(54, 61, 77, 0.03);
   border-radius: 10px;
-  img {
-    width: vw(255);
-    height: vw(160);
+  &-img {
+    img {
+      width: vw(255);
+    }
   }
   button {
-    height: vw(40);
-    width: vw(40);
     position: absolute;
     margin-left: vw(108);
     margin-top: vw(60);
-    background: #0d111a;
-    opacity: 0.5;
-    border-radius: 30px;
+    background: none;
     cursor: pointer;
     border: none;
   }
   span {
-    margin-top: vw(115);
-    margin-left: vw(-60);
+    left: 100%;
+    margin-top: vw(-50);
     position: absolute;
     font-family: "SF Pro Display";
     font-style: normal;
@@ -788,125 +579,385 @@ export default {
 }
 @media screen and (max-width: 1700px) {
   .heroImg {
-    top: vw(160);
+    top: vw(190);
   }
 }
 @media screen and (max-width: 1400px) {
   .heroImg {
-    top: vw(170);
+    top: vw(220);
   }
-  .hero__block-play{
-    .span{
+  .hero__block-circle {
+    margin: 0 vmin(15) 0 0;
+  }
+  .hero__block-play {
+    .span {
       margin-left: vw(100);
     }
   }
-  .card{
-    span{
+  .card {
+    span {
       margin-left: vw(-90);
     }
-    
-
-}
-.card-text2 {
-  margin-top:vw(-10);}
   }
-  
+  .card-text2 {
+    margin-top: vw(-10);
+  }
+  .hero__block-icon {
+    width: vmin(100);
+    height: vmin(100);
+  }
+}
 
 @media screen and (max-width: 1200px) {
   .heroImg {
-    top: vmin(270);
+    top: vmin(360);
+  }
+  .hero__block-circle {
+    margin: 0 vmin(15) 0 0;
+  }
+  .hero__block-icon {
+    width: vmin(100);
+    height: vmin(100);
+  }
+  .hero__block {
+    .navbar-nav {
+      padding: vmin(33) 0 0 vmin(35);
+      margin-right: vmin(600);
+    }
+    button {
+      img {
+        width: vw(200);
+        height: vw(200);
+      }
+    }
+  }
+
+  .logo {
+    width: vmin(400);
+  }
+}
+
+@media screen and (max-width: 1100px) {
+  .heroImg {
+    top: vw(250);
+  }
+  .video{
+    .card{
+      .vbutton{
+        img{
+          margin-left:vw(-20);
+        }
+      }
+    }
   }
   .hero__block-circle {
     margin: 0 vmin(25) 0 0;
+  }
+
+  .hero__block {
+    .navbar-nav {
+      padding: vmin(33) 0 0 vmin(35);
+      margin-right: vmin(500);
+    }
+    .seasons {
+      margin-top: vw(150);
+    }
+  }
+
+  .card {
+    span {
+      font-size: 13px;
+    }
+  }
+  .card-text {
+    font-size: 13px;
+    margin-top: vw(15);
+  }
+}
+.card-text2 {
+  font-size: 13px;
+  margin-top: vw(-10);
+}
+@media screen and (max-width: 1000px) {
+  .heroImg {
+    top: vw(260);
+  }
+}
+@media screen and (max-width: 944px) {
+  .hero__block {
+    .navbar-nav {
+      padding: vmin(33) 0 0 vmin(35);
+      margin-right: vmin(400);
+    }
+  }
+  .hero__block-circle {
+    margin: 0 vmin(35) 0 0;
+  }
+}
+@media screen and (max-width: 900px) {
+  .heroImg {
+    top: vw(270);
   }
   .hero__block-icon {
     width: vmin(80);
     height: vmin(80);
   }
+
+  .card-text {
+    font-size: 10px;
+    margin-top: vw(15);
+  }
+}
+.card-text2 {
+  font-size: 10px;
+  margin-top: vw(-20);
+}
+.hero__block-play {
+  .span {
+    font-size: 20px;
+  }
+}
+@media screen and (max-width: 800px) {
+  .heroImg {
+    top: vw(310);
+  }
   .hero__block {
     .navbar-nav {
       padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(500);
-      
+      margin-right: vmin(300);
     }
+  }
+  .hero__block-play {
+    .span {
+      font-size: 18px;
+    }
+  }
+  .card {
+    span {
+      margin-left: vw(-100);
+      font-size: 10px;
+    }
+  }
+  .video{
+    .card{
+      .vbutton{
+        img{
+          
+          width: vw(60);
+          height: vw(60);
+        }
+      }
+    }
+  }
+}
+@media screen and (max-width: 700px) {
+  .hero__block {
+    .navbar-nav {
+      padding: vmin(33) 0 0 vmin(35);
+      margin-right: vmin(250);
+    }
+  }
+  .hero__block-circle {
+    margin: 0 vmin(35) 0 0;
+  }
+  .card-text {
+    font-size: 10px;
+    margin-top: vw(10);
+  }
+  .card-text2 {
+    font-size: 10px;
+    margin-top: vw(-35);
+  }
+}
+@media screen and (max-width: 630px) {
+  .hero__block-play {
+    .span {
+      font-size: 15px;
+      margin-top: 2vmin;
+    }
+    
+  }
+   .hero__block {
+     .seasons{
+       margin-top: vw(110);
+     }
+  }
+  .card-text {
+    font-size: 9px;
+    margin-top: vw(0);
+  }
+  .card-text2 {
+    font-size: 8px;
+    margin-top: vw(-35);
+  }
+}
+@media screen and (max-width: 600px) {
+  .heroImg {
+    top: vw(330);
+  }
+  .lmdb {
+    background-size: vw(40);
+    background-repeat: no-repeat;
+
+  }
+  .hero__block {
+    .navbar-nav {
+      svg{
+        width: vw(10);
+      }
+    }}
+  .hero__block-play {
+    .span {
+      font-size: 15px;
+      margin-top: 1vmin;
+    }
+    
+  }
+   .hero__block {
+     .seasons{
+       margin-top: vw(100);
+     }
+  }
+  .hero__block-logo-icons{
+    svg{
+      margin-top: vw(-5);
+      width: vw(40);
+    }
+  }
+  }
+  @media screen and (max-width: 550px) {
+  .heroImg {
+    top: vw(350);
+  }
+   .hero__block {
+    p{
+     margin-top: vw(-10); 
+    }
+  }
+   .card-text {
+    font-size: 8px;
+    margin-top: vw(-8);
+  }
+  .card-text2 {
+    font-size: 7px;
+    margin-top: vw(-40);
+  }
+  .hero__block-icon {
+    width: vmin(60);
+    height: vmin(60);
+  }
+  .card {
+    span {
+      margin-left: vw(-100);
+      font-size: 8px;
+    }
+  }
+}
+@media screen and (max-width: 500px) {
+  .heroImg {
+    top: vw(380);
+  }
+  .card-text2 {
+    font-size: 7px;
+    margin-top: vw(-50);
+  }
+}
+@media screen and (max-width: 450px) {
+  .heroImg {
+    top: vw(400);
+  }
+  .card-text {
+    font-size: 7px;
+    margin-top: vw(-8);
+  }
+  .card-text2 {
+    font-size: 7px;
+    margin-top: vw(-65);
+  }
+  .card {
+    span {
+      margin-top: vw(-70);
+      font-size: 7px;
+    }
+  }
+}
+@media screen and (max-width: 420px) {
+  .heroImg {
+    top: vw(430);
+  }}
+@media screen and (max-width: 400px) {
+  .heroImg {
+    top: vw(450);
+  }
+  .card-text {
+    font-size: 6px;
+    margin-top: vw(-25);
+  }
+  .card-text2 {
+    font-size: 6px;
+    margin-top: vw(-65);
+  }
+  .hero__block-play {
+    .span {
+      font-size: 10px;
+      margin-top: 0vmin;
+    }
+  }
+  .hero__block {
+     .seasons{
+       margin-top: vw(90);
+     }
+  }
+  }
+  @media screen and (max-width: 390px) {
+  .heroImg {
+    top: vw(460);
+  }}
+  @media screen and (max-width: 370px) {
+  .heroImg {
+    top: vw(500);
+  }
+  .card-text2 {
+    font-size: 5px;
+    margin-top: vw(-75);
+  }
+  .video{
+    .card{
+      .vbutton{
+        img{
+          margin-left:vw(-30);
+        }
+      }
+    }
+  }
+  }
+  @media screen and (max-width: 340px) {
+  .heroImg {
+    top: vw(530);
   }
   .logo{
-    width: vmin(400);
+    width: vw(400);
   }
-.rect{
-     width: vmin(80);
-    height: vmin(80);
+  .card-text {
+    font-size: 5px;
+    margin-top: vw(-35);
   }
-  
-}
-@media screen and (max-width: 1100px) {
+  .card-text2 {
+    font-size: 4px;
+    margin-top: vw(-85);
+  }
+  .card {
+    span {
+      margin-left: vw(-120);
+      margin-top: vw(-90);
+      font-size: 6px;
+    }
+  }
+  }
+  @media screen and (max-width: 320px) {
   .heroImg {
-    top: vw(200);
-  }
-  .hero__block {
-    .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(500);
-      
-    }
-  }
-  .hero__block-play{
-    .span{
-      margin-left: vw(130);
-    }
-  }
-  .card{
-    span{ 
-      font-size: 13px;
-      
-    }
-}
-.card-text{
-  font-size: 13px;
-  margin-top:vw(15);
-  }
-  }
-.card-text2 {
-  font-size: 13px;
-  margin-top:vw(-10);
-  }
-  @media screen and (max-width: 1000px) {
-  .heroImg {
-    top: vw(220);
+    top: vw(560);
   }}
-  @media screen and (max-width: 900px) {
-  .heroImg {
-    top: vw(250);
-  }
-  .card-text{
-  font-size: 10px;
-  margin-top:vw(15);
-  }
-  }
-.card-text2 {
-  font-size: 10px;
-  margin-top:vw(-20);
-  }
-  .hero__block-play{
-    .span{
-      font-size: 20px;
-    }
-  }
-  @media screen and (max-width: 800px) {
-  .heroImg {
-    top: vw(280);
-  }
-  .hero__block {
-    .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(400);
-      
-    }
-  }
-}
-
-
-  
 </style>
 
 

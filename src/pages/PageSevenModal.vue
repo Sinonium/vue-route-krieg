@@ -77,7 +77,7 @@ export default {
 .modal{position: absolute;
     left: vw(245);
     top: vw(800);
-    height: vw(540);
+    height: vw(500);
     width: vw(825);
     padding: 20px;
     margin: 100px auto;
@@ -202,12 +202,12 @@ border: none;
 }
 span{
   margin-top: vw(115);
-  margin-left: vw(-60);
+  margin-left: vw(-80);
   position: absolute;
   font-family: 'SF Pro Display';
 font-style: normal;
 font-weight: bold;
-font-size: 17px;
+font-size: 15px;
 line-height: 20px;
 /* identical to box height, or 167% */
 
@@ -227,24 +227,24 @@ height: 20px;
 font-family: 'SF Pro Display';
 font-style: normal;
 font-weight: bold;
-font-size: 17px;
+font-size: 15px;
 line-height: 20px;
 color: $greyBlue50;
-margin-left: vw(70);
+margin-left: vw(60);
 margin-top: vw(25);
 }
 .card-text2{
 width: vw(300);
 height: 20px;
 margin-left: vw(-30);
-top: 215px;
+margin-top: vw(-15);
 
 /* Semibold 12 */
 
 font-family: SF Pro Display;
 font-style: normal;
 font-weight: 600;
-font-size: 18px;
+font-size: 15px;
 line-height: 20px;
 /* identical to box height, or 167% */
 
@@ -286,12 +286,12 @@ border: none;
 }
 span{
   margin-top: vw(115);
-  margin-left: vw(-60);
+  margin-left: vw(-80);
   position: absolute;
   font-family: 'SF Pro Display';
 font-style: normal;
 font-weight: bold;
-font-size: 17px;
+font-size: 15px;
 line-height: 20px;
 /* identical to box height, or 167% */
 
@@ -311,7 +311,7 @@ height: 20px;
 font-family: 'SF Pro Display';
 font-style: normal;
 font-weight: bold;
-font-size: 17px;
+font-size: 15px;
 line-height: 20px;
 color: $greyBlue50;
 margin-left: vw(70);
@@ -321,7 +321,7 @@ margin-top: vw(25);
 width: vw(300);
 height: 20px;
 margin-left: vw(-30);
-top: 215px;
+margin-top:vw(-15);
 
 /* Semibold 12 */
 
