@@ -315,6 +315,7 @@ export default {
       .header__natifications {
         & svg:nth-child(2) {
           display: none;
+
         }
         & svg:last-child {
           margin-top: 0;
@@ -331,6 +332,18 @@ export default {
           & svg:first-child {
             display: none;
           }
+            &__profile{
+              & svg{
+                  width: vmin(12);
+                  height: vmin(12);
+              }
+              & span{
+                  font-size: vmin(5);
+              }
+            }
+              &__search{
+                  margin-left: vw(30);
+        & input{
           & svg:last-child {
             margin-left: 2vw;
           }
@@ -338,6 +351,10 @@ export default {
       }
     }
 }
+@media screen and (max-width: 580px){
+    .header{
+        &__logo{
+            font-size: vmin(10);
 @media screen and (max-width: 578px) {
   .header {
     &__logo {
@@ -370,13 +387,14 @@ export default {
         margin-top: vw(20);
         width: vmin(10.05);
         height: vmin(10.05);
-      }
-    }
-    &__natifications {
-      & svg:last-child {
-        margin-top: vw(5);
-        margin-left: vw(75);
-      }
+      
+     }
+     &__natifications{
+           & svg:last-child{
+           margin-top: vw(5);
+           margin-left: vw(45);
+       }
+     }
     }
   }
 }

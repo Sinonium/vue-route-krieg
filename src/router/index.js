@@ -7,6 +7,7 @@ import PageSeven from '../pages/PageSeven.vue'
 import CatalogFilms from '../pages/catalogFilm/CatalogFilms'
 
 
+
 const routes = [
   {
     path: '/1',
@@ -38,7 +39,7 @@ const routes = [
     name: 'CatalogFilms',
     component: CatalogFilms,
     props: true,
-  }
+  },
 ]
 
 const router = createRouter({
