@@ -10,7 +10,7 @@ import CatalogFilms from '../pages/catalogFilm/CatalogFilms'
 
 const routes = [
   {
-    path: '/1',
+    path: '/',
     name: 'PageOne',
     component: PageOne
   },
