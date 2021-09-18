@@ -166,6 +166,7 @@ export default {
               popularity: 5,
               img: require('@/assets/img/PageOneImg/catalog-img-1.png')},
 
+
               {title: 'Boardwalk Empire, 4 Season 9 Episode',
               imdb: 9.5,
               year: 2021,

@@ -228,9 +228,13 @@ export default {
 @media screen and (max-width: 1024px) {
   .header {
     &__natifications {
+        & svg {
+            margin-left: vw(-10);
+        }
       & svg:last-child {
         margin-top: vw(5);
-        margin-left: vw(25);
+        margin-left: vw(5);
+        width: vw(30);
       }
     }
   }
@@ -307,6 +311,16 @@ export default {
         font-size: vw(15);
       }
     }
+    &__natifications {
+        & svg {
+            margin-left: vw(-10);
+        }
+      & svg:last-child {
+        margin-top: vw(5);
+        margin-left: vw(55);
+        width: vw(35);
+      }
+    }
   }
 }
 @media screen and (max-width: 747px) {
@@ -315,7 +329,6 @@ export default {
       .header__natifications {
         & svg:nth-child(2) {
           display: none;
-
         }
         & svg:last-child {
           margin-top: 0;
@@ -332,7 +345,7 @@ export default {
           & svg:first-child {
             display: none;
           }
-            &__profile{
+           &__profile{
               & svg{
                   width: vmin(12);
                   height: vmin(12);
@@ -341,7 +354,7 @@ export default {
                   font-size: vmin(5);
               }
             }
-              &__search{
+        &__search{
                   margin-left: vw(30);
               }
         & input{
@@ -350,7 +363,12 @@ export default {
           }
         }
       }
+        }
     }
+    }
+
+  }
+
 }
 }
 @media screen and (max-width: 580px){
@@ -358,8 +376,8 @@ export default {
         &__logo{
             font-size: vmin(10);
         }
-    }
-}
+    }   
+}    
 @media screen and (max-width: 578px) {
   .header {
     &__logo {
@@ -368,9 +386,9 @@ export default {
     &__navigation {
       display: none;
     }
-    &__profile {
-      display: none;
-    }
+    // // &__profile {
+    // //   display: none;
+    // }
     &__search {
       margin-left: vw(30);
       & input {
@@ -405,9 +423,6 @@ export default {
 }
 @media screen and (max-width: 425px) {
   .header {
-    &__natifications {
-      display: none;
-    }
     &__search {
       margin-left: vw(250);
       & svg:first-child {
@@ -455,4 +470,6 @@ export default {
     }
   }
 }
+        
 </style>
+
