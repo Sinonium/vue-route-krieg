@@ -1,26 +1,259 @@
 {
-    "AvtoCatalogFilms": [
+    "AutoCatalogFilms": [
         {
             "id": 1,
             "title": "Big Brother",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
+            "imageUrl": ""
         },
         {
             "id": 2,
-            "title": "Guydufefuy",
+            "title": "American Ninja War…",
             "code": "s21e27",
             "data": "19: 00",
-            "imageUrl": "http://localhost:8080/img/catalog-film1.png"
+            "imageUrl": ""
         },
         {
-            "id": 3,
-            "title": "Big Brother",
-            "code": "s21e27",
-            "data": "19: 00",
-            "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
+          "id": 3,
+          "title": "Americas Got Talent",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 4,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 5,
+          "title": "The Outpost",
+          "code": "s21e27",
+          "data": "13: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 6,
+          "title": "BattleBots",
+          "code": "s21e27",
+          "data": "15: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 7,
+          "title": "Americas Got Talent",
+          "code": "s21e27",
+          "data": "9: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 8,
+          "title": "Power",
+          "code": "s06e01",
+          "data": "5: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 9,
+          "title": "Penn & Tellar",
+          "code": "s06e01",
+          "data": "18: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 10,
+          "title": "Tales",
+          "code": "s06e01",
+          "data": "20: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 11,
+          "title": "Masterchief",
+          "code": "s06e01",
+          "data": "23: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 12,
+          "title": "Queen of the South",
+          "code": "s06e01",
+          "data": "24: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 13,
+          "title": "Fargo",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 14,
+          "title": "Tales",
+          "code": "s06e01",
+          "data": "16: 24",
+          "imageUrl": ""
+        },
+        {
+          "id": 15,
+          "title": "Orange Is the New Black",
+          "code": "s21e27",
+          "data": "12: 24",
+          "imageUrl": ""
+        },
+        {
+          "id": 16,
+          "title": "Whose Line Is It Any…",
+          "code": "s01e02",
+          "data": "15: 50",
+          "imageUrl": ""
+        },
+        {
+          "id": 17,
+          "title": "Adam Ruins Everything",
+          "code": "s01e02",
+          "data": "19: 16.48",
+          "imageUrl": ""
+        },
+        {
+          "id": 18,
+          "title": "Downton Abbey",
+          "code": "s21e27",
+          "data": "6: 47",
+          "imageUrl": ""
+        },
+        {
+          "id": 19,
+          "title": "Reaed Break",
+          "code": "s01e02",
+          "data": "2: 30",
+          "imageUrl": ""
+        },
+        {
+          "id": 20,
+          "title": "13 Reasons Why",
+          "code": "s01e02",
+          "data": "8: 25.54",
+          "imageUrl": ""
+        },
+        {
+          "id": 21,
+          "title": "Pandora",
+          "code": "s01e02",
+          "data": "17: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 22,
+          "title": "Fear The Walking ...",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 23,
+          "title": "Instinct",
+          "code": "s05e01",
+          "data": "18: 14.22",
+          "imageUrl": ""
+        },
+        {
+          "id": 24,
+          "title": "American Dad",
+          "code": "s05e01",
+          "data": "19: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 25,
+          "title": "Shameless",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 26,
+          "title": "Carnival Row",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 27,
+          "title": "Florida Girls",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 28,
+          "title": "Conan",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 29,
+          "title": "Fear The Walking ...",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 30,
+          "title": "Conan",
+          "code": "s05e01",
+          "data": "14: 34",
+          "imageUrl": ""
+        },
+        {
+          "id": 31,
+          "title": "Westworld",
+          "code": "s05e01",
+          "data": "19: 00",
+          "imageUrl": ""
+        },
+        {
+          "id": 32,
+          "title": "Boardwalk Empire",
+          "code": "fw216f",
+          "data": "20: 38",
+          "imageUrl": ""
+        },
+        {
+          "id": 33,
+          "title": "Harlots",
+          "code": "D6SBJF",
+          "data": "14: 34",
+          "imageUrl": ""
         }
+    ],
+    "catalogFilms": [
+      {
+          "id": 1,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "image": "<img src='~@/assets/img/catalog-films/catalog-film2.png'/>"
+      },
+      {
+          "id": 2,
+          "title": "Guydufefuy",
+          "code": "s21e27",
+          "data": "19: 00",
+          "image": "<img src='~@/assets/img/catalog-films/catalog-film2.png'/>"
+      },
+      {
+          "id": 3,
+          "title": "Big Brother",
+          "code": "s21e27",
+          "data": "19: 00",
+          "imageUrl": "../assets/img/catalog-films/catalog-film1.png"
+      }
     ],
     "catalogFilmsWeek":[
         {
@@ -54,5 +287,13 @@
     ],
     "ScheduleAddres": {
         "text": "Subscribe To Schedule"
-    }
+    },
+    "catalogFilmsMonths": [
+      "May",
+      "June",
+      "July",
+      "September",
+      "October",
+      "November"
+    ]
 }

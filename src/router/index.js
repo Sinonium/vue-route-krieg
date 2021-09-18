@@ -3,9 +3,9 @@ import PageOne from '../pages/PageOne.vue'
 import PageTwo from '../pages/PageTwo.vue'
 import PageThree from '../pages/PageThree.vue'
 import PageFour from '../pages/PageFour.vue'
-
 import PageSeven from '../pages/PageSeven.vue'
 import CatalogFilms from '../pages/catalogFilm/CatalogFilms'
+
 
 
 const routes = [
@@ -29,7 +29,6 @@ const routes = [
     name: 'PageFour',
     component: PageFour
   },
- 
   {
     path: '/7',
     name: 'PageSeven',
@@ -40,7 +39,7 @@ const routes = [
     name: 'CatalogFilms',
     component: CatalogFilms,
     props: true,
-  }
+  },
 ]
 
 const router = createRouter({
