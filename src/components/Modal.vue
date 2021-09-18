@@ -1,5 +1,5 @@
 <template>
-  <div ref="Modal" class="Modal" :class="{modalTrue: showModal}">
+  <div ref="Modal" class="Modal" :class="{ modalTrue: showModal }">
     <div class="modal">
       <div class="popa">
         <img
@@ -47,7 +47,7 @@
           </svg>
           <span>Popular</span>
         </router-link>
-        <router-link  :to="{ name: 'PageFour' }" class="modal__list-column">
+        <router-link :to="{ name: 'PageFour' }" class="modal__list-column">
           <svg
             width="21"
             height="18"
@@ -64,7 +64,7 @@
           </svg>
           <span>Favorite</span>
         </router-link>
-        <router-link  :to="{ name: 'PageOne' }" class="modal__list-column">
+        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
           <svg
             width="20"
             height="20"
@@ -81,7 +81,7 @@
           </svg>
           <span>Watch Later</span>
         </router-link>
-        <router-link  :to="{ name: 'PageThree' }" class="modal__list-column">
+        <router-link :to="{ name: 'PageThree' }" class="modal__list-column">
           <svg
             width="20"
             height="16"
@@ -98,7 +98,7 @@
           </svg>
           <span>Statistics</span>
         </router-link>
-        <router-link  :to="{ name: 'CatalogFilms' }" class="modal__list-column">
+        <router-link :to="{ name: 'CatalogFilms' }" class="modal__list-column">
           <svg
             width="18"
             height="20"
@@ -115,7 +115,7 @@
           </svg>
           <span>Schedule</span>
         </router-link>
-        <router-link :to="{ name: 'PageTwo' }"  class="modal__list-column">
+        <router-link :to="{ name: 'PageTwo' }" class="modal__list-column">
           <svg
             width="23"
             height="20"
@@ -132,7 +132,7 @@
           </svg>
           <span>For Me</span>
         </router-link>
-        <router-link :to="{ name: 'PageSeven' }"  class="modal__list-column">
+        <router-link :to="{ name: 'PageSeven' }" class="modal__list-column">
           <svg
             width="18"
             height="18"
@@ -149,7 +149,7 @@
           </svg>
           <span>History</span>
         </router-link>
-        <router-link :to="{ name: 'PageOne' }"  class="modal__list-column">
+        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
           <svg
             width="19"
             height="18"
@@ -274,21 +274,21 @@ export default {
   },
   methods: {
     toggleHiddenModal() {
-      this.$emit('toggleHidden')
+      this.$emit("toggleHidden");
       console.log(showModal);
-    }
+    },
   },
   updated(showModal) {
     if (this.showModal) {
-      const Overlay = document.querySelector('.overlay') 
+      const Overlay = document.querySelector(".overlay");
       const Modall = document.querySelector(".Modal");
       Modall.classList.add("modalTrue");
-      Overlay.classList.add('overlaySowModal')
+      Overlay.classList.add("overlaySowModal");
     } else {
-      const Overlay = document.querySelector('.overlay') 
+      const Overlay = document.querySelector(".overlay");
       const Modall = document.querySelector(".Modal");
       Modall.classList.remove("modalTrue");
-      Overlay.classList.remove('overlaySowModal')
+      Overlay.classList.remove("overlaySowModal");
     }
   },
 };
@@ -357,11 +357,6 @@ a {
       }
     }
   }
- .modalTrue {
-  transform: scale(1) !important;
-  right: 0%;
-  transition: 1s;
-}
   .modal__list {
     margin-left: vw(20);
     margin-top: vw(43);
@@ -373,7 +368,7 @@ a {
     .modal__list-column.router-link-exact-active {
       background: orange;
       svg path {
-        fill:white;
+        fill: white;
       }
       span {
         color: white;
@@ -485,14 +480,19 @@ a {
     }
   }
 }
+.modalTrue {
+  transform: scale(1) !important;
+  right: 0%;
+  transition: 1s;
+}
 @media screen and (max-width: 1260px) {
-    .Modal {
+  .Modal {
     position: absolute;
     transition: 0.7s;
     transform: scale(0);
   }
   .modalTrue {
-    transform: scale(1);;
+    transform: scale(1);
     right: 0%;
     transition: 0.7s;
   }
@@ -685,7 +685,7 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,0.5);
+    background: rgba(0, 0, 0, 0.5);
     display: block;
     z-index: 1;
   }
