@@ -1,5 +1,5 @@
 <template>
-  <div ref="Modal" class="Modal">
+  <div ref="Modal" class="Modal" :class="{modalTrue: showModal}">
     <div class="modal">
       <div class="popa">
         <img
@@ -30,7 +30,7 @@
         <span :style="widthLineLeft"></span>
       </div>
       <div class="modal__list">
-        <div class="modal__list-column">
+        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
           <svg
             width="15"
             height="16"
@@ -46,8 +46,8 @@
             />
           </svg>
           <span>Popular</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link  :to="{ name: 'PageFour' }" class="modal__list-column">
           <svg
             width="21"
             height="18"
@@ -63,8 +63,8 @@
             />
           </svg>
           <span>Favorite</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link  :to="{ name: 'PageOne' }" class="modal__list-column">
           <svg
             width="20"
             height="20"
@@ -80,8 +80,8 @@
             />
           </svg>
           <span>Watch Later</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link  :to="{ name: 'PageThree' }" class="modal__list-column">
           <svg
             width="20"
             height="16"
@@ -97,8 +97,8 @@
             />
           </svg>
           <span>Statistics</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link  :to="{ name: 'CatalogFilms' }" class="modal__list-column">
           <svg
             width="18"
             height="20"
@@ -114,8 +114,8 @@
             />
           </svg>
           <span>Schedule</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link :to="{ name: 'PageTwo' }"  class="modal__list-column">
           <svg
             width="23"
             height="20"
@@ -131,8 +131,8 @@
             />
           </svg>
           <span>For Me</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link :to="{ name: 'PageSeven' }"  class="modal__list-column">
           <svg
             width="18"
             height="18"
@@ -148,8 +148,8 @@
             />
           </svg>
           <span>History</span>
-        </div>
-        <div class="modal__list-column">
+        </router-link>
+        <router-link :to="{ name: 'PageOne' }"  class="modal__list-column">
           <svg
             width="19"
             height="18"
@@ -165,7 +165,7 @@
             />
           </svg>
           <span>Subscription</span>
-        </div>
+        </router-link>
       </div>
       <div class="modal__episode">
         <img src="..\assets\img\modal-img.png" alt="" />
@@ -261,7 +261,7 @@
       </div>
     </div>
   </div>
-  <div class="overlay"></div>
+  <div @click.self="toggleHiddenModal" class="overlay"></div>
 </template>
 
 <script>
@@ -271,6 +271,12 @@ export default {
     return {
       widthLineLeft: `width: 30%`,
     };
+  },
+  methods: {
+    toggleHiddenModal() {
+      this.$emit('toggleHidden')
+      console.log(showModal);
+    }
   },
   updated(showModal) {
     if (this.showModal) {
@@ -290,18 +296,16 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
+a {
+  text-decoration: none;
+}
 .overlay {
   display: none;
-}
-.modalTrue {
-  transform: scale(1) !important;
-  right: 0%;
-  transition: 1s;
 }
 .Modal {
   position: absolute;
   z-index: 222;
-  transform: scale(0) !important;
+  transform: scale(0);
   transition: 1s;
   left: 70%;
   .modal {
@@ -353,6 +357,11 @@ export default {
       }
     }
   }
+ .modalTrue {
+  transform: scale(1) !important;
+  right: 0%;
+  transition: 1s;
+}
   .modal__list {
     margin-left: vw(20);
     margin-top: vw(43);
@@ -361,6 +370,15 @@ export default {
     grid-template-rows: vw(125) vw(125) vw(125) vw(125);
     grid-column-gap: vw(19);
     grid-row-gap: vw(17);
+    .modal__list-column.router-link-exact-active {
+      background: orange;
+      svg path {
+        fill:white;
+      }
+      span {
+        color: white;
+      }
+    }
     .modal__list-column {
       background-color: $greyBlue99;
       border-radius: vw(10);
@@ -468,15 +486,15 @@ export default {
   }
 }
 @media screen and (max-width: 1260px) {
-  .modalTrue {
-    transform: scale(1) !important;
-    right: 0%;
-    transition: 0.7s;
-  }
-  .Modal {
+    .Modal {
     position: absolute;
     transition: 0.7s;
     transform: scale(0);
+  }
+  .modalTrue {
+    transform: scale(1);;
+    right: 0%;
+    transition: 0.7s;
   }
 }
 @media screen and (max-width: 1024px) {
@@ -702,6 +720,12 @@ export default {
 
     }
   }
+}
+@media screen and (max-width: 593px) {
+  .modalTrue {
+    transform: scale(1);
+    right: 0%;
+    transition: 1s;
   }
 }
 @media screen and (max-width: 425px) {
@@ -717,15 +741,20 @@ export default {
   }
   .Modal {
     position: absolute;
-    transition: 0.7s;
+    z-index: 222;
     transform: scale(0);
-    left: 40%;
-    .modal {
-    // text-align: center;
-    max-width: vw(900);
-    min-height: vw(2500);
-    border-radius: vw(20);
-    // background-color: $white;
+    transition: 1s;
+  }
+  .Modal .modal .popa .modal__name {
+    font-size: 3vmin !important;
+    line-height: 3vmin !important;
+  }
+  .modal {
+    text-align: center !important;
+    max-width: vmin(200) !important;
+    height: 150vmin !important;
+    border-radius: vmin(10) !important;
+    position: relative !important;
     .popa {
       & .modal__setting {
         margin-top: vw(98);

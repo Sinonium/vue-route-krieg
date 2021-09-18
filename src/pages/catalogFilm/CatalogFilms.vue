@@ -160,7 +160,7 @@ import CatalogSecond from "./components/CatalogSecond.vue";
 import CatalogThird from "./components/CatalogThird.vue";
 import SheduleWeekFirst from "./components/SheduleWeekFirst.vue";
 import SheduleWeekSecond from "./components/SheduleWeekSecond.vue";
-import SheduleWeekThird from "./components/SheduleWeekSThird.vue";
+import SheduleWeekThird from "./components/SheduleWeekThird.vue";
 
 export default {
   components: {
@@ -551,11 +551,6 @@ export default {
         const ScheduleAddress = await response.json();
         this.ScheduleAddres = ScheduleAddress;
       };
-      // const AutoCatalogFilms = async () => {
-      //   const response = await fetch("http://localhost:3000/ScheduleAddres");
-      //   const AutoCatalogFilmss = await response.json();
-      //   this.AutoCatalogFilms = AutoCatalogFilmss;
-      // };
       const catalogFilmsWeek = async () => {
         const response = await fetch("http://localhost:3000/catalogFilmsWeek");
         const catalogFilmsWeekk = await response.json();
@@ -568,7 +563,6 @@ export default {
         const catalogFilmsMonthss = await response.json();
         this.catalogFilmsMonths = catalogFilmsMonthss;
       };
-      // setTimeout(AutoCatalogFilms,1500)
       setTimeout(catalogFilmsWeek, 1200);
       ScheduleAddres();
       catalogFilmsMonths();
@@ -582,10 +576,7 @@ export default {
 @import "@/assets/scss/index.scss";
 .content {
   .Schedule__row {
-    padding-top: vw(100);
     padding-right: vw(60);
-    position: absolute;
-    top: vw(60);
     .Schedule__films {
       width: vw(1111);
     }
@@ -618,10 +609,7 @@ export default {
 @media screen and (max-width: 584px) {
   .content {
     .Schedule__row {
-      padding-top: vmin(100);
       padding-right: vmin(60);
-      position: absolute;
-      top: vmin(60);
       .Schedule__films {
         width: vmin(1111);
       }

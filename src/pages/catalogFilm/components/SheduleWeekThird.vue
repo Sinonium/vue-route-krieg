@@ -1,5 +1,5 @@
 <template>
-  <div class="Schedule__week">
+  <div class="Schedule__week ScheduleWeek">
     <div
       class="col-2"
       @click="currentWeek('MondayThird')"
@@ -12,7 +12,7 @@
     </div>
     <div
       class="col-2"
-      @click="currentWeek('c')"
+      @click="currentWeek('TuesdayThird')"
       :class="{ active: this.currentWeekThird === 'TuesdayThird' }"
     >
       <div class="catalog__films-item">
@@ -71,21 +71,141 @@
       </div>
     </div>
   </div>
+  <splide :options="options" class="Schedule__week ScheduleWeekSlider">
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('MondayThird')"
+        :class="{ active: this.currentWeekThird === 'MondayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Monday</h3>
+          <span>26.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('TuesdayThird')"
+        :class="{ active: this.currentWeekThird === 'TuesdayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Tuesday</h3>
+          <span>27.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('WednesdayThird')"
+        :class="{ active: this.currentWeekThird === 'WednesdayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Wednesday</h3>
+          <span>28.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('ThursdayThird')"
+        :class="{ active: this.currentWeekThird === 'ThursdayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Thursday</h3>
+          <span>29.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('FridayThird')"
+        :class="{ active: this.currentWeekThird === 'FridayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Friday</h3>
+          <span>30.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('SaturdayThird')"
+        :class="{ active: this.currentWeekThird === 'SaturdayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Saturday</h3>
+          <span>31.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('SundayThird')"
+        :class="{ active: this.currentWeekThird === 'SundayThird' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Sunday</h3>
+          <span>32.05</span>
+        </div>
+      </div>
+    </splide-slide>
+  </splide>
 </template>
 
 <script>
+import { Splide, SplideSlide } from "@splidejs/vue-splide";
+import "@splidejs/splide/dist/css/themes/splide-default.min.css";
+
 export default {
   props: ["catalogFilmsWeek", "currentWeekThird"],
+  components: {
+    Splide,
+    SplideSlide,
+  },
+  data() {
+    return {
+      sliderScheduleWeek: true,
+      options: {
+        rewind: false,
+        gap: "1rem",
+        perPage: 4,
+        pagination: false,
+        arrows: false,
+      },
+    };
+  },
   methods: {
     currentWeek(week) {
-      this.$emit('current' , week)
+      this.$emit("current", week);
     },
   },
+  // updated(window) {
+  //     if(document.documentElement.clientWidth <= 592){
+  //       this.sliderScheduleWeek = false
+  //       console.log(this.sliderScheduleWeek)
+  //     }
+  //     if(document.documentElement.clientWidth >= 593) {
+  //       console.log(this.sliderScheduleWeek)
+  //       this.sliderScheduleWeek = true
+  //     }
+  // }
 };
 </script>
-
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/index.scss";
+.ScheduleWeek {
+  display: flex;
+}
+.Schedule__week.ScheduleWeekSlider {
+  display: none;
+}
 .Schedule__week {
   display: flex;
   flex-wrap: nowrap;
@@ -95,7 +215,8 @@ export default {
     margin-top: vw(5);
     &:hover {
       background: lighten($purple, 1.9%);
-      h3 , span {
+      h3,
+      span {
         color: white;
       }
     }
@@ -135,12 +256,43 @@ export default {
 .active {
   background: purple;
   .catalog__films-item {
-    h3 , span {
+    h3,
+    span {
       color: white !important;
     }
   }
 }
 @media screen and (max-width: 592px) {
+  .ScheduleWeek {
+    display: none !important;
+  }
+  .Schedule__week.ScheduleWeekSlider {
+    display: block !important;
+    overflow: hidden;
+  }
+  .splide {
+    .splide__track {
+      .splide__list {
+        width: 25%;
+        overflow: hidden;
+      }
+    }
+  }
+  // .splide.is-active .splide__list {
+  //   width: 25% ;
+  //   overflow: hidden ;
+  // }
+  // .splide__track {
+  //   .splide__list {
+  //   width: 1000px ;
+  //   overflow: hidden ;
+  // }
+  // }
+  // #splide01-list {
+  //   width: 1000px ;
+  //   overflow: hidden ;
+  // }
+
   .Schedule__week {
     justify-content: center;
     align-items: center;
