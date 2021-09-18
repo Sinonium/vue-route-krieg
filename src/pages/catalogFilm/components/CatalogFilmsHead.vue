@@ -6,7 +6,7 @@
         <li class="Schedule__month-item">
           <span
             @click="handelMonth('May')"
-            :class="{ active: currentMonth === 'May' }"
+            :class="{ active__month: currentMonth === 'May' }"
           >
             May
           </span>
@@ -14,7 +14,7 @@
         <li class="Schedule__month-item">
           <span
             @click="handelMonth('June')"
-            :class="{ active: currentMonth === 'June' }"
+            :class="{ active__month: currentMonth === 'June' }"
           >
             June
           </span>
@@ -22,7 +22,7 @@
         <li class="Schedule__month-item">
           <span
             @click="handelMonth('July')"
-            :class="{ active: currentMonth === 'July' }"
+            :class="{ active__month: currentMonth === 'July' }"
           >
             July
           </span>
@@ -30,7 +30,7 @@
         <li class="Schedule__month-item">
           <span
             @click="handelMonth('September')"
-            :class="{ active: currentMonth === 'September' }"
+            :class="{ active__month: currentMonth === 'September' }"
           >
             September
           </span>
@@ -38,7 +38,7 @@
         <li class="Schedule__month-item">
           <span
             @click="handelMonth('October')"
-            :class="{ active: currentMonth === 'October' }"
+            :class="{ active__month: currentMonth === 'October' }"
           >
             October
           </span>
@@ -46,7 +46,7 @@
         <li class="Schedule__month-item">
           <span
             @click="handelMonth('November')"
-            :class="{ active: currentMonth === 'November' }"
+            :class="{ active__month: currentMonth === 'November' }"
           >
             November
           </span>
@@ -86,7 +86,7 @@ export default {
 
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
-.active {
+.active__month {
   color: $purple !important;
 }
 .Schedule__head {
@@ -172,12 +172,12 @@ export default {
     .Schedule__month-nav {
       .Schedule__month-list {
         display: flex;
-        flex-wrap: wrap;
+        flex-wrap: nowrap;
         .Schedule__month-item {
           margin-left: vmin(10);
           cursor: pointer;
           span {
-            @include font(vmin(14), bold, vmin(20), $greyBlue60);
+            @include font(vmin(12), bold, vmin(20), $greyBlue60);
             transition: 0.5s;
           }
         }

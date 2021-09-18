@@ -10,10 +10,12 @@
   <Header
     @handleShowModal="this.showModal = !this.showModal"
     :showModal="showModal"
+    @click="toggle = !toggle"
   />
-  <!-- <Modal
+  <Modal
+  @toggleHidden="this.showModal = false"
     :showModal="showModal"
-  /> -->
+  />
   <div class="container">
     <router-view />
     <Footer />

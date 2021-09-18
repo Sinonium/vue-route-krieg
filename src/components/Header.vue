@@ -343,6 +343,7 @@ export default {
             }
               &__search{
                   margin-left: vw(30);
+              }
         & input{
           & svg:last-child {
             margin-left: 2vw;
@@ -351,10 +352,14 @@ export default {
       }
     }
 }
+}
 @media screen and (max-width: 580px){
     .header{
         &__logo{
             font-size: vmin(10);
+        }
+    }
+}
 @media screen and (max-width: 578px) {
   .header {
     &__logo {

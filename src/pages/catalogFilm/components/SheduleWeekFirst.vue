@@ -1,5 +1,5 @@
 <template>
-  <div class="Schedule__week">
+  <div class="Schedule__week ScheduleWeek">
     <div
       class="col-2"
       @click="currentWeek('MondayFirst')"
@@ -71,6 +71,92 @@
       </div>
     </div>
   </div>
+  <splide :options="options" class="Schedule__week ScheduleWeekSlider">
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('MondayFirst')"
+        :class="{ active: this.currentWeekFirst === 'MondayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Monday</h3>
+          <span>26.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('TuesdayFirst')"
+        :class="{ active: this.currentWeekFirst === 'TuesdayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Tuesday</h3>
+          <span>27.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('WednesdayFirst')"
+        :class="{ active: this.currentWeekFirst === 'WednesdayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Wednesday</h3>
+          <span>28.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('ThursdayFirst')"
+        :class="{ active: this.currentWeekFirst === 'ThursdayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Thursday</h3>
+          <span>29.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('FridayFirst')"
+        :class="{ active: this.currentWeekFirst === 'FridayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Friday</h3>
+          <span>30.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('SaturdayFirst')"
+        :class="{ active: this.currentWeekFirst === 'SaturdayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Saturday</h3>
+          <span>31.05</span>
+        </div>
+      </div>
+    </splide-slide>
+    <splide-slide>
+      <div
+        class="col-2"
+        @click="currentWeek('SundayFirst')"
+        :class="{ active: this.currentWeekFirst === 'SundayFirst' }"
+      >
+        <div class="catalog__films-item">
+          <h3>Sunday</h3>
+          <span>32.05</span>
+        </div>
+      </div>
+    </splide-slide>
+  </splide>
 </template>
 
 <script>
@@ -80,22 +166,21 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 export default {
   props: ["catalogFilmsWeek", "currentWeekFirst"],
   components: {
-        Splide,
-        SplideSlide,
+    Splide,
+    SplideSlide,
   },
   data() {
     return {
+      sliderScheduleWeek: true,
       options: {
-                rewind: true,
-                gap: "20rem",
-                perPage: 1,
-		            pagination : false,
-                arrows: false,
-                autoplay: true,
-                speed: 800,
+        rewind: false,
+        gap: "1rem",
+        perPage: 4,
+        pagination: false,
+        arrows: false,
       },
-    }
-  }, 
+    };
+  },
   methods: {
     currentWeek(week) {
       this.$emit("current", week);
@@ -104,8 +189,14 @@ export default {
 };
 </script>
 
-<style lang="scss" scoped>
+<style lang="scss">
 @import "@/assets/scss/index.scss";
+.ScheduleWeek {
+  display: flex;
+}
+.Schedule__week.ScheduleWeekSlider {
+  display: none;
+}
 .Schedule__week {
   display: flex;
   flex-wrap: nowrap;
@@ -163,6 +254,36 @@ export default {
   }
 }
 @media screen and (max-width: 592px) {
+  .ScheduleWeek {
+    display: none !important;
+  }
+  .Schedule__week.ScheduleWeekSlider {
+    display: block !important;
+    overflow: hidden;
+  }
+  .splide {
+    .splide__track {
+      .splide__list {
+        width: 25%;
+        overflow: hidden;
+      }
+    }
+  }
+  // .splide.is-active .splide__list {
+  //   width: 25% ;
+  //   overflow: hidden ;
+  // }
+  // .splide__track {
+  //   .splide__list {
+  //   width: 1000px ;
+  //   overflow: hidden ;
+  // }
+  // }
+  // #splide01-list {
+  //   width: 1000px ;
+  //   overflow: hidden ;
+  // }
+
   .Schedule__week {
     justify-content: center;
     align-items: center;
