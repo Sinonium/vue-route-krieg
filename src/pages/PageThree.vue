@@ -29,7 +29,7 @@
                     <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd" d="M112 182C150.66 182 182 150.66 182 112C182 73.3401 150.66 42 112 42C73.3401 42 42 73.3401 42 112C42 150.66 73.3401 182 112 182Z" stroke="#8833FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     <path d="M62 160.91C74.7106 173.922 92.4509 182 112.078 182V182C150.738 182 182.078 150.66 182.078 112C182.078 73.3401 150.738 42 112.078 42C105.261 42 98.6727 42.9742 92.4432 44.7911" stroke="#8833FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
                     </svg>
-                    <span>320 h</span>
+                    <span>{{timeSpent}} h</span>
                 </div>
             </div>
             <div class="stats__block__time-spent-watching-shows">
@@ -58,10 +58,10 @@
                     </svg>
                  </div>
                  <div class="time__spent__movies-content">
-                     <svg class="progress-ring" width="54" height="54">
-                         <!-- <circle class="progress-ring__circle" stroke="#8833FF" fill="transparent" stroke-width="3" cx="26" cy="26" r="18"/> -->
-                        <circle class="progress-ring__circle" stroke="#8833FF" opacity="0.1" fill="transparent" stroke-width="3" cx="18" cy="18" r="17"/>
-                     </svg>
+                     <svg width="54" height="54" viewBox="0 0 54 54" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path opacity="0.1" fill-rule="evenodd" clip-rule="evenodd" d="M27 52C40.8071 52 52 40.8071 52 27C52 13.1929 40.8071 2 27 2C13.1929 2 2 13.1929 2 27C2 40.8071 13.1929 52 27 52Z" stroke="#8833FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    <path d="M37.8447 49.5316C46.2205 45.4928 51.9998 36.9213 51.9998 27C51.9998 19.3258 48.5419 12.4591 43.0993 7.8732" stroke="#8833FF" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
                     <span class=time>{{hours.h}}</span>
                     <span>hours</span>
                     <span class=time>{{hours.m}}</span>
@@ -92,6 +92,8 @@
                                 <span>
                                     MO
                                 </span>
+                                <div class="background">
+                                </div>
                             </li>
                              <li>
                                 <div class="scale">
@@ -100,6 +102,8 @@
                                 <span>
                                     TU
                                 </span>
+                                <div class="background">
+                                </div>
                             </li>
                              <li>
                                 <div class="scale">
@@ -108,6 +112,7 @@
                                 <span>
                                     WE
                                 </span>
+                                <div class="background"></div>
                             </li>
                              <li>
                                 <div class="scale">
@@ -116,6 +121,7 @@
                                 <span>
                                     TH
                                 </span>
+                                <div class="background"></div>
                             </li>
                              <li>
                                 <div class="scale">
@@ -124,6 +130,7 @@
                                 <span>
                                     FR
                                 </span>
+                                <div class="background"></div>
                             </li>
                              <li>
                                 <div class="scale">
@@ -132,6 +139,7 @@
                                 <span>
                                     SA
                                 </span>
+                                <div class="background"></div>
                             </li>
                              <li>
                                 <div class="scale">
@@ -140,9 +148,11 @@
                                 <span>
                                     SU
                                 </span>
+                                <div class="background"></div>
                             </li>
                         </ul>
                     </div>
+                    
                 </div>
             </div>
             <div class="stats__block__last-year-time">
@@ -292,17 +302,17 @@
                 </div>
                 <div class="films-watched">
                     <h4>Films Watched</h4>
-                    <span>240</span>
+                    <span>98</span>
                     <p>Films</p>
                 </div>
                 <div class="watched-shows">
                     <h4>Watched Shows</h4>
-                    <span>240</span>
+                    <span>43</span>
                     <p>Shows</p>
                 </div>
                 <div class="shows-abandoned">
                     <h4>Shows Abandoned</h4>
-                    <span>240</span>
+                    <span>65</span>
                     <p>Shows</p>
                 </div>
             </div>
@@ -406,61 +416,74 @@ export default {
             ],
             progress: [],
             hours: {},
+            timeSpent: null,
             data: '200.2,0'
 
         }
     },
     methods: {
-        cirle(){
-            $(document).ready(function(){
-  $('.dial').each(function () { 
-
-            var elm = $(this);
-            var color = elm.attr("data-fgColor");  
-            var perc = elm.attr("value");  
-
-            elm.knob({ 
-                 'value': 0, 
-                  'min':0,
-                  'max':100,
-                  "skin":"tron",
-                  "readOnly":true,
-                  "thickness":.1,                 'dynamicDraw': true,                "displayInput":false
-            });
-
-            $({value: 0}).animate({ value: perc }, {
-                duration: 2000,
-                easing: 'swing',
-                progress: function () {                  elm.val(Math.ceil(this.value)).trigger('change')
+        animation() {
+            const animDiv = document.querySelector('.SortSystem1')
+            const sinonium = document.querySelector('.sinonium')
+            const nonium1 = document.querySelector('.yapona')
+            const s1 = document.querySelector('.mat')
+            const sort = document.querySelector('.sort')
+            const rt1 = document.querySelector('.qwe')
+            const system = document.querySelector('.system')
+            animDiv.classList.add('SortSystem')
+            animDiv.style.display = "block"
+            sinonium.style.opacity = "0";
+            s1.style.opacity = "0";
+            sort.style.opacity = "0";
+            system.style.opacity = "0";
+            setTimeout(() => {
+                sinonium.style.opacity = "1";
+            }, 17000);
+            setTimeout(() => {
+                system.style.opacity = "1";
+            }, 17500);
+            setTimeout(() => {
+                sort.style.opacity = "1";
+            }, 18000);
+            setTimeout(() => {
+                s1.style.opacity = "1";
+            }, 18600);
+            setTimeout(() => {
+                let move = 73
+                let id = setInterval(() => {
+                    if (move !== 44.5){
+                    move -= 0.5
+                    sort.style.left = move + '%'
+                    }
+                }, 50);
+                if (move <= 44.5) {
+                    clearInterval(id)
                 }
-            });
-
-            //circular progress bar color
-            $(this).append(function() {
-                elm.parent().parent().find('.circular-bar-content').css('color',color);
-                elm.parent().parent().find('.circular-bar-content label').text(perc+'%');
-            });
-
-            });
-   
-  function progressBar(percent, $element) {
-	var progressBarWidth = percent * $element.width() / 100;
-	$element.find('div').animate({ width: progressBarWidth }, 1500).html(percent + "%&nbsp;");
-  }
-  
-  progressBar(75, $('#progressBar'));
-  
-  progressBar(25, $('#progressBar2'));
-  
- });
-        },
+            }, 22500);
+            setTimeout(() => {
+                rt1.style.opacity = '0.4'
+            }, 25500);
+            setTimeout(() => {
+                rt1.style.display = "none";
+                nonium1.style.display = "none";
+                system.style.display = "none";
+                s1.style.display = "none";
+                sort.style.color = 'rgb(226, 36, 226)'
+                sinonium.style.color = 'cyan'
+            }, 26200);
+            setTimeout(() => {
+                animDiv.style.display = "none"
+                animDiv.classList.remove('SortSystem')
+            }, 32300);
+        }
     },
     mounted() {
         this.hours = this.timeSpentAll.map((item)=> {
             return (+item.time.split(':')[0]*3600) + (+item.time.split(':')[1] * 60) + (+item.time.split(':')[2])
         }).reduce((a,b) => (a+b))
         this.hours = {h: Math.floor(this.hours / 3600), m: Math.floor(this.hours % 3600 /60), s: this.hours % 3600 % 60}
-        console.log(this.hours);
+        this.timeSpent = this.hours.h + 240
+        console.log(this.timeSpent);
         this.timeSpentAll.sort((a,b) => ((+b.time.split(':')[0]*3600) + (+b.time.split(':')[1]) * 60 + (+b.time.split(':')[2])) > ((+a.time.split(':')[0]*3600) + (+a.time.split(':')[1]) * 60+(+a.time.split(':')[2])) ? 1 : -1)
         this.timeSpentAll.splice(8)
         this.timeSpentAll.forEach(item=> {
@@ -599,7 +622,8 @@ export default {
                 align-items: center;
                 svg{
                     width: vw(54);
-                    height: vw(54)
+                    height: vw(54);
+                    margin-right: vw(30);
                 }
                 span{
                     @include font(vw(18), 600, vw(30), $greyBlue70);
@@ -656,6 +680,7 @@ export default {
                     margin: vw(-182) vw(111) vw(30) vw(50);
                     li{
                         margin-right: vw(42);
+                        position: relative;
                         .scale{
                                 height: vw(180);
                                 width: vw(10);
@@ -674,9 +699,23 @@ export default {
                         span{
                             @include font(vw(12), 800, vw(20), $greyBlue80);
                         }
+                        .background{
+                        opacity: 0;
+                        position: relative;
+                        position: absolute;
+                        width: vw(60);
+                        height: vw(350);
+                        left: vw(-22);
+                        bottom: vw(-27);
+                        background-color: $blue;
+                    }
+                    .background:hover{
+                        opacity: 0.1;
+                    }
                     };
                 }
             }
+            
         }
         &__last-year-time{
             grid-area: F;

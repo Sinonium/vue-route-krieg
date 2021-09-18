@@ -58,7 +58,7 @@ ul {
 }
 .container {
   max-width: vw(1510);
-  margin: vw(-1455) auto 0;
+  margin: 0 auto;
 }
 #nav .router-link-exact-active {
   color: #42b983;

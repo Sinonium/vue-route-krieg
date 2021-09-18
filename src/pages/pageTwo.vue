@@ -391,4 +391,88 @@ export default {
     text-align: center;
   }
 }
+
+@media screen and(max-width:768px) {
+  .catalog__panel-sort{
+  max-width: vw(350);
+  ul {
+    li{
+      @include font (vw(18), 800, vw(20), $greyBlue70);
+      button{
+        margin: 0 vw(26) 0 auto;
+      }
+    }
+  }
+}
+.catalog__panel-genre{
+  width: vw(350);
+  &-title{
+    display: flex;
+    & span{
+      @include font(vw(20), 800, vw(20), $greyBlue50);
+      margin: vw(40) auto vw(40) vw(35);
+    } 
+  }
+  ul{
+    li{
+       margin-bottom: vw(15);
+    }
+    li:last-child{
+      margin-bottom: vw(45);
+    }
+  }
+}
+.genres__list{
+  padding: vw(15) vw(10);
+  height: vw(75);
+  &-title{
+    @include font(vw(18), 800, vw(20), $greyBlue60);
+    margin: auto auto auto vw(25);
+  }
+  &-count{
+    @include font(vw(17), 800, vw(20), $greyBlue60);
+    margin: auto 10px;
+  }
+}
+  .active{
+    .genres__list-title{
+      @include font(vw(18), 800, vw(20), $purple);
+   }
+}
+  .catalog__block{
+  &__item{
+    margin: 0 vw(15) vw(30);
+    &-img{
+      img{
+        border-radius: vw(10);
+        max-width: vw(686);
+        height: vw(500);
+      }
+    }
+    &-seasons{
+      padding: vw(7) vw(24);
+      @include font(vw(18), 800, vw(20), $white);
+    }
+    &-title{
+      @include font(vw(23), 700, vw(30), $white);
+    }
+  .IMDb-rate{
+    top: 10%;
+    img{
+      max-width: vw(50);
+      height: vw(26);
+    }
+    span{
+      @include font(vw(18), 800, vw(20), $white);
+      margin-left: vw(16);
+    }
+    }
+    button{
+      svg{
+         max-width: vw(60);
+      }
+    }
+  }
+}
+}
 </style>
