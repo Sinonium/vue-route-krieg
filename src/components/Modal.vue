@@ -275,7 +275,6 @@ export default {
   methods: {
     toggleHiddenModal() {
       this.$emit("toggleHidden");
-      console.log(showModal);
     },
   },
   updated(showModal) {
@@ -949,5 +948,323 @@ a {
   }
   }
 }
-
+// @media screen and (max-width: 700px) {
+//   .Modal {
+//     .modal {
+//       height: 84vw;
+//       .modal__list {
+//         grid-template-columns: 9.125vw 9.125vw;
+//         grid-template-rows: 10vw 10vw 10vw 10vw;
+//         grid-column-gap: 0.1875vw;
+//         grid-row-gap: 3.0625vw;
+//         .modal__list-column {
+//           padding: vw(15);
+//           svg {
+//             margin: 2.25vw 3.125vw 1.3125vw 2.125vw;
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// @media screen and (max-width: 700px) {
+//   .Modal {
+//     .modal {
+//       height: 86vw;
+//     }
+//   }
+// }
+// @media screen and (max-width: 612px) {
+//   .Modal {
+//     .modal {
+//       height: 92vw;
+//       .modal__list {
+//         grid-template-columns: 9.125vw 9.125vw;
+//         grid-template-rows: 11vw 11vw 11vw 11vw;
+//         grid-column-gap: 0.1875vw;
+//         grid-row-gap: 3.0625vw;
+//         .modal__list-column {
+//           span {
+//             font-size: vw(19);
+//           }
+//         }
+//       }
+//     }
+//     .modal-2 {
+//       height: 30vw;
+//       padding: vw(15) vw(10);
+//       width: 49vw;
+//       .modal-2__head {
+//         display: flex;
+//         flex-direction: column;
+//         & svg:first-child {
+//           margin-top: 2vw;
+//         }
+//         & span {
+//           margin-top: 2vw;
+//           margin-left: -3vw;
+//           font-size: vw(18);
+//         }
+//         & svg:last-child {
+//           margin-top: 2vw;
+//           margin-left: -1.8125vw;
+//         }
+//       }
+//       .modal-2__list {
+//         ul {
+//           margin-left: 1.5vw;
+//           li {
+//             font-size: vw(16);
+//           }
+//         }
+//       }
+//     }
+//   }
+// }
+// @media screen and (max-width: 593px) {
+//   .modalTrue {
+//     transform: scale(1) !important;
+//     right: 0%;
+//     transition: 1s;
+//   }
+//   .overlaySowModal {
+//     position: fixed;
+//     top: 0;
+//     left: 0;
+//     width: 100%;
+//     height: 100%;
+//     background: rgba(0,0,0,0.5);
+//     display: block;
+//     z-index: 1;
+//   }
+//   .Modal {
+//     position: absolute;
+//     z-index: 222;
+//     transform: scale(1) !important;
+//     transition: 1s;
+//     right: -10%;
+//   }
+//   .Modal .modal .popa .modal__name {
+//     font-size: 3vmin !important;
+//     line-height: 3vmin !important;
+//   }
+//   .modal {
+//     text-align: center !important;
+//     max-width: vmin(200) !important;
+//     height: 150vmin !important;
+//     border-radius: vmin(10) !important;
+//     position: relative !important;
+//     .popa {
+//       display: flex;
+//       & .modal__setting {
+//         width: 5vmin;
+//         height: 5vmin;
+//         margin-left: -3vmin !important;
+//       }
+//     }
+//     &__avatar {
+//       margin: vmin(30) 0 vmin(20) vmin(20);
+//       height: 20vmin;
+//       width: 20vmin;
+//     }
+//     &__name {
+//       font-size: 40vmin !important;
+//     }
+//     &__subscription {
+//       @include font(vmin(20) !important, 700 !important, vmin(30) !important);
+//       margin: vmin(20) vmin(80) vmin(0) vmin(20);
+//     }
+//     &__data {
+//       @include font(vmin(20) !important, 700 !important, vmin(30) !important);
+//       margin-right: vmin(20);
+//     }
+//     &__sub__line {
+//       height: vmin(5) !important;
+//       width: 40vmin !important;
+//       position: relative;
+//       background-color: #f0f2f7;
+//       border-radius: vmin(5);
+//       margin: vmin(20) vmin(23) vmin(15) !important;
+//       padding: vmin(2) !important;
+//       & span {
+//         position: relative;
+//         height: 100% !important;
+//         background-color: #8833ff;
+//         border-radius: vmin(5) !important;
+//         display: block;
+//       }
+//     }
+//   }
+//   .modal__list {
+//     margin-top: vmin(43);
+//     display: grid;
+//     grid-template-columns: 23.125vmin 21.125vmin !important;
+//     grid-template-rows: 11vmin 11vmin 11vmin 12vmin !important;
+//     grid-column-gap: 2.1875vmin !important;
+//     grid-row-gap: 4.0625vmin !important;
+//     margin-top: 1vmin;
+//     align-items: center;
+//     justify-content: center;
+//     .modal__list-column {
+//       background-color: $greyBlue99;
+//       border-radius: vmin(10);
+//       cursor: pointer;
+//       text-align: center;
+//       transition: 0.3s;
+//       & svg {
+//         margin: vmin(36) vmin(50) vmin(21) vmin(50);
+//       }
+//       & span {
+//         @include font(
+//           vmin(8) !important,
+//           700 !important,
+//           vmin(25) !important,
+//           $greyBlue60
+//         );
+//         margin: vmin(30) 0 vmin(30) 0;
+//       }
+//     }
+//     .modal__list-column:hover {
+//       background-color: #ff6633;
+//       & svg path {
+//         fill: $white;
+//       }
+//       & span {
+//         color: $white;
+//       }
+//     }
+//   }
+//   .modal__episode {
+//     max-width: vmin(280) !important;
+//     max-height: vmin(195) !important;
+//     margin-top: vmin(10) !important;
+//     margin-left: 0 !important;
+//     & img {
+//       max-width: 110vmin !important;
+//       max-height: 55vmin !important;
+//       margin-top: vmin(10) !important;
+//     }
+//     &-zoom {
+//       height: 6vmin !important;
+//       width: 6vmin !important;
+//       margin: vmin(25) 0 0 vmin(15) !important;
+//       cursor: pointer;
+//     }
+//     &-play {
+//       width: 20vmin !important;
+//       height: 15vmin !important;
+//       margin: vmin(50) vmin(50) !important;
+//     }
+//     & span {
+//       @include font(
+//         vmin(14) !important,
+//         700 !important,
+//         vmin(25) !important,
+//         $white
+//       );
+//       margin: 0 0 0.9375vmin 4.5625vmin !important;
+//     }
+//   }
+//   .modal-2 {
+//     margin-top: vmin(30) !important;
+//     max-width: vmin(360) !important;
+//     height: 62.33333vmin !important;
+//     border-radius: vw(10) !important;
+//     & span {
+//       font-size: vmin(17) !important;
+//       margin: -1vmin 9vmin -36px 4.6vmin;
+//       cursor: pointer;
+//     }
+//     & svg {
+//       margin-left: 0 !important;
+//       margin-top: 0 !important;
+//       margin: 2.33333vmin 43.33333vmin 2vmin 7.66667vmin !important;
+//       width: 10.66667vmin !important;
+//       height: 7.66667vmin !important;
+//     }
+//     & svg:last-child {
+//       cursor: pointer;
+//       margin: 1.33333vmin -25.66667vmin 0 6.66667vmin !important;
+//       width: 8.66667vmin !important;
+//       height: 0vmin;
+//     }
+//     &__list {
+//       display: flex;
+//       flex-wrap: wrap;
+//       & ul {
+//         margin-left: 2vmin !important;
+//         li {
+//           @include font(
+//             vmin(12) !important,
+//             700 !important,
+//             vmin(25) !important,
+//             $greyBlue60
+//           );
+//           margin-top: vmin(30);
+//         }
+//       }
+//     }
+//   }
+// }
+// @media screen and (max-width: 584px) {
+//   .modal {
+//     width: 100vmin;
+//     // max-width: 86.33333vmin !important;
+//     height: 100vmin !important;
+//     border-radius: 2.66667vmin !important;
+//   }
+//   .modal__avatar {
+//     margin: 8vmin 0 5.33333vmin 5.33333vmin;
+//     height: 40vmin;
+//     width: 38vmin; 
+//   }
+//   .modal__list {
+//     margin-top: 11.46667vmin !important;
+//     grid-template-columns: 38.125vmin 36.125vmin !important;
+//     grid-template-rows: 50vmin 50vmin 50vmin 50vmin !important;
+//     grid-column-gap: 5.1875vmin !important;
+//     grid-row-gap: -8.9375vmin !important;
+//     margin-top: 1vmin !important;
+//   }
+//   .modal__list .modal__list-column span {
+//     font-size: 8vmin !important;
+//     line-height: 10vmin;
+//   }
+//   .Modal .modal .modal__list .modal__list-column svg {
+//     margin: 12.25vmin 3.125vmin 9.3125vmin 3.125vmin;
+//   }
+//   .Modal .modal .modal__list .modal__list-column {
+//     padding: 4vmin;
+//   }
+//   .modal__sub__line {
+//     height: 1.33333vmin !important;
+//     width: 87% !important;
+//     margin: 5.33333vmin 6.13333vmin 4vmin !important;
+//     padding: 0.53333vmin !important;
+//   }
+//   .Modal .modal .popa .modal__name {
+//     font-size: 10vmin !important;
+//     line-height: 10vmin !important;
+//   }
+//   .modal .popa .modal__setting {
+//     width: 27vmin;
+//     height: 19vmin;
+//     margin-left: -4vmin !important;
+//   }
+//   .modal__subscription {
+//     font-size: 9.33333vmin !important;
+//     line-height: 14vmin !important;
+//   }
+//   .modal__data {
+//     font-size: 10.33333vmin !important;
+//     font-weight: 700 !important;
+//     line-height: 12vmin !important;
+//     font-style: normal;
+//     color: #4d5e80;
+//     margin-right: 5.33333vmin;
+//   }
+//   .Modal {
+//     right: -100%;
+//   }
+// }
 </style>

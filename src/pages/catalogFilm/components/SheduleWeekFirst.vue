@@ -177,7 +177,7 @@ export default {
         gap: "5rem",
         perPage: 4,
         pagination: false,
-        arrows: false,
+        arrows: true,
       },
     };
   },
