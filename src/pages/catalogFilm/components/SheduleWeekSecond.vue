@@ -186,18 +186,9 @@ export default {
       this.$emit("current", week);
     },
   },
-  // updated(window) {
-  //     if(document.documentElement.clientWidth <= 592){
-  //       this.sliderScheduleWeek = false
-  //       console.log(this.sliderScheduleWeek)
-  //     }
-  //     if(document.documentElement.clientWidth >= 593) {
-  //       console.log(this.sliderScheduleWeek)
-  //       this.sliderScheduleWeek = true
-  //     }
-  // }
 };
 </script>
+
 <style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
 .ScheduleWeek {
@@ -268,34 +259,12 @@ export default {
   }
   .Schedule__week.ScheduleWeekSlider {
     display: block !important;
-    overflow: hidden;
   }
-  .splide {
-    .splide__track {
-        width: 25%;
-        overflow: hidden;
-    }
-  }
-  // .splide.is-active .splide__list {
-  //   width: 25% ;
-  //   overflow: hidden ;
-  // }
-  // .splide__track {
-  //   .splide__list {
-  //   width: 1000px ;
-  //   overflow: hidden ;
-  // }
-  // }
-  // #splide01-list {
-  //   width: 1000px ;
-  //   overflow: hidden ;
-  // }
-
   .Schedule__week {
     justify-content: center;
     align-items: center;
     .col-2 {
-      width: 90%;
+      width: 100%;
       margin-left: vmin(10);
       margin-top: vmin(5);
       &:hover {
@@ -306,16 +275,16 @@ export default {
         }
       }
       .catalog__films-item {
-        display: flex;
+        display: block !important;
         align-items: center;
         justify-content: space-between;
         h3 {
-          @include font(vmin(17), bold, vmin(20), $greyBlue50);
+          @include font(vmin(20), bold, vmin(20), $greyBlue50);
           padding: vmin(5);
           cursor: pointer;
         }
         span {
-          @include font(vmin(10), bold, vmin(20), $greyBlue70);
+          @include font(vmin(18), bold, vmin(20), $greyBlue70);
           transition: 0.6s;
           padding: vmin(5);
         }
