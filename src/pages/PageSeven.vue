@@ -6,11 +6,7 @@
       <img src="../assets/img/PageSeven/hero.png" alt="" class="heroImg" />
       <ul class="navbar-nav">
         <li v-for="(menu, index) in menuList" :key="index">
-          <router-link
-            class="nav-link active"
-            aria-current="page"
-            :to="menu.path"
-          >
+          <router-link class="nav-link" aria-current="page" :to="menu.path">
             {{ menu.name }}
           </router-link>
           <svg
@@ -401,6 +397,10 @@ export default {
       background-color: inherit;
       border: none;
     }
+    .hero__block-play .span {
+      margin-top: 3.875vw;
+      margin-left: 7.5vw;
+    }
     &-play {
       display: flex;
       button {
@@ -417,7 +417,7 @@ export default {
         font-family: SF Pro Display;
         font-style: normal;
         font-weight: bold;
-        font-size: 25px;
+        font-size: vw(25);
         line-height: 30px;
         color: #ffffff;
       }
@@ -579,15 +579,16 @@ export default {
 }
 @media screen and (max-width: 1700px) {
   .heroImg {
-    top: vw(190);
+    top: vw(120);
   }
 }
 @media screen and (max-width: 1400px) {
   .heroImg {
-    top: vw(220);
+    top: vw(130);
   }
+
   .hero__block-circle {
-    margin: 0 vmin(15) 0 0;
+    margin: 0 vw(15) 0 0;
   }
   .hero__block-play {
     .span {
@@ -603,26 +604,44 @@ export default {
     margin-top: vw(-10);
   }
   .hero__block-icon {
-    width: vmin(100);
-    height: vmin(100);
+    width: vw(60);
+    height: vw(60);
+  }
+}
+@media screen and (max-width: 1250px) {
+  .hero__block-play {
+    button {
+      img {
+        width: vw(200);
+        height: vw(200);
+      }
+    }
+  }
+  .hero__block-play {
+    .span {
+      margin-top: vw(20);
+    }
   }
 }
 
 @media screen and (max-width: 1200px) {
-  .heroImg {
-    top: vmin(360);
+  .hero__block {
+    .seasons {
+      margin-top: vw(150);
+    }
   }
   .hero__block-circle {
-    margin: 0 vmin(15) 0 0;
+    margin: 0 vw(15) 0 0;
   }
   .hero__block-icon {
-    width: vmin(100);
-    height: vmin(100);
+    width: vw(60);
+    height: vw(60);
   }
+
   .hero__block {
     .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(600);
+      padding: vw(33) 0 0 vw(35);
+      margin-right: vw(400);
     }
     button {
       img {
@@ -633,31 +652,31 @@ export default {
   }
 
   .logo {
-    width: vmin(400);
+    width: vw(400);
   }
 }
 
 @media screen and (max-width: 1100px) {
   .heroImg {
-    top: vw(250);
+    top: vw(130);
   }
-  .video{
-    .card{
-      .vbutton{
-        img{
-          margin-left:vw(-20);
+  .video {
+    .card {
+      .vbutton {
+        img {
+          margin-left: vw(-20);
         }
       }
     }
   }
   .hero__block-circle {
-    margin: 0 vmin(25) 0 0;
+    margin: 0 vw(15) 0 0;
   }
 
   .hero__block {
     .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(500);
+      padding: vw(33) 0 0 vw(35);
+      margin-right: vw(400);
     }
     .seasons {
       margin-top: vw(150);
@@ -680,27 +699,13 @@ export default {
 }
 @media screen and (max-width: 1000px) {
   .heroImg {
-    top: vw(260);
+    top: vw(130);
   }
 }
-@media screen and (max-width: 944px) {
-  .hero__block {
-    .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(400);
-    }
-  }
-  .hero__block-circle {
-    margin: 0 vmin(35) 0 0;
-  }
-}
+
 @media screen and (max-width: 900px) {
   .heroImg {
-    top: vw(270);
-  }
-  .hero__block-icon {
-    width: vmin(80);
-    height: vmin(80);
+    top: vw(130);
   }
 
   .card-text {
@@ -712,37 +717,28 @@ export default {
   font-size: 10px;
   margin-top: vw(-20);
 }
-.hero__block-play {
-  .span {
-    font-size: 20px;
-  }
-}
+
 @media screen and (max-width: 800px) {
   .heroImg {
-    top: vw(310);
+    top: vw(120);
   }
   .hero__block {
     .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(300);
+      padding: vw(33) 0 0 vw(35);
+      margin-right: vw(300);
     }
   }
-  .hero__block-play {
-    .span {
-      font-size: 18px;
-    }
-  }
+
   .card {
     span {
       margin-left: vw(-100);
       font-size: 10px;
     }
   }
-  .video{
-    .card{
-      .vbutton{
-        img{
-          
+  .video {
+    .card {
+      .vbutton {
+        img {
           width: vw(60);
           height: vw(60);
         }
@@ -753,12 +749,19 @@ export default {
 @media screen and (max-width: 700px) {
   .hero__block {
     .navbar-nav {
-      padding: vmin(33) 0 0 vmin(35);
-      margin-right: vmin(250);
+      padding: vw(33) 0 0 vw(35);
+      margin-right: vw(350);
     }
   }
-  .hero__block-circle {
-    margin: 0 vmin(35) 0 0;
+  .hero__block-play {
+    .span {
+      margin-top: vw(30);
+    }
+  }
+  .hero__block {
+    .seasons {
+      margin-top: vw(110);
+    }
   }
   .card-text {
     font-size: 10px;
@@ -772,15 +775,13 @@ export default {
 @media screen and (max-width: 630px) {
   .hero__block-play {
     .span {
-      font-size: 15px;
-      margin-top: 2vmin;
+      margin-top: vw(25);
     }
-    
   }
-   .hero__block {
-     .seasons{
-       margin-top: vw(110);
-     }
+  .hero__block {
+    .seasons {
+      margin-top: vw(110);
+    }
   }
   .card-text {
     font-size: 9px;
@@ -793,48 +794,46 @@ export default {
 }
 @media screen and (max-width: 600px) {
   .heroImg {
-    top: vw(330);
+    top: vw(140);
   }
   .lmdb {
     background-size: vw(40);
     background-repeat: no-repeat;
-
   }
   .hero__block {
     .navbar-nav {
-      svg{
+      svg {
         width: vw(10);
       }
-    }}
+    }
+  }
   .hero__block-play {
     .span {
-      font-size: 15px;
-      margin-top: 1vmin;
+      margin-top: vw(30);
     }
-    
   }
-   .hero__block {
-     .seasons{
-       margin-top: vw(100);
-     }
+  .hero__block {
+    .seasons {
+      margin-top: vw(100);
+    }
   }
-  .hero__block-logo-icons{
-    svg{
+  .hero__block-logo-icons {
+    svg {
       margin-top: vw(-5);
       width: vw(40);
     }
   }
-  }
-  @media screen and (max-width: 550px) {
+}
+@media screen and (max-width: 550px) {
   .heroImg {
-    top: vw(350);
+    top: vw(150);
   }
-   .hero__block {
-    p{
-     margin-top: vw(-10); 
+  .hero__block {
+    p {
+      margin-top: vw(-10);
     }
   }
-   .card-text {
+  .card-text {
     font-size: 8px;
     margin-top: vw(-8);
   }
@@ -842,10 +841,7 @@ export default {
     font-size: 7px;
     margin-top: vw(-40);
   }
-  .hero__block-icon {
-    width: vmin(60);
-    height: vmin(60);
-  }
+
   .card {
     span {
       margin-left: vw(-100);
@@ -855,16 +851,27 @@ export default {
 }
 @media screen and (max-width: 500px) {
   .heroImg {
-    top: vw(380);
+    top: vw(150);
   }
   .card-text2 {
     font-size: 7px;
     margin-top: vw(-50);
   }
 }
+.hero__block-play {
+  .span {
+    margin-top: vw(30);
+    margin-left: vw(120);
+  }
+}
+.hero__block {
+  .seasons {
+    margin-top: vw(130);
+  }
+}
 @media screen and (max-width: 450px) {
   .heroImg {
-    top: vw(400);
+    top: vw(160);
   }
   .card-text {
     font-size: 7px;
@@ -881,13 +888,10 @@ export default {
     }
   }
 }
-@media screen and (max-width: 420px) {
-  .heroImg {
-    top: vw(430);
-  }}
+
 @media screen and (max-width: 400px) {
   .heroImg {
-    top: vw(450);
+    top: vw(160);
   }
   .card-text {
     font-size: 6px;
@@ -899,43 +903,33 @@ export default {
   }
   .hero__block-play {
     .span {
-      font-size: 10px;
-      margin-top: 0vmin;
+      margin-top: vw(20);
     }
   }
   .hero__block {
-     .seasons{
-       margin-top: vw(90);
-     }
+    .seasons {
+      margin-top: vw(120);
+    }
   }
-  }
-  @media screen and (max-width: 390px) {
-  .heroImg {
-    top: vw(460);
-  }}
-  @media screen and (max-width: 370px) {
-  .heroImg {
-    top: vw(500);
-  }
+}
+
+@media screen and (max-width: 370px) {
   .card-text2 {
     font-size: 5px;
     margin-top: vw(-75);
   }
-  .video{
-    .card{
-      .vbutton{
-        img{
-          margin-left:vw(-30);
+  .video {
+    .card {
+      .vbutton {
+        img {
+          margin-left: vw(-30);
         }
       }
     }
   }
-  }
-  @media screen and (max-width: 340px) {
-  .heroImg {
-    top: vw(530);
-  }
-  .logo{
+}
+@media screen and (max-width: 340px) {
+  .logo {
     width: vw(400);
   }
   .card-text {
@@ -953,11 +947,17 @@ export default {
       font-size: 6px;
     }
   }
+  .hero__block-play {
+    .span {
+      margin-top: vw(10);
+    }
   }
-  @media screen and (max-width: 320px) {
-  .heroImg {
-    top: vw(560);
-  }}
+  .hero__block {
+    .seasons {
+      margin-top: vw(110);
+    }
+  }
+}
 </style>
 
 
