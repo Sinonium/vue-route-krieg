@@ -37,7 +37,7 @@
             </button>
           </div>
           <ul v-if="genresBoollean"> 
-            <li class="genres__list" @click="selectGenre(index)" v-for="(genre, index) in genres" :key="genre.title">
+            <li class="genres__list" @click="selectGenre(genre, index)" v-for="(genre, index,) in genres" :key="genre.title">
                 <span v-html="genre.img"></span>
                 <span class="genres__list-title"> {{genre.title}}</span>
                 <span class="genres__list-count"> {{genre.count}} </span>
@@ -206,10 +206,11 @@ export default {
       }
       
     },
-    selectGenre(id){
+    selectGenre(genre, id){
       const lala = Array.from(document.querySelectorAll('.genres__list'))
       lala.forEach(item => item.classList.remove('active'))
       lala[id].classList.add('active')
+      this.catalog = this.catalog.filter(item => item.genre.includes(genre.title))
     },
     selectPage(id){
       const lala = Array.from(document.querySelectorAll('.pages'))
