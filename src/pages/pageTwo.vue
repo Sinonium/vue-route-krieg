@@ -392,7 +392,7 @@ export default {
       flex-direction: column;
       margin: 0 vw(70) 0 vw(5);
       text-align: center;
-      max-height: vw(1000);
+      max-height: vw(1200);
       li{
         padding: vw(12.92) vw(17.55);
         border: 2px solid $greyBlue95;
