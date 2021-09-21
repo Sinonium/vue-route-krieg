@@ -177,7 +177,7 @@ export default {
         gap: "5rem",
         perPage: 4,
         pagination: false,
-        arrows: true,
+        arrows: false,
       },
     };
   },
@@ -260,17 +260,11 @@ export default {
   .Schedule__week.ScheduleWeekSlider {
     display: block !important;
   }
-  .splide {
-    .splide__track {
-        width: 25%;
-        overflow: hidden;
-    }
-  }
   .Schedule__week {
     justify-content: center;
     align-items: center;
     .col-2 {
-      width: 90%;
+      width: 100%;
       margin-left: vmin(10);
       margin-top: vmin(5);
       &:hover {
@@ -281,16 +275,16 @@ export default {
         }
       }
       .catalog__films-item {
-        display: flex;
+        display: block !important;
         align-items: center;
         justify-content: space-between;
         h3 {
-          @include font(vmin(17), bold, vmin(20), $greyBlue50);
+          @include font(vmin(20), bold, vmin(20), $greyBlue50);
           padding: vmin(5);
           cursor: pointer;
         }
         span {
-          @include font(vmin(10), bold, vmin(20), $greyBlue70);
+          @include font(vmin(18), bold, vmin(20), $greyBlue70);
           transition: 0.6s;
           padding: vmin(5);
         }
