@@ -29,11 +29,22 @@ export default {
 </script>
 <style lang="scss">
 @import "@/assets/scss/index.scss";
+@media screen and (max-width: 592px) {
+  .splide {
+    .splide__track {
+        width: 25%;
+        overflow: hidden;
+        .splide__slide {
+          width: 50vmin !important;
+        }
+    }
+  }
+}
 body {
   background: $bg-main;
   margin: 0;
 }
-ul {
+ul {  
   padding: 0;
   margin: 0;
   li {

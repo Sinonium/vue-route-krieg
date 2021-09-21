@@ -11,7 +11,8 @@
           <div
             v-for="monthSchdeule in catalogFilmsMonths"
             v-bind:key="monthSchdeule"
-            class="Schedule__films">
+            class="Schedule__films"
+          >
             <div v-if="currentMonth === monthSchdeule">
               <div
                 style="margin-top: 50px"
@@ -54,10 +55,10 @@
                   v-if="!currentWeekFirst.length"
                   :AutoCatalogFilmsFirst="AutoCatalogFilmsFirst"
                 />
-                <!-- <div
-                  v-if="!AutoCatalogFilms.length"
-                  class="catalogFilms__loading">
-                  </div> -->
+                <div
+                  v-if="!catalogFilms.length"
+                  class="catalogFilms__loading"
+                ></div>
               </div>
               <div
                 style="margin-top: 50px"
@@ -100,9 +101,6 @@
                   v-if="!currentWeekSecond.length"
                   :AutoCatalogFilms="AutoCatalogFilms"
                 />
-                <!-- <div
-                  v-if="!AutoCatalogFilms.length"
-                  class="catalogFilms__loading"></div> -->
               </div>
               <div
                 style="margin-top: 50px"
@@ -115,6 +113,10 @@
                 />
                 <CatalogThird
                   v-if="this.currentWeekThird === 'MondayThird'"
+                  :AutoCatalogFilms="AutoCatalogFilms"
+                />
+                <CatalogThird
+                  v-if="this.currentWeekThird === 'TuesdayThird'"
                   :AutoCatalogFilms="AutoCatalogFilms"
                 />
                 <CatalogThird
@@ -141,9 +143,6 @@
                   v-if="!currentWeekThird.length"
                   :AutoCatalogFilms="AutoCatalogFilms"
                 />
-                  <!-- <div
-                  v-if="!AutoCatalogFilms.length"
-                  class="catalogFilms__loading"></div> -->
               </div>
             </div>
           </div>
@@ -410,6 +409,7 @@ export default {
           imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film15.png"/>`,
         },
       ],
+      catalogFilms: [],
       currentMonth: "May",
       ScheduleAddres: {},
       catalogFilmsWeek: [],
@@ -541,7 +541,7 @@ export default {
           imageUrl: `<img src="~@/assets/img/catalog-films/catalog-film18.png"/>`,
         },
       ],
-      catalogFilmsMonths: []
+      catalogFilmsMonths: [],
     };
   },
   mounted() {
@@ -556,6 +556,13 @@ export default {
         const catalogFilmsWeekk = await response.json();
         this.catalogFilmsWeek = catalogFilmsWeekk;
       };
+      const catalogFilms = async () => {
+        const response = await fetch("http://localhost:3000/catalogFilms");
+        console.log(response);
+        const catalogFilmss = response.json();
+        this.catalogFilms = catalogFilmss;
+        console.log(this.catalogFilms);
+      };
       const catalogFilmsMonths = async () => {
         const response = await fetch(
           "http://localhost:3000/catalogFilmsMonths"
@@ -563,6 +570,7 @@ export default {
         const catalogFilmsMonthss = await response.json();
         this.catalogFilmsMonths = catalogFilmsMonthss;
       };
+      catalogFilms();
       setTimeout(catalogFilmsWeek, 1200);
       ScheduleAddres();
       catalogFilmsMonths();
@@ -583,27 +591,38 @@ export default {
   }
 }
 .catalogFilms__loading {
-  background: $bg-blueRgbDark;
-  height: vw(50);
-  width: vw(50);
-  border-radius: 50%;
-  position: absolute;
-  z-index: 2;
-  top: 50%;
-  left: 40%;
-  transform: translate(-50%, -50%);
-  animation: anim-catalogFilmsLoading 0.4s ease-in-out infinite alternate;
+  animation: anim-catalogFilmsLoading 0.3s ease-in-out;
 }
 @keyframes anim-catalogFilmsLoading {
   0% {
     transform: translate(-50%, -50%);
+    height: vw(50);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
+    width: vw(50);
     top: 50%;
     background: $bg-greenRgbLight;
+    left: 40%;
   }
   100% {
+    left: 40%;
+    height: vw(50);
+    border-radius: 50%;
+    position: absolute;
+    z-index: 2;
     transform: translate(-50%, -50%);
+    width: vw(50);
     background: $bg-blueRgbDark;
     top: 60%;
+  }
+}
+@media screen and (max-width: 592px) {
+  .splide {
+    .splide__track {
+      width: 25%;
+      overflow: hidden;
+    }
   }
 }
 @media screen and (max-width: 584px) {
@@ -613,30 +632,6 @@ export default {
       .Schedule__films {
         width: vmin(1111);
       }
-    }
-  }
-  .catalogFilms__loading {
-    background: $bg-blueRgbDark;
-    height: vmin(50);
-    width: vmin(50);
-    border-radius: 50%;
-    position: absolute;
-    z-index: 2;
-    top: 50%;
-    left: 40%;
-    transform: translate(-50%, -50%);
-    animation: anim-catalogFilmsLoading 0.4s ease-in-out infinite alternate;
-  }
-  @keyframes anim-catalogFilmsLoading {
-    0% {
-      transform: translate(-50%, -50%);
-      top: 50%;
-      background: $bg-greenRgbLight;
-    }
-    100% {
-      transform: translate(-50%, -50%);
-      background: $bg-blueRgbDark;
-      top: 60%;
     }
   }
 }
