@@ -64,7 +64,7 @@
           </svg>
           <span>Favorite</span>
         </router-link>
-        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
+        <div class="modal__list-column">
           <svg
             width="20"
             height="20"
@@ -80,7 +80,7 @@
             />
           </svg>
           <span>Watch Later</span>
-        </router-link>
+        </div>
         <router-link :to="{ name: 'PageThree' }" class="modal__list-column">
           <svg
             width="20"
@@ -149,7 +149,7 @@
           </svg>
           <span>History</span>
         </router-link>
-        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
+        <div class="modal__list-column">
           <svg
             width="19"
             height="18"
@@ -165,7 +165,7 @@
             />
           </svg>
           <span>Subscription</span>
-        </router-link>
+        </div>
       </div>
       <div class="modal__episode">
         <img src="..\assets\img\modal-img.png" alt="" />
@@ -275,7 +275,6 @@ export default {
   methods: {
     toggleHiddenModal() {
       this.$emit("toggleHidden");
-      console.log(showModal);
     },
   },
   updated(showModal) {
@@ -1284,7 +1283,7 @@ a {
 //   .modal__avatar {
 //     margin: 8vmin 0 5.33333vmin 5.33333vmin;
 //     height: 40vmin;
-//     width: 38vmin;
+//     width: 38vmin; 
 //   }
 //   .modal__list {
 //     margin-top: 11.46667vmin !important;

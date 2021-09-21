@@ -177,7 +177,7 @@ export default {
         gap: "5rem",
         perPage: 4,
         pagination: false,
-        arrows: false,
+        arrows: true,
       },
     };
   },
@@ -189,7 +189,7 @@ export default {
 };
 </script>
 
-<style lang="scss">
+<style lang="scss" scoped>
 @import "@/assets/scss/index.scss";
 .ScheduleWeek {
   display: flex;
