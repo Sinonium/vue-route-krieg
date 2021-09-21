@@ -59,12 +59,12 @@
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M11.3536 17.1307C10.5936 17.8207 9.42357 17.8207 8.66357 17.1207L8.55357 17.0207C3.30357 12.2707 -0.126429 9.16065 0.00357106 5.28065C0.0635711 3.58065 0.933571 1.95065 2.34357 0.990654C4.98357 -0.809346 8.24357 0.0306542 10.0036 2.09065C11.7636 0.0306542 15.0236 -0.819346 17.6636 0.990654C19.0736 1.95065 19.9436 3.58065 20.0036 5.28065C20.1436 9.16065 16.7036 12.2707 11.4536 17.0407L11.3536 17.1307Z"
-              fill="#8833FF"
+              fill="#C3CAD9"
             />
           </svg>
           <span>Favorite</span>
         </router-link>
-        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
+        <div class="modal__list-column">
           <svg
             width="20"
             height="20"
@@ -80,7 +80,7 @@
             />
           </svg>
           <span>Watch Later</span>
-        </router-link>
+        </div>
         <router-link :to="{ name: 'PageThree' }" class="modal__list-column">
           <svg
             width="20"
@@ -93,7 +93,7 @@
               fill-rule="evenodd"
               clip-rule="evenodd"
               d="M8 0H12V12H8V0ZM6 7H2V12H6V7ZM0 16V13H20V16H0ZM18 3H14V12H18V3Z"
-              fill="#29CC39"
+              fill="#C3CAD9"
             />
           </svg>
           <span>Statistics</span>
@@ -149,7 +149,7 @@
           </svg>
           <span>History</span>
         </router-link>
-        <router-link :to="{ name: 'PageOne' }" class="modal__list-column">
+        <div class="modal__list-column">
           <svg
             width="19"
             height="18"
@@ -165,7 +165,7 @@
             />
           </svg>
           <span>Subscription</span>
-        </router-link>
+        </div>
       </div>
       <div class="modal__episode">
         <img src="..\assets\img\modal-img.png" alt="" />
@@ -307,7 +307,7 @@ a {
   z-index: 222;
   transform: scale(0);
   transition: 1s;
-  left: 70%;
+  left: 76%;
   .modal {
     text-align: center;
     max-width: vw(340);
@@ -318,8 +318,8 @@ a {
     .popa {
       display: flex;
       & .modal__setting {
-        margin-top: vw(48);
-        margin-left: -3vw;
+        margin-top: vw(38);
+        margin-left: vw(20);
       }
     }
     &__avatar {
@@ -491,18 +491,18 @@ a {
     transition: 0.7s;
     transform: scale(0);
   }
-  .modalTrue {
-    transform: scale(1);
-    right: 0%;
-    transition: 0.7s;
-  }
+  // .modalTrue {
+  //   transform: scale(1);
+  //   right: 0%;
+  //   transition: 0.7s;
+  // }
 }
 @media screen and (max-width: 1024px) {
-  .modalTrue {
-    transform: scale(1) !important;
-    left: 75%;
-    transition: 0.7s;
-  }
+  // .modalTrue {
+  //   transform: scale(1) !important;
+  //   left: 75%;
+  //   transition: 0.7s;
+  // }
   .Modal {
     position: absolute;
     transition: 0.7s;
@@ -513,7 +513,8 @@ a {
     height: vw(1085);
     .popa {
       & .modal__setting {
-        margin-left: 2vw;
+        margin-left: vw(10);
+        margin-top: vw(50);
       }
     }
     &__avatar {
@@ -601,104 +602,68 @@ a {
   }
   }
 }
-// @media screen and (max-width: 907px) {
-//   .modal {
-//     height: 72vw;
-//   }
-//   .modal {
-//     .modal__episode {
-//       margin-top: 1.625vw;
-//     }
-//   }
-//   .modal__list {
-//     grid-template-columns: 8.125vw 8.125vw;
-//     grid-template-rows: 7.8125vw 9.8125vw 8.8125vw 7.8125vw;
-//     grid-column-gap: 1.1875vw;
-//     grid-row-gap: 2.0625vw;
-//   }
-// }
-// @media screen and (max-width: 840px) {
-//   .modal-2 {
-//     height: vw(390);
-//   }
-//   .modal {
-//     .modal__list {
-//       .modal__list-column {
-//         margin: vw(-15.25) vw(3.125) vw(1.3125) vw(3.125);
-//       }
-//     }
-//   }
-// }
-// @media screen and (max-width: 795px) {
-//   .Modal {
-//     .modal {
-//       display: flex;
-//       flex-direction: column;
-//       height: 77vw;
-//       .popa {
-//         padding-top: vw(10);
-//         .modal__name {
-//           font-size: vw(24);
-//         }
-//         .modal__setting {
-//           margin-top: vw(1);
-//           margin-left: vw(-100);
-//         }
-//       }
-//       &__subscription {
-//         @include font(vw(30), 700, vw(30));
-//         margin: vw(1.25) vw(5) vw(20) vw(4.25);
-//         display: block;
-//       }
-//       &__data {
-//         @include font(vw(30), 700, vw(30));
-//         margin-right: 0;
-//       }
-//       .modal__list {
-//         .modal__list-column {
-//           span {
-//             @include font(vw(15), 700, vw(25), $greyBlue60);
-//           }
-//           &:hover {
-//             span {
-//               color: $white;
-//             }
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
 @media screen and (max-width: 768px) {
-  .modalTrue {
-    transform: scale(1) !important;
-    right: 0;
-    transition: 0.7s;
-  }
-  .Modal {
-    position: absolute;
-    transition: 0.7s;
-    transform: scale(0);
+ .Modal {
+    // position: absolute;
+    // transition: 0.7s;
+    // transform: scale(0);
+    left: 72.5%;
     .modal {
-        .popa {
+    text-align: center;
+    max-width: vw(440);
+    height: vw(1170);
+    .popa {
       & .modal__setting {
-        margin-left: -1vw;
+        margin-left: vw(10);
+        margin-top: vw(50);
       }
     }
-    height: vw(1095);
-     &__name {
-     font-size: vw(16)
+    &__avatar {
+      margin: vw(30) 0 vw(20) vw(30);
+    }
+    &__name {
+     font-size: vw(19)
+    
+    }
+    &__subscription {
+      @include font(vw(19), 700, vw(30));
+    }
+    &__data {
+      @include font(vw(19), 700, vw(30));
+    }
+    &__sub__line {
+      height: vw(10);
+      width: vw(330);
+      margin: vw(20) vw(40) vw(15);
+      & span {
+        height: vw(11);
+      }
     }
     }
+    .modal__list {
+    margin-left: vw(39);
+    margin-top: vw(43);
+    display: grid;
+    grid-template-columns: vw(160) vw(160);
+    grid-template-rows: vw(145) vw(145) vw(145) vw(145);
+    .modal__list-column {
+      & span {
+        @include font(vw(19), 700, vw(25), $greyBlue60);
+        margin: vw(30) 0 vw(30) 0;
+      }
+    }
+  }
     .modal__episode {
+      width: vw(350);
+      height: vw(185);
+      margin-left: vw(40);
       margin-top: vw(20);
-      margin-left: vw(30);
     & img {
-      max-width: vw(320);
-      max-height: vw(285);
+      max-width: vw(360);
+      max-height: vw(230);
       margin-top: vw(-5);
     }
-     &-zoom {
+    &-zoom {
       margin: vw(0) 0 0 vw(25);
       width: vw(60);
     }
@@ -707,25 +672,35 @@ a {
       width: vw(80);
     }
     & span {
-      @include font(vw(17), 700, vw(25), $white);
+      @include font(vw(19), 700, vw(25), $white);
     }
   }
-    .modal__list {
-      margin-top: vw(20);
-      margin-left: vw(30);
-    .modal__list-column {
-      & svg {
-        margin: vw(36) vw(50) vw(0) vw(50);
-      }
+   .modal-2 {
+    margin-top: vw(30);
+    max-width: vw(540);
+    height: vw(350);
+    border-radius: vw(10);
+    background-color: $white;
+    padding-top: vw(7);
+    & span {
+      @include font(vw(19), 700, vw(25), $greyBlue60);
+      margin: 0 vw(30);
+    }
+    & svg {
+      cursor: pointer;
+    }
+    &__list {
+      display: flex;
 
+      & ul {
+        margin-left: vw(50);
+        li {
+          @include font(vw(19), 700, vw(25), $greyBlue60);
+          margin-top: vw(30);
+        }
+      }
     }
   }
-}
-@media screen and (max-width: 593px) {
-  .modalTrue {
-    transform: scale(1);
-    right: 0%;
-    transition: 1s;
   }
 }
 @media screen and (max-width: 425px) {
@@ -740,138 +715,14 @@ a {
     z-index: 1;
   }
   .Modal {
-    position: absolute;
-    z-index: 222;
-    transform: scale(0);
-    transition: 1s;
-  }
-  .Modal .modal .popa .modal__name {
-    font-size: 3vmin !important;
-    line-height: 3vmin !important;
-  }
-  .modal {
-    text-align: center !important;
-    max-width: vmin(200) !important;
-    height: 150vmin !important;
-    border-radius: vmin(10) !important;
-    position: relative !important;
-    .popa {
-      & .modal__setting {
-        margin-top: vw(98);
-        margin-left: 8vw;
-      }
-    }
-     &__avatar {
-      margin: vw(60) 0 vw(30) vw(60);
-    }
-    &__name {
-      font-size: vmin(9);
-    }
-    &__subscription {
-      font-size: vmin(9);
-      margin: vw(20) vw(80) vw(0) vw(20);
-      cursor: pointer;
-    }
-    &__data {
-      font-size: vmin(9);
-      margin-right: vw(20);
-      cursor: pointer;
-    }
-    &__sub__line {
-      height: vw(10);
-      width: vmin(160);
-      margin: vw(20) vw(90) vw(15);
-      & span {
-        height: vw(11);
-      
-      }
-    }
-  }
-   .modal__list {
-    margin-left: vw(60);
-    margin-top: vw(43);
-    display: grid;
-    grid-template-columns: vmin(80) vmin(80);
-    grid-template-rows: vmin(80) vmin(80) vmin(80) vmin(80);
-    grid-column-gap: vw(49);
-    grid-row-gap: vw(30);
-    .modal__list-column {
-      border-radius: vw(10);
-      & svg {
-        margin: vw(56) vw(120) vw(81) vw(110);
-      }
-      & span {
-       font-size: vmin(10);
-        margin: vw(30) 0 vw(60) 0;
-      }
-    }
-  }
-  .modal__episode {
-    max-width: vmin(155);
-    max-height: vmin(185);
-    position: relative;
-    margin-top: vmin(10);
-    margin-left: vmin(20);
-    & img {
-      max-width: vmin(165);
-      max-height: vmin(195);
-      margin-top: vw(10);
-    }
-    &-zoom {
-      position: absolute;
-      top: 0;
-      left: 0;
-      margin: vw(40) 0 0 vw(35);
-      cursor: pointer;
-      width: vmin(30);
-    }
-    &-play {
-      margin: vmin(-40) vmin(60);
-      width: vmin(40);
-    }
-    & span {
-      font-size: vmin(9);
-      margin: 0 0 vmin(-60) vmin(25);
-    }
-  }
-   .modal-2 {
-    margin-top: vw(30);
-    max-width: vw(900);
-    height: vw(650);
-    padding-top: vw(7);
-    & span {
-      font-size: vmin(10);
-      cursor: pointer;
-      margin: vw(40) vw(100);
-    }
-    & svg {
-      cursor: pointer;
-    }
-    &__list {
-      display: flex;
-
-      & ul {
-        margin-left: vw(80);
-        li {
-          font-size: vmin(10);
-          margin-top: vw(70);
-        }
-      }
-    }
-  }
-  }
-}
-@media screen and (max-width: 320px) {
- 
-  .Modal {
-    position: absolute;
-    transition: 0.7s;
-    transform: scale(0);
+    // position: absolute;
+    // transition: 0.7s;
+    // transform: scale(0);
     left: 40%;
     .modal {
     // text-align: center;
     max-width: vw(900);
-    min-height: vw(2600);
+    height: vw(2600);
     border-radius: vw(20);
     // background-color: $white;
     .popa {
@@ -980,359 +831,123 @@ a {
   }
   }
 }
-// @media screen and (max-width: 752px) {
-//   .Modal {
-//     right: -1%;
-//     .modal {
-//       .modal__episode {
-//         & .modal__episode-play {
-//           height: 7vw;
-//         }
-//         & .modal__episode-zoom {
-//           height: 5vw;
-//         }
-//       }
-//     }
-//   }
-// }
-// @media screen and (max-width: 748px) {
-//   .Modal {
-//     right: -1%;
-//     .modal {
-//       .popa {
-//         padding-right: vw(25);
-//         .modal__name {
-//           font-size: vw(28) !important;
-//         }
-//       }
-//     }
-//     .modal-2 {
-//       .modal-2__head {
-//         svg:first-child {
-//           margin-right: 3vw;
-//         }
-//       }
-//     }
-//   }
-// }
+@media screen and (max-width: 320px) {
+  .Modal {
+    position: absolute;
+    transition: 0.7s;
+    transform: scale(0);
+    left: 35%;
+    .modal {
+    // text-align: center;
+    max-width: vw(1000);
+    min-height: vw(2600);
+    border-radius: vw(20);
+    // background-color: $white;
+    .popa {
+      & .modal__setting {
+        margin-top: vw(110);
+        margin-left: 8vw;
+      }
+    }
+     &__avatar {
+      margin: vw(60) 0 vw(30) vw(60);
+    }
+    &__name {
+      font-size: vmin(9);
+    }
+    &__subscription {
+      font-size: vmin(9);
+      margin: vw(20) vw(80) vw(0) vw(20);
+      cursor: pointer;
+    }
+    &__data {
+      font-size: vmin(9);
+      margin-right: vw(20);
+      cursor: pointer;
+    }
+    &__sub__line {
+      height: vw(10);
+      width: vmin(160);
+      margin: vw(20) vw(140) vw(15);
+      & span {
+        height: vw(11);
+      
+      }
+    }
+  }
+   .modal__list {
+    margin-left: vw(130);
+    margin-top: vw(43);
+    display: grid;
+    grid-template-columns: vmin(80) vmin(80);
+    grid-template-rows: vmin(80) vmin(80) vmin(80) vmin(80);
+    grid-column-gap: vw(49);
+    grid-row-gap: vw(30);
+    .modal__list-column {
+      border-radius: vw(10);
+      & svg {
+        margin: vw(56) vw(120) vw(61) vw(110);
+      }
+      & span {
+       font-size: vmin(10);
+        margin: vw(30) 0 vw(70) 0;
+      }
+    }
+  }
+  .modal__episode {
+    max-width: vmin(155);
+    max-height: vmin(185);
+    position: relative;
+    margin-top: vmin(10);
+    margin-left: vmin(32);
+    & img {
+      max-width: vmin(165);
+      max-height: vmin(195);
+      margin-top: vw(10);
+    }
+    &-zoom {
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin: vw(40) 0 0 vw(35);
+      cursor: pointer;
+      width: vmin(30);
+    }
+    &-play {
+      margin: vmin(-50) vmin(60);
+      width: vmin(40);
+    }
+    & span {
+      font-size: vmin(10);
+      margin: 0 0 vmin(-60) vw(25);
+    }
+  }
+   .modal-2 {
+    margin-top: vw(30);
+    max-width: vw(1000);
+    height: vw(650);
+    padding-top: vw(10);
+    & span {
+      font-size: vmin(10);
+      cursor: pointer;
+      margin: vw(40) vw(100);
+    }
+    & svg {
+      cursor: pointer;
+    }
+    &__list {
+      display: flex;
 
-// @media screen and (max-width: 700px) {
-//   .Modal {
-//     .modal {
-//       height: 84vw;
-//       .modal__list {
-//         grid-template-columns: 9.125vw 9.125vw;
-//         grid-template-rows: 10vw 10vw 10vw 10vw;
-//         grid-column-gap: 0.1875vw;
-//         grid-row-gap: 3.0625vw;
-//         .modal__list-column {
-//           padding: vw(15);
-//           svg {
-//             margin: 2.25vw 3.125vw 1.3125vw 2.125vw;
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// @media screen and (max-width: 700px) {
-//   .Modal {
-//     .modal {
-//       height: 86vw;
-//     }
-//   }
-// }
-// @media screen and (max-width: 612px) {
-//   .Modal {
-//     .modal {
-//       height: 92vw;
-//       .modal__list {
-//         grid-template-columns: 9.125vw 9.125vw;
-//         grid-template-rows: 11vw 11vw 11vw 11vw;
-//         grid-column-gap: 0.1875vw;
-//         grid-row-gap: 3.0625vw;
-//         .modal__list-column {
-//           span {
-//             font-size: vw(19);
-//           }
-//         }
-//       }
-//     }
-//     .modal-2 {
-//       height: 30vw;
-//       padding: vw(15) vw(10);
-//       width: 49vw;
-//       .modal-2__head {
-//         display: flex;
-//         flex-direction: column;
-//         & svg:first-child {
-//           margin-top: 2vw;
-//         }
-//         & span {
-//           margin-top: 2vw;
-//           margin-left: -3vw;
-//           font-size: vw(18);
-//         }
-//         & svg:last-child {
-//           margin-top: 2vw;
-//           margin-left: -1.8125vw;
-//         }
-//       }
-//       .modal-2__list {
-//         ul {
-//           margin-left: 1.5vw;
-//           li {
-//             font-size: vw(16);
-//           }
-//         }
-//       }
-//     }
-//   }
-// }
-// @media screen and (max-width: 593px) {
-//   .modalTrue {
-//     transform: scale(1) !important;
-//     right: 0%;
-//     transition: 1s;
-//   }
-//   .overlaySowModal {
-//     position: fixed;
-//     top: 0;
-//     left: 0;
-//     width: 100%;
-//     height: 100%;
-//     background: rgba(0,0,0,0.5);
-//     display: block;
-//     z-index: 1;
-//   }
-//   .Modal {
-//     position: absolute;
-//     z-index: 222;
-//     transform: scale(1) !important;
-//     transition: 1s;
-//     right: -10%;
-//   }
-//   .Modal .modal .popa .modal__name {
-//     font-size: 3vmin !important;
-//     line-height: 3vmin !important;
-//   }
-//   .modal {
-//     text-align: center !important;
-//     max-width: vmin(200) !important;
-//     height: 150vmin !important;
-//     border-radius: vmin(10) !important;
-//     position: relative !important;
-//     .popa {
-//       display: flex;
-//       & .modal__setting {
-//         width: 5vmin;
-//         height: 5vmin;
-//         margin-left: -3vmin !important;
-//       }
-//     }
-//     &__avatar {
-//       margin: vmin(30) 0 vmin(20) vmin(20);
-//       height: 20vmin;
-//       width: 20vmin;
-//     }
-//     &__name {
-//       font-size: 40vmin !important;
-//     }
-//     &__subscription {
-//       @include font(vmin(20) !important, 700 !important, vmin(30) !important);
-//       margin: vmin(20) vmin(80) vmin(0) vmin(20);
-//     }
-//     &__data {
-//       @include font(vmin(20) !important, 700 !important, vmin(30) !important);
-//       margin-right: vmin(20);
-//     }
-//     &__sub__line {
-//       height: vmin(5) !important;
-//       width: 40vmin !important;
-//       position: relative;
-//       background-color: #f0f2f7;
-//       border-radius: vmin(5);
-//       margin: vmin(20) vmin(23) vmin(15) !important;
-//       padding: vmin(2) !important;
-//       & span {
-//         position: relative;
-//         height: 100% !important;
-//         background-color: #8833ff;
-//         border-radius: vmin(5) !important;
-//         display: block;
-//       }
-//     }
-//   }
-//   .modal__list {
-//     margin-top: vmin(43);
-//     display: grid;
-//     grid-template-columns: 23.125vmin 21.125vmin !important;
-//     grid-template-rows: 11vmin 11vmin 11vmin 12vmin !important;
-//     grid-column-gap: 2.1875vmin !important;
-//     grid-row-gap: 4.0625vmin !important;
-//     margin-top: 1vmin;
-//     align-items: center;
-//     justify-content: center;
-//     .modal__list-column {
-//       background-color: $greyBlue99;
-//       border-radius: vmin(10);
-//       cursor: pointer;
-//       text-align: center;
-//       transition: 0.3s;
-//       & svg {
-//         margin: vmin(36) vmin(50) vmin(21) vmin(50);
-//       }
-//       & span {
-//         @include font(
-//           vmin(8) !important,
-//           700 !important,
-//           vmin(25) !important,
-//           $greyBlue60
-//         );
-//         margin: vmin(30) 0 vmin(30) 0;
-//       }
-//     }
-//     .modal__list-column:hover {
-//       background-color: #ff6633;
-//       & svg path {
-//         fill: $white;
-//       }
-//       & span {
-//         color: $white;
-//       }
-//     }
-//   }
-//   .modal__episode {
-//     max-width: vmin(280) !important;
-//     max-height: vmin(195) !important;
-//     margin-top: vmin(10) !important;
-//     margin-left: 0 !important;
-//     & img {
-//       max-width: 110vmin !important;
-//       max-height: 55vmin !important;
-//       margin-top: vmin(10) !important;
-//     }
-//     &-zoom {
-//       height: 6vmin !important;
-//       width: 6vmin !important;
-//       margin: vmin(25) 0 0 vmin(15) !important;
-//       cursor: pointer;
-//     }
-//     &-play {
-//       width: 20vmin !important;
-//       height: 15vmin !important;
-//       margin: vmin(50) vmin(50) !important;
-//     }
-//     & span {
-//       @include font(
-//         vmin(14) !important,
-//         700 !important,
-//         vmin(25) !important,
-//         $white
-//       );
-//       margin: 0 0 0.9375vmin 4.5625vmin !important;
-//     }
-//   }
-//   .modal-2 {
-//     margin-top: vmin(30) !important;
-//     max-width: vmin(360) !important;
-//     height: 62.33333vmin !important;
-//     border-radius: vw(10) !important;
-//     & span {
-//       font-size: vmin(17) !important;
-//       margin: -1vmin 9vmin -36px 4.6vmin;
-//       cursor: pointer;
-//     }
-//     & svg {
-//       margin-left: 0 !important;
-//       margin-top: 0 !important;
-//       margin: 2.33333vmin 43.33333vmin 2vmin 7.66667vmin !important;
-//       width: 10.66667vmin !important;
-//       height: 7.66667vmin !important;
-//     }
-//     & svg:last-child {
-//       cursor: pointer;
-//       margin: 1.33333vmin -25.66667vmin 0 6.66667vmin !important;
-//       width: 8.66667vmin !important;
-//       height: 0vmin;
-//     }
-//     &__list {
-//       display: flex;
-//       flex-wrap: wrap;
-//       & ul {
-//         margin-left: 2vmin !important;
-//         li {
-//           @include font(
-//             vmin(12) !important,
-//             700 !important,
-//             vmin(25) !important,
-//             $greyBlue60
-//           );
-//           margin-top: vmin(30);
-//         }
-//       }
-//     }
-//   }
-// }
-// @media screen and (max-width: 584px) {
-//   .modal {
-//     width: 100vmin;
-//     // max-width: 86.33333vmin !important;
-//     height: 100vmin !important;
-//     border-radius: 2.66667vmin !important;
-//   }
-//   .modal__avatar {
-//     margin: 8vmin 0 5.33333vmin 5.33333vmin;
-//     height: 40vmin;
-//     width: 38vmin;
-//   }
-//   .modal__list {
-//     margin-top: 11.46667vmin !important;
-//     grid-template-columns: 38.125vmin 36.125vmin !important;
-//     grid-template-rows: 50vmin 50vmin 50vmin 50vmin !important;
-//     grid-column-gap: 5.1875vmin !important;
-//     grid-row-gap: -8.9375vmin !important;
-//     margin-top: 1vmin !important;
-//   }
-//   .modal__list .modal__list-column span {
-//     font-size: 8vmin !important;
-//     line-height: 10vmin;
-//   }
-//   .Modal .modal .modal__list .modal__list-column svg {
-//     margin: 12.25vmin 3.125vmin 9.3125vmin 3.125vmin;
-//   }
-//   .Modal .modal .modal__list .modal__list-column {
-//     padding: 4vmin;
-//   }
-//   .modal__sub__line {
-//     height: 1.33333vmin !important;
-//     width: 87% !important;
-//     margin: 5.33333vmin 6.13333vmin 4vmin !important;
-//     padding: 0.53333vmin !important;
-//   }
-//   .Modal .modal .popa .modal__name {
-//     font-size: 10vmin !important;
-//     line-height: 10vmin !important;
-//   }
-//   .modal .popa .modal__setting {
-//     width: 27vmin;
-//     height: 19vmin;
-//     margin-left: -4vmin !important;
-//   }
-//   .modal__subscription {
-//     font-size: 9.33333vmin !important;
-//     line-height: 14vmin !important;
-//   }
-//   .modal__data {
-//     font-size: 10.33333vmin !important;
-//     font-weight: 700 !important;
-//     line-height: 12vmin !important;
-//     font-style: normal;
-//     color: #4d5e80;
-//     margin-right: 5.33333vmin;
-//   }
-//   .Modal {
-//     right: -100%;
-//   }
-// }
+      & ul {
+        margin-left: vw(110);
+        li {
+          font-size: vmin(10);
+          margin-top: vw(70);
+        }
+      }
+    }
+  }
+  }
+}
+
 </style>

@@ -301,7 +301,7 @@ footer{
                 }
          }
          .footer__chat{
-            margin-right: vmin(20);
+            margin-right: vmin(5);
          }
     }
 }

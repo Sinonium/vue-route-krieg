@@ -670,6 +670,7 @@ export default {
   grid-column-gap: vw(30);
   grid-row-gap: vw(30); 
   .favorite__series{
+    cursor: pointer;
     position: relative;
     & h6{
       position: absolute;
@@ -705,6 +706,10 @@ export default {
       margin: vw(20) 0 0 vw(20);
     }
   
+  }
+  .favorite__series:hover{
+    transform: scale(0.9);
+    transition: 0.4s;
   }
 }
 @media screen and (max-width: 2560px) {
