@@ -271,7 +271,7 @@ export default {
        .slider__line{
         margin-top: vw(26);
         height: vw(1);
-        width: vw(280);
+        width: vw(279);
         position: relative;
         background-color: #F0F2F7;
         border-radius: vw(5);
@@ -288,6 +288,7 @@ export default {
             border-radius: vw(5);
             display: block;
             margin-top: vw(-1);
+            margin-left: vw(-1);
         }
        }
     }
@@ -545,6 +546,13 @@ export default {
  
 }
  @media screen and (max-width: 425px){
+   .tabs{
+    & ul{
+      & li{
+        font-size: vmin(9);
+      }
+    }
+  }
     .back{
   & img{
         width: vmin(360);
@@ -570,7 +578,7 @@ export default {
     .catalog-icons{
       margin: vmin(10) 0  0 vw(30);
       & span{
-         font-size: vmin(5);
+         font-size: vmin(7);
          margin: vw(50) vmin(80) 0 vw(15);
       }
       & svg{
@@ -579,11 +587,11 @@ export default {
       }
     }
       & h6{
-       font-size: vmin(7);
+       font-size: vmin(9);
        margin: 0 0 vw(100) vw(30);
     }
     .catalog__data{
-     font-size: vmin(6);
+     font-size: vmin(7);
     }
   }
   .catalog__genres{
@@ -594,7 +602,7 @@ export default {
         // padding: vmin(9) vw(10);
         height: vmin(20);
           &-title{
-            font-size: vmin(7);
+            font-size: vmin(8);
              margin: auto auto auto vw(20);
           }
           & img{
