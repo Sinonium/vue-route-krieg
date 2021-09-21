@@ -47,7 +47,7 @@
       </div>
       <div class="catalog__block">
         <ul v-if="check">
-          <li  class="catalog__block__item" v-for="(film, index) in catalog" :key="index">
+          <li  class="catalog__block__item" v-for="(film, index) in catalogFiltered" :key="index">
             <div class="IMDb-rate">
               <img src="../assets/img/Imdb.png" alt="">
               <span>{{film.rate}}</span>
@@ -183,6 +183,7 @@ export default {
       ],
       genresBoollean: false,
       catalog: [],
+      catalogFiltered:[],
       check: false,
       pages: [1,2,3,4,5,6,7,8,9,10]
     }
@@ -190,7 +191,7 @@ export default {
   methods: {
     sort(by){
       if(by === 'alpha'){
-        this.catalog.sort((a,b) =>{
+        this.catalogFiltered.sort((a,b) =>{
           let fa = a.title.toLowerCase(), fb = b.title.toLowerCase()
           if(fa < fb) {
             return -1
@@ -202,7 +203,7 @@ export default {
         })
       }
       if (by === 'imdb') {
-        this.catalog.sort((a,b) => b.rate - a.rate)
+        this.catalogFiltered.sort((a,b) => b.rate - a.rate)
       }
       
     },
@@ -210,7 +211,8 @@ export default {
       const lala = Array.from(document.querySelectorAll('.genres__list'))
       lala.forEach(item => item.classList.remove('active'))
       lala[id].classList.add('active')
-      this.catalog = this.catalog.filter(item => item.genre.includes(genre.title))
+      this.catalogFiltered = this.catalog.filter(item => item.genre.includes(genre.title))
+      
     },
     selectPage(id){
       const lala = Array.from(document.querySelectorAll('.pages'))
@@ -324,15 +326,17 @@ export default {
   }
 }
 .catalog__block{
-  max-width: vw(900);
+  width: vw(900);
   display: flex;
   ul{
     display: flex;
     flex-wrap: wrap;
+    max-height: vw(600);
   }
   &__item{
-    margin: 0 vw(15) vw(30);
+    margin: 0 vw(15) auto;
     position: relative;
+    top: 0;
     &-img{
       img{
         border-radius: vw(10);
@@ -388,6 +392,7 @@ export default {
       flex-direction: column;
       margin: 0 vw(70) 0 vw(5);
       text-align: center;
+      max-height: vw(1000);
       li{
         padding: vw(12.92) vw(17.55);
         border: 2px solid $greyBlue95;
