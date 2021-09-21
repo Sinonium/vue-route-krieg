@@ -229,11 +229,11 @@ export default {
   .header {
     &__natifications {
         & svg {
-            margin-left: vw(-10);
+            margin-left: vw(10);
         }
       & svg:last-child {
         margin-top: vw(5);
-        margin-left: vw(5);
+        margin-left: vw(60);
         width: vw(30);
       }
     }
@@ -281,7 +281,7 @@ export default {
       margin-left: vw(70);
       & ul {
         & li {
-          font-size: vw(17);
+          font-size: vw(19);
         }
       }
     }
@@ -308,7 +308,7 @@ export default {
     &__profile {
       margin-left: vw(13);
       & span {
-        font-size: vw(15);
+        font-size: vw(19);
       }
     }
     &__natifications {
@@ -419,7 +419,14 @@ export default {
 @media screen and (max-width: 425px) {
   .header {
     &__search {
-      margin-left: vw(250);
+      margin-left: vw(150);
+       & input {
+        width: vmin(145);
+        height: vmin(20);
+        margin-left: vw(121);
+        border-radius: vw(35);
+        @include font(vmin(8), 600, vw(25), $greyBlue85);
+      }
       & svg:first-child {
         width: vmin(9.05);
         height: vmin(9.05);
@@ -427,6 +434,17 @@ export default {
       & svg {
         width: vmin(9.05);
         height: vmin(9.05);
+      }
+    }
+    &__profile {
+      margin-left: vw(13);
+      & span {
+        font-size: vmin(8);
+      }
+    }
+    &__natifications {
+      & svg:last-child {
+        width: vw(50);
       }
     }
   }
@@ -437,17 +455,24 @@ export default {
       display: none;
     }
     &__search {
-      margin-left: vw(250);
+      margin-left: vw(160);
+      margin-right: vw(20);
       & svg:first-child {
         margin-top: vw(30);
-        width: vmin(8.05);
-        height: vmin(8.05);
+        width: vmin(9.05);
+        height: vmin(9.05);
       }
       & svg {
         margin-left: vw(-90);
         margin-top: vw(30);
-        width: vmin(8.05);
-        height: vmin(8.05);
+        width: vmin(9.05);
+        height: vmin(9.05);
+      }
+    }
+    &__profile {
+      margin-left: vw(20);
+      & span {
+        font-size: vmin(8);
       }
     }
   }
@@ -455,12 +480,32 @@ export default {
 @media screen and (max-width: 320px) {
   .header {
     &__search {
-      margin-left: vw(280);
+      margin-left: vmin(20);
+      & input {
+      width: vmin(170);
+      height: vmin(25);
+      margin-left: vw(100);
+      border-radius: vw(40);
+      border: 2px solid #f5f6f7;
+      background: #ffffff;
+      box-sizing: border-box;
+      padding-left: vw(60);
+      outline: none;
+      position: relative;
+      @include font(vmin(9), 600, vw(25), $greyBlue85);
+    }
       & svg:first-child {
         margin-top: vw(40);
+        margin-left: vw(130);
       }
       & svg {
         margin-top: vw(40);
+      }
+    }
+     &__profile {
+      margin-left: vw(20);
+      & span {
+        font-size: vmin(9);
       }
     }
   }
