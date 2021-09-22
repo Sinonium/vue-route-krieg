@@ -179,6 +179,7 @@
                                 <span>
                                     Ja
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -187,6 +188,7 @@
                                 <span>
                                     Fe
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -195,6 +197,7 @@
                                 <span>
                                     Ma
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -203,6 +206,7 @@
                                 <span>
                                     Ap
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -211,6 +215,7 @@
                                 <span>
                                     Ma
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -219,6 +224,7 @@
                                 <span>
                                     Ju
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -227,6 +233,7 @@
                                 <span>
                                     Ju
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -235,6 +242,7 @@
                                 <span>
                                     Au
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -243,6 +251,7 @@
                                 <span>
                                     Se
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -251,6 +260,7 @@
                                 <span>
                                     Oc
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -259,6 +269,7 @@
                                 <span>
                                     No
                                 </span>
+                                <div class="background"></div>
                             </li>
                             <li>
                                 <div class="scale">
@@ -267,6 +278,7 @@
                                 <span>
                                     De
                                 </span>
+                                <div class="background"></div>
                             </li>
                         </ul>
                     </div>
@@ -707,17 +719,16 @@ export default {
                             @include font(vw(12), 800, vw(20), $greyBlue80);
                         }
                         .background{
-                        opacity: 0;
-                        position: relative;
+                        background: rgba($blue, $alpha: 0);
+                        // position: relative;
                         position: absolute;
                         width: vw(60);
                         height: vw(350);
                         left: vw(-22);
                         bottom: vw(-27);
-                        background-color: $blue;
                     }
                     .background:hover{
-                        opacity: 0.1;
+                        background: rgba($blue, $alpha: 0.2);
                     }
                     };
                 }
@@ -769,6 +780,7 @@ export default {
                     margin: vw(-182) vw(0) vw(30) vw(30);
                     li{
                         margin-right: vw(20);
+                        position: relative;
                         .scale{
                                 height: vw(180);
                                 width: vw(10);
@@ -787,7 +799,19 @@ export default {
                         span{
                             @include font(vw(12), 800, vw(20), $greyBlue80);
                         }
-                    };
+                    }
+                    .background{
+                        background: rgba($orange, $alpha: 0);
+                        position: relative;
+                        position: absolute;
+                        width: vw(38);
+                        height: vw(350);
+                        left: vw(-12);
+                        bottom: vw(-27);
+                    }
+                    .background:hover{
+                        background: rgba($orange, $alpha: 0.2);
+                    }
                 }
             }
         }
